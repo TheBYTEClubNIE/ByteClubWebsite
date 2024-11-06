@@ -1,6 +1,7 @@
 'use client'
+import "./loading.css"
 
-import ParticleSystem from "./components/ParticleSystem";
+import ParticleSystem from "../ParticleSystem";
 
 const Loading = () => {
     return (
@@ -12,7 +13,7 @@ const Loading = () => {
 
             {/* Typewriter text */}
             <div className="typewriter relative z-10">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                <h1 className="text-border text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
                     BUILD YOUR TECHNICAL EXPERTISE
                 </h1>
             </div>
