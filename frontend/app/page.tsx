@@ -4,10 +4,10 @@ import Image from "next/image";
 import {useEffect, useState } from "react";
 import Loading from "./loading";
 
-const Page = () => {
+
+export default function Home() {
 
   const [loader, setLoader] = useState(true)
-
   useEffect(()=>{
 
     const timer = setTimeout(() => {
@@ -15,12 +15,8 @@ const Page = () => {
     }, 3000);
   
   },[])
-
-
   if(loader) return <Loading/>
-}
 
-export default function Home() {
   return (
     <>
       <h1>home</h1>

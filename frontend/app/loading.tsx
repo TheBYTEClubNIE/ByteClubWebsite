@@ -1,5 +1,6 @@
 'use client'
-const loading = () => {
+
+const Loading = () => {
     return (
         <div className="typewriter">
             <div>
@@ -9,4 +10,4 @@ const loading = () => {
     )
 }
 
-export default loading
+export default Loading
