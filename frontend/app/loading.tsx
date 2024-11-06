@@ -1,10 +1,20 @@
 'use client'
 
+import ParticleSystem from "./components/ParticleSystem";
+
 const Loading = () => {
     return (
-        <div className="typewriter">
-            <div>
-                <h1 className="text-4xl">BUILD YOUR TECHINCAL EXPERTISE</h1>
+        <div className="relative h-screen w-full overflow-hidden">
+            {/* Particle background */}
+            <div className="absolute inset-0 z-0">
+                <ParticleSystem />
+            </div>
+
+            {/* Typewriter text */}
+            <div className="typewriter relative z-10">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                    BUILD YOUR TECHNICAL EXPERTISE
+                </h1>
             </div>
         </div>
     )
