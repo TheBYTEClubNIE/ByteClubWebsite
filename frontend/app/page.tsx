@@ -18,6 +18,7 @@ const Page = () => {
 
 
   if(loader) return <Loading/>
+}
 
 export default function Home() {
   return (
