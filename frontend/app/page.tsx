@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 export default function Home() {
   const [loader, setLoader] = useState(true);
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setLoader(false);
     }, 5500);
   }, []);
