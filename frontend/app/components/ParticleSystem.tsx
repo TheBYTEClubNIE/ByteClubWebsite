@@ -73,7 +73,7 @@ const ParticleSystem = () => {
           particles.push(new Particle({ x, y, z }, config.dt, color, tailLength, config.zoom, life, p));
         }
 
-        p.background(0);
+        p.background(20);
         p.strokeWeight(config.strokeWeight);
         p.translate(p.width / 2, p.height / 2);
 

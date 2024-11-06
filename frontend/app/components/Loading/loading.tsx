@@ -11,13 +11,18 @@ const Loading = () => {
                 <ParticleSystem />
             </div>
 
-            {/* Typewriter text */}
-            <div className="typewriter relative z-10">
-                <h1 className="text-border text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-                    BUILD YOUR TECHNICAL EXPERTISE
-                </h1>
+
+
+
+
+            <div className="typewriter relative flex justify-center items-center h-screen">
+                <div>
+                    <h1 className="overflow-hidden text-4xl sm:text-5xl md:text-6xl lg:text-7xl ">Build Your Technical Expertise</h1>
+                </div>
             </div>
         </div>
+
+
     )
 }
 
