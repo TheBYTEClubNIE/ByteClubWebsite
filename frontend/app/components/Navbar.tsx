@@ -33,8 +33,8 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center w-full h-fit z-5">
-      <nav className="navbar fixed w-max backdrop:blur-md bg-transparent mt-28 shadow-sm">
+    <div className="flex items-center justify-center w-full h-fit z-50 absolute ">
+      <nav className="navbar fixed w-max backdrop:blur-md bg-transparent mt-28 shadow-sm backdrop-blur-md">
         <button type="button">
           <span className="material-symbols-outlined">
             <MdHome />
