@@ -2,7 +2,9 @@
 
 function ReviewSection() {
   return (
-    <div>ReviewSection</div>
+    <div className=" w-full h-screen grid place-content-center bg-slate-600 backdrop-blur-md">
+      ReviewSection
+    </div>
   )
 }
 
