@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily:{
+        rubic: ['Rubic Glitch','sans-serif'],
+      }
     },
   },
   plugins: [],
