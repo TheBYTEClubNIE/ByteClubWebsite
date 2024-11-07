@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Loading from "./components/Loading/loading";
 import Navbar from "./components/Navbar";
+import ReviewSection from "./sections/review/ReviewSection";
 
 export default function Home() {
   const [loader, setLoader] = useState(true);
@@ -16,7 +17,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <h1>home</h1>
+      <ReviewSection />
     </>
   );
 }
