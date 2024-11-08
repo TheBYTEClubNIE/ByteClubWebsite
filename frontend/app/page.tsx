@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import ReviewSection from "./sections/review/ReviewSection";
 import Leads from "./sections/leads/Leads";
 import Footer from "./sections/Footer/Footer";
+import FrontLogo from "./components/FrontLogo/FrontLogo";
 
 const content: React.CSSProperties = {
   minHeight: '100vh',
@@ -18,19 +19,20 @@ const content: React.CSSProperties = {
 export default function Home() {
 
 
-  const [loader, setLoader] = useState(true);
+  const [loader, setLoader] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setLoader(false);
     }, 5500);
   }, []);
-  
+
   return loader ? (
     <Loading />
   ) : (
     <div>
       <div style={content}>
       <Navbar />
+      <FrontLogo/>
       <Leads />
       <ReviewSection />
       </div>
