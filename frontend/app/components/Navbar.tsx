@@ -37,7 +37,8 @@ const Navbar: React.FC = () => {
       <nav className="navbar fixed w-max backdrop:blur-md bg-transparent mt-28 shadow-sm backdrop-blur-md">
         <button type="button">
           <span className="material-symbols-outlined">
-            <MdHome />
+            
+            <MdEmojiEvents />
           </span>
         </button>
         <button type="button">
@@ -47,7 +48,7 @@ const Navbar: React.FC = () => {
         </button>
         <button type="button" className="active">
           <span className="material-symbols-outlined">
-            <MdEmojiEvents />
+            <MdHome />
           </span>
         </button>
         <button type="button">

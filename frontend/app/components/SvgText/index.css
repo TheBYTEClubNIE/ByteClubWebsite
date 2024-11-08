@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+
+
+body{
+  margin:0;
+  height:100vh;
+  display:grid;
+  place-items:center;
+  background-color:#131313;
+}
+
+.text{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 50px;
+    -webkit-text-stroke: 1px #eee;
+    color: transparent;
+    letter-spacing: 5px;
+    position: relative;
+}
+
+.text::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #f2ff00;
+    -webkit-text-stroke: 3px #f2ff00;
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #ff7a00;
+    animation: text-fill 2s ease-in-out alternate infinite;
+}
+
+
+@keyframes text-fill {
+    100% {
+        width: 350px;
+    }
+}
