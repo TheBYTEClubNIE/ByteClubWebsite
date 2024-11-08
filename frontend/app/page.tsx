@@ -24,11 +24,10 @@ export default function Home() {
       setLoader(false);
     }, 5500);
   }, []);
-  if (loader) return <Loading />;
-
-
-
-  return (
+  
+  return loader ? (
+    <Loading />
+  ) : (
     <div>
       <div style={content}>
       <Navbar />
