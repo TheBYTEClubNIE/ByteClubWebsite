@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Loading from "./components/Loading/loading";
 import Navbar from "./components/Navbar";
-import ReviewSection from "./sections/review/ReviewSection";
+// import ReviewSection from "./sections/review/ReviewSection";
 import Leads from "./sections/leads/Leads";
 import Footer from "./sections/Footer/Footer";
 
@@ -33,7 +33,7 @@ export default function Home() {
       <div style={content}>
       <Navbar />
       <Leads />
-      <ReviewSection />
+      {/* <ReviewSection /> */}
       </div>
       <Footer/>
     </div>
