@@ -18,7 +18,7 @@ interface LeadsCardProps {
 
 const LeadsCard: React.FC<LeadsCardProps> = ({ name, insta, linkedin, email, img, bio, onMouseEnter, onMouseLeave }) => {
   return (
-    <section onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="h-fit">
+    <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="h-fit">
       <div className="container w-full">
         <div className="box">
           <div className="imgBox">
@@ -33,23 +33,23 @@ const LeadsCard: React.FC<LeadsCardProps> = ({ name, insta, linkedin, email, img
             <h3>
               {name}
               <br />
-              <span>{bio}</span>
+              <p>{bio}</p>
             </h3>
             <ul className="flex justify-center items-center gap-4 pb-2">
-              <a className="cursor-pointer" href={`mailto:${email}`} rel="noopener noreferrer">
+              <a className="cursor-pointer" href={`mailto:${email}`}>
                 <CiMail size={24} />
               </a>
-              <a href={linkedin} className="cursor-pointer" target="_blank" rel="noopener noreferrer">
+              <a href={linkedin} className="cursor-pointer" target="_blank">
                 <GrLinkedinOption size={24} />
               </a>
-              <a href={insta} className="cursor-pointer" target="_blank" rel="noopener noreferrer">
+              <a href={insta} className="cursor-pointer" target="_blank">
                 <LuInstagram size={24} />
               </a>
             </ul>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
