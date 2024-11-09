@@ -4,6 +4,11 @@
 import './footer.scss'; // Optional: Import CSS if needed
 import logo from "../../../public/ByteLogo.png"
 import Image from 'next/image';
+import { FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -13,11 +18,11 @@ const Footer = () => {
                     <div className="row">
                         <div className="col-xl-4 col-lg-4 mb-4">
                             <div className="footer-widget">
-                                <div className="footer-logo inline-block float-left px-8" id='logo'>
-                                    <a href="index.html" className='shadowfilter'><Image  src={logo} alt="logo" className="size-24" /></a>
+                                <div className="footer-logo sm:float-left px-8" id='logo'>
+                                    <a href="index.html" className=' a shadowfilter max-[640px]:flex max-[640px]:justify-center '><Image  src={logo} alt="logo" className="sm:size-24 max-[640px]:size-28" /></a>
                                 </div>
                                 <div className="footer-text">
-                                    <p className='w-2/3 h-24 content-center'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Cras quis elit sit amet turpis dictum placerat. Curabitur vehicula eros vitae lacus volutpat, a convallis erat facilisis.</p>
+                                    <p className='max-[640px]:w-full max-[640px]:text-center max-[640px]:p-4 w-2/3 sm:h-24 content-center max-[640px]:text-xs'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Cras quis elit sit amet turpis dictum placerat. Curabitur vehicula eros vitae lacus volutpat, a convallis erat facilisis.</p>
                                 </div>
                             </div>
                         </div>
@@ -26,22 +31,40 @@ const Footer = () => {
                                 <div className="footer-widget-heading">
                                     <h3 className='px-8'>Useful Links</h3>
                                 </div>
-                                <div className='grid grid-cols-2 w-full justify-between '>
-                                    <ul className='inline-block text-center'>
+                                {/* <div className='sm:grid sm:grid-cols-2 w-full sm:justify-between '>
+                                    <ul className='sm:inline-block text-center justify-center'>
                                         <li><p className='ease-in-out duration-300 text-lg font-bold underline foot-subhead'>Navigate</p></li>
-                                        <li><a className='ease-in-out duration-300 text-md font-semibold' href="/home">Home</a></li>
-                                        <li><a className='ease-in-out duration-300 text-md font-semibold' href="/events">Events</a></li>
-                                        <li><a className='ease-in-out duration-300 text-md font-semibold' href="/about">About</a></li>
-                                        <li><a className='ease-in-out duration-300 text-md font-semibold' href="/contact">Contact</a></li>
-                                        <li><a className='ease-in-out duration-300 text-md font-semibold' href="/review">Review</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/home">Home</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/events">Events</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/about">About</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/contact">Contact</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/review">Review</a></li>
                                     </ul>
-                                    <ul  className='inline-block text-center'>
+                                    <ul  className='sm:inline-block text-center  justify-center'>
                                         <li><p className='ease-in-out duration-300 text-lg font-bold underline foot-subhead'>More Info</p></li>
-                                        <li><a className='ease-in-out duration-300 text-md font-semibold' href="/home">Term & Services</a></li>
-                                        <li><a className='ease-in-out duration-300 text-md font-semibold' href="/events">Sponsors</a></li>
-                                        <li><a className='ease-in-out duration-300 text-md font-semibold' href="/about">Privacy Policy</a></li>
-                                        <li><a className='ease-in-out duration-300 text-md font-semibold' href="/contact">Know More</a></li>
-                                        <li><a className='ease-in-out duration-300 text-md font-semibold' href="/review">Review</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/home">Term & Services</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/events">Sponsors</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/about">Privacy Policy</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/contact">Know More</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/review">Review</a></li>
+                                    </ul>
+                                </div> */}
+                                <div className='sm:grid sm:grid-cols-2 w-full sm:justify-between '>
+                                    <ul className='sm:inline-block text-center max-[640px]:flex max-[640px]:flex-wrap max-[640px]:gap-x-4 justify-center'>
+                                        <li><p className='ease-in-out duration-300 text-lg font-bold underline foot-subhead max-[640px]:hidden'>Navigate</p></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/home">Home</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/events">Events</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/about">About</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/contact">Contact</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/review">Review</a></li>
+                                    </ul>
+                                    <ul  className='sm:inline-block text-center max-[640px]:flex max-[640px]:gap-x-4 max-[640px]:flex-wrap justify-center'>
+                                        <li><p className='ease-in-out duration-300 text-lg font-bold underline foot-subhead max-[640px]:hidden'>More Info</p></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/home">Term & Services</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/events">Sponsors</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/about">Privacy Policy</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/contact">Know More</a></li>
+                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/review">Review</a></li>
                                     </ul>
                                 </div>
 
@@ -52,18 +75,18 @@ const Footer = () => {
                                 <div className="footer-widget-heading">
                                     <h3 className='px-8'>Subscribe</h3>
                                 </div>
-                                <div className="social-links justify-center my-2">
-                                    <a href=""><i className="fab fa-facebook-f z-50"></i></a>
-                                    <a href=""><i className="fab fa-instagram"></i></a>
-                                    <a href=""><i className="fab fa-twitter"></i></a>
-                                    <a href=""><i className="fab fa-github"></i></a>
-                                    <a href=""><i className="fab fa-linkedin-in"></i></a>
+                                <div className="social-links justify-center sm:my-2 flex items-center">
+                                    <a href="" className='a mx-8 my-0 flex justify-center items-center max-[640px]:mx-2'><FaInstagram className='fab size-6' size='24' /></a>
+                                    <a href="" className='a mx-8 my-0 flex justify-center items-center max-[640px]:mx-2'><FaXTwitter className='fab size-6' size='24' /></a>
+                                    <a href="" className='a mx-8 my-0 flex justify-center items-center max-[640px]:mx-2'><FaGithub className='fab size-6' size='24' /></a>
+                                    <a href="" className='a mx-8 my-0 flex justify-center items-center max-[640px]:mx-2'><FaFacebookF className='fab size-6' size='24' /></a>
+                                    <a href="" className='a mx-8 my-0 flex justify-center items-center max-[640px]:mx-2'><FaLinkedinIn className='fab  size-6' size='24' /></a>
                                 </div>
-                                <div className="footer-text">
+                                <div className="footer-text max-[640px]:text-xs">
                                     <p>Don’t forget to subscribe to our new feeds, to not to miss any info.</p>
                                 </div>
-                                <div className="copyright-text">
-                <p>&copy; 2024, All Rights Reserved <a href="https://en.wikipedia.org/wiki/Sean_Combs" target='#blank'>Diddy</a></p>
+                                <div className="copyright-text max-[640px]:text-xs">
+                <p>&copy; 2024, All Rights Reserved <a className='a' href="https://en.wikipedia.org/wiki/Sean_Combs" target='#blank'>Diddy</a></p>
             </div>
                             </div>
                         </div>
@@ -77,3 +100,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
