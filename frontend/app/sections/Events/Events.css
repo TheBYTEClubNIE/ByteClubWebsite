@@ -2,6 +2,11 @@
 
 
 
+.box-wrapper{
+    background-color: rgba(255, 0, 0, 0.116);
+}
+
+
   .first {
     color: transparent;
     -webkit-text-stroke: 2px #05a8f3;

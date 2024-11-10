@@ -10,7 +10,7 @@ const SVGAnimation = () => {
     const minY = 5; // Minimum Y value for the curve (moving upwards more)
     const maxY = svgHeight - 5; // Maximum Y value for the curve (moving downwards more)
 
-    let pathString = "M 100 60 Q 500 60 1400 60"; // Initial path
+    let pathString = "M 120 60 Q 500 60 1400 60"; // Initial path
 
     if (svgContainer) {
       svgContainer.addEventListener("mousemove", (event) => {
@@ -28,7 +28,7 @@ const SVGAnimation = () => {
         mouseY = Math.min(Math.max(mouseY, minY), maxY);
 
         // Update the path string to reflect the mouse position
-        pathString = `M 100 60 Q 500 ${mouseY} 1400 60`;
+        pathString = `M 120 60 Q 500 ${mouseY} 1400 60`;
 
         // Animate the path using GSAP with no delay, making it smooth and seamless
         gsap.to(".string path", {
@@ -39,7 +39,7 @@ const SVGAnimation = () => {
 
       // Reset the path when the mouse leaves the container
       svgContainer.addEventListener("mouseleave", () => {
-        pathString = "M 100 60 Q 500 60 1400 60"; // Reset to original path
+        pathString = "M 120 60 Q 500 60 1400 60"; // Reset to original path
         gsap.to(".string path", {
           duration: 0.6, // Slightly longer duration for smooth transition back
           ease: "elastic.out(1, 0.1)", // Apply rubberband easing
@@ -60,11 +60,10 @@ const SVGAnimation = () => {
   return (
     <div
       ref={svgContainerRef}
-      
-      className="z-1 string w-full h-36 hidden lg:block"
+      className="string z-1 w-full h-36 hidden lg:block"
       style={{
         position: "relative",
-        overflow: "hidden", 
+        overflow: "hidden",
       }}
     >
       {/* Pseudo-element for background image */}
@@ -86,9 +85,15 @@ const SVGAnimation = () => {
         `}
       </style>
 
-      <svg className="string" width="100%" height="160" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        className="string"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1600 160" // Ensure responsive scaling
+        width="100%" // Make SVG responsive
+        height="160"
+      >
         <path
-          d="M 100 60 Q 95 60 1400 60"
+          d="M 120 60 Q 500 60 1400 60"
           stroke="white"
           fill="transparent"
           strokeWidth="2"
