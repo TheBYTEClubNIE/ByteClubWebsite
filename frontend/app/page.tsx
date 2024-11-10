@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Leads from "./sections/leads/Leads";
 import Footer from "./sections/Footer/Footer";
 import FrontLogo from "./components/FrontLogo/FrontLogo";
+import ReviewSection from "./sections/review/ReviewSection";
 
 const content: React.CSSProperties = {
   minHeight: '100vh',
@@ -33,7 +34,7 @@ export default function Home() {
       <Navbar />
       <FrontLogo/>
       <Leads />
-      {/* <ReviewSection /> */}
+      <ReviewSection />
       </div>
       <Footer/>
     </div>

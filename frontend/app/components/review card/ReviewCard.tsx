@@ -1,34 +1,89 @@
 "use client";
-import React from 'react';
+import React from "react";
 
-interface ReviewCardInterface {
-  name?: string;
-  sem?: string;
-  branch?: string;
-  text: string;
+interface CardProps {
+  name: string;
+  sem: string;
+  branch: string;
+  title: string;
+  description: string;
+  prevSlide: string;
+  nextSlide: string;
+  currentSlide: string;
 }
 
-class ReviewCard extends React.Component<ReviewCardInterface> {
-  render() {
-    const { name, sem, branch, text } = this.props;
-    const reviewTitle = name ? `${name}'s Review` : 'Website Review from Our Team'; // Fixed fallback content
-
-    return (
-      <div className="relative review-card min-w-52 md:min-w-80 flex flex-col my-6 bg-white shadow-sm border 
-        border-slate-200 rounded-lg w-96 max-h-[200px] sm:max-h-[300px] md:max-h-[400px]">
-        <div className="p-4">
-          <h5 className="mb-2 text-slate-800 text-xl font-semibold">
-            {reviewTitle}
-          </h5>
-          <p className="text-slate-600 leading-normal font-light">
-            {text.slice(0, 100)} {/* Use `slice` to ensure consistency */}
+const Card: React.FC<CardProps> = ({
+  name,
+  sem,
+  branch,
+  title,
+  description,
+  prevSlide,
+  nextSlide,
+  currentSlide,
+}) => {
+  return (
+    <div className="relative w-full flex flex-col justify-center items-center">
+      <input
+        className="sr-only peer"
+        type="radio"
+        name="carousel"
+        id={currentSlide}
+        defaultChecked={currentSlide === "carousel-1"}
+      />
+      <div className="w-96 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg transition-all duration-300 opacity-0 peer-checked:opacity-100 peer-checked:z-10 z-0">
+        <div className="py-4 px-8">
+          <h1 className="hover:cursor-pointer mt-2 text-gray-900 font-bold text-2xl tracking-tight">
+            {title}
+          </h1>
+          <p className="hover:cursor-pointer py-3 text-gray-600 leading-6">
+            {description}
           </p>
-          {sem && <p className="text-slate-500 text-sm">Semester: {sem}</p>}
-          {branch && <p className="text-slate-500 text-sm">Branch: {branch}</p>}
+          <div className="grid grid-cols-1 sm:grid-cols-2 w-full place-content-center">
+            <p className="text-sm text-gray-500 font-bold">Name: {name}</p>
+            <p className="text-sm text-gray-500 font-bold">Semester: {sem}</p>
+            <p className="text-sm text-gray-500 font-bold">Branch: {branch}</p>
+          </div>
+        </div>
+        <div className="absolute top-1/2 w-full flex justify-between z-20">
+          <label
+            htmlFor={prevSlide}
+            className={`inline-block text-red-600 cursor-pointer -translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-10 w-10"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </label>
+          <label
+            htmlFor={nextSlide}
+            className={`inline-block text-red-600 cursor-pointer translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-10 w-10"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </label>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
-export default ReviewCard;
+export default Card;
