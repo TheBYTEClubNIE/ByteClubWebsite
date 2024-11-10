@@ -4,7 +4,6 @@ import Image from "next/image";
 import { CiMail } from "react-icons/ci";
 import { LuInstagram } from "react-icons/lu";
 import { GrLinkedinOption } from "react-icons/gr";
-
 interface LeadsCardProps {
   name: string;
   insta: string;
@@ -15,11 +14,10 @@ interface LeadsCardProps {
   onMouseEnter: () => void;
   onMouseLeave: () => void;
 }
-
 const LeadsCard: React.FC<LeadsCardProps> = ({ name, insta, linkedin, email, img, bio, onMouseEnter, onMouseLeave }) => {
   return (
-    <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="h-fit">
-      <div className="container w-full">
+    <section onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="h-fit">
+      <div className="lead-container w-full">
         <div className="box">
           <div className="imgBox">
             <Image
@@ -33,24 +31,23 @@ const LeadsCard: React.FC<LeadsCardProps> = ({ name, insta, linkedin, email, img
             <h3>
               {name}
               <br />
-              <p>{bio}</p>
+              <span>{bio}</span>
             </h3>
             <ul className="flex justify-center items-center gap-4 pb-2">
-              <a className="cursor-pointer" href={`mailto:${email}`}>
+              <a className="cursor-pointer" href={`mailto:${email}`} rel="noopener noreferrer">
                 <CiMail size={24} />
               </a>
-              <a href={linkedin} className="cursor-pointer" target="_blank">
+              <a href={linkedin} className="cursor-pointer" target="_blank" rel="noopener noreferrer">
                 <GrLinkedinOption size={24} />
               </a>
-              <a href={insta} className="cursor-pointer" target="_blank">
+              <a href={insta} className="cursor-pointer" target="_blank" rel="noopener noreferrer">
                 <LuInstagram size={24} />
               </a>
             </ul>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
-
 export default LeadsCard;
