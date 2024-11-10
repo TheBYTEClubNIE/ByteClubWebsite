@@ -70,7 +70,7 @@ const FrontLogo = () => {
     <>
 
 
-      <div className="relative hidden lg:block h-screen w-full sm:flex flex-col lg:flex-row justify-center items-center bg-slate-950">
+      <div className="relative hidden sm:hidden md:hidden lg:block h-screen w-full lg:flex-row justify-center items-center bg-slate-950">
 
 
 
@@ -112,48 +112,65 @@ const FrontLogo = () => {
         </div>
       </div>
 
+  
+
 
 
 
       {/* //MOBILE RESPONSIVE */}
 
-      {/* <div className="relative lg:hidden h-screen w-full bg-gradient-to-r from-gray-800 via-black to-gray-900 flex justify-center items-center">
+      <div className="relative lg:hidden h-screen w-full bg-gradient-to-b from-purple-800 via-gray-900 to-black overflow-hidden">
+  
+  {/* Background Animations */}
+  <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,0,128,0.15),transparent)] 
+      animate-[spin_30s_linear_infinite] z-0"></div>
+    <div className="absolute w-[150%] h-[150%] bg-[radial-gradient(circle,rgba(0,128,255,0.2),transparent)] 
+      animate-[spin_20s_linear_reverse_infinite] z-0"></div>
+  </div>
+  
+  {/* Logo and Welcome Text */}
+  <div className="relative flex flex-col items-center justify-center z-10 p-8 text-center space-y-6">
+    <img 
+      src="/ByteLogo.png" 
+      alt="BYTE CLUB Logo" 
+      className="w-40 sm:w-48 rounded-full shadow-xl border-4 border-purple-500 mb-6 animate-bounce"
+      style={{ marginTop: '20vh' }} // Moves logo down to avoid being hidden by navbar
+    />
+    <h1 className="text-4xl sm:text-5xl text-white font-bold leading-tight tracking-wide bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+      BYTE <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">CLUB</span>
+    </h1>
+    <p className="text-lg sm:text-xl text-white opacity-90 font-medium">
+      Step into the Future of Coding
+    </p>
+  </div>
 
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]">
+  {/* Floating Info Boxes */}
+  <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 w-[90%] space-y-4 z-20 px-4">
+    <div className="p-6 bg-gradient-to-br from-purple-700 to-blue-600 text-white rounded-2xl shadow-xl text-center 
+      transform transition duration-500 hover:scale-105 ease-in-out">
+      <h2 className="text-xl font-semibold">Community of Innovators</h2>
+      <p className="text-sm opacity-80 mt-1">Where ideas meet action</p>
+    </div>
+    <div className="p-6 bg-gradient-to-br from-pink-600 to-purple-500 text-white rounded-2xl shadow-xl text-center 
+      transform transition duration-500 hover:scale-105 ease-in-out">
+      <h2 className="text-xl font-semibold">Collaborate & Create</h2>
+      <p className="text-sm opacity-80 mt-1">Build and share with the best minds</p>
+    </div>
+  </div>
 
-          <div className="relative flex flex-col justify-center items-center px-6 py-12 text-center sm:px-8 lg:px-16 mt-20 ml-20">
+  {/* Overlay Animated Elements */}
+  <div className="absolute inset-0 flex items-center justify-center opacity-70 z-0">
+    <div className="absolute w-48 h-48 bg-gradient-to-r from-blue-500 to-purple-600 opacity-40 rounded-full 
+      animate-[ping_3s_ease-in-out_infinite]"></div>
+    <div className="absolute w-36 h-36 bg-gradient-to-r from-purple-600 to-pink-600 opacity-50 rounded-full 
+      animate-[ping_5s_ease-in-out_infinite] delay-200"></div>
+  </div>
+</div>
 
-            <div className="flex flex-col items-center mb-8">
-              <img 
-                src="/byte original logo.jpeg"
-                alt="BYTE CLUB Logo"
-                className="w-60 sm:w-72 md:w-80 rounded-lg shadow-lg" 
-              />
-              <p className="text-lg sm:text-xl text-white font-medium mt-4">Welcome to the Future of Coding</p>
-            </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
-              The BYTE CLUB <span className="text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-blue-500">Community</span>
-            </h1>
 
-            <p className="text-lg sm:text-xl text-white opacity-80 mb-8 max-w-3xl">
-              A space where innovators and creators come together to build the future. Join the revolution, expand your knowledge, and collaborate with brilliant minds.
-            </p>
 
-            <div className="flex flex-col items-center">
-              <button className="bg-gradient-to-r from-indigo-600 to-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:scale-105 transform transition duration-200 ease-in-out">
-                Join the Club
-              </button>
-            </div>
-          </div>
-
-          <div className="absolute inset-0 z-0 flex justify-center items-center">
-            <div className="chakra-circle chakra1 absolute bg-gradient-to-r from-blue-500 to-indigo-600 opacity-50 rounded-full animate-pulse"></div>
-            <div className="chakra-circle chakra2 absolute bg-gradient-to-r from-purple-600 to-pink-600 opacity-40 rounded-full animate-pulse"></div>
-          </div>
-        </div>
-
-      </div> */}
 
 
 
