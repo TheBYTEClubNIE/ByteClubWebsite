@@ -36,7 +36,7 @@ const LeadsCard: React.FC<LeadsCardProps> = ({ name, insta, linkedin, email, img
               <br />
               <span>{bio}</span>
             </h3>
-            <ul className="flex justify-center items-center gap-4 pt-2">
+            <ul className="flex justify-center items-center gap-4 pt-2 -translate-y-2">
               <a className="cursor-pointer" href={`mailto:${email}`} rel="noopener noreferrer">
                 <CiMail size={24} />
               </a>

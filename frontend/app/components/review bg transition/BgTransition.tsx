@@ -17,7 +17,7 @@ function BgTransition() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % img.length);
-    }, 2000);
+    }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, [img.length]);
@@ -28,14 +28,14 @@ function BgTransition() {
         {img.map((image, index) => (
           <li
             key={index}
-            className={`absolute top w-full h-full transition-opacity duration-1000 ease-in-out 
-              ${index === currentIndex ? 'opacity-100' : 'opacity-0'} ${index !== 0 ? 'filter blur-sm' : ''}`}
+            className={`absolute top-0 w-full h-full transition-opacity duration-1000
+               ease-in-out ${index === currentIndex ? 'opacity-100' : 'opacity-0'} ${index !== 0 ? 'filter blur-sm' : ''}`}
           >
             <Image
               src={image.url}
               alt={`Image ${index + 1}`}
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: 'cover' }}
               quality={100}
             />
           </li>
