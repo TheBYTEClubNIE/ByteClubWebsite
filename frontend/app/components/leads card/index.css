@@ -46,8 +46,8 @@ section {
 
   .box {
     position: relative;
-    width: 18.75rem;
-    height: 18.75rem;
+    width: 16.75rem;
+    height: 16.75rem;
     border-radius: 0.625rem;
     display: flex;
     justify-content: center;

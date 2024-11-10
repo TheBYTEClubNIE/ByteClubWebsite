@@ -2,6 +2,7 @@
 import React from "react";
 import Card from "@/app/components/review card/ReviewCard";
 import GlitchText from "@/app/components/glitch text/GlitchText";
+import BgTransition from "@/app/components/review bg transition/BgTransition";
 
 const reviews = [
   {
@@ -29,12 +30,12 @@ const reviews = [
 
 const ReviewSection = () => {
   return (
-    <div className="min-h-screen flex items-center gap-7 justify-center flex-col p-3
-    bg-cover bg-center object-fill bg-[url('/review/review-pattern.png')]">
-      <div className="w-full h-fit p-4 translate-y-4">
+    <div className="relative min-h-screen w-full flex items-center gap-7 justify-center flex-col p-3 overflow-hidden">
+      <BgTransition />
+      <div className="relative z-10 w-full h-fit p-4 translate-y-4">
         <GlitchText text="REVIEWS" />
       </div>
-      <div className="w-96 mx-auto mb-96 translate-y-36" style={{ scrollSnapType: "x mandatory" }}>
+      <div className="relative z-10 w-80 mx-auto mb-96 translate-y-36" style={{ scrollSnapType: "x mandatory" }}>
         {reviews.map((review, index) => (
           <Card
             key={index}

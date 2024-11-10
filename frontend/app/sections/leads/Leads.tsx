@@ -43,11 +43,11 @@ const leads = [
 function Leads() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   return (
-    <div className={`w-screen min-h-screen pt-14 opacity-50 ${hoveredIndex !== null ? leads[hoveredIndex].bgColor : ''}`}>
+    <div className={`min-h-screen pt-14 opacity-70 ${hoveredIndex !== null ? leads[hoveredIndex].bgColor : ''}`}>
       <div>
         <SvgText />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 h-fit mt-10">
+      <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 h-fit mt-10">
         {leads.map((lead, index) => (
           <LeadsCard
             key={index}
