@@ -4,6 +4,7 @@ import Image from "next/image";
 import { CiMail } from "react-icons/ci";
 import { LuInstagram } from "react-icons/lu";
 import { GrLinkedinOption } from "react-icons/gr";
+
 interface LeadsCardProps {
   name: string;
   insta: string;
@@ -14,26 +15,28 @@ interface LeadsCardProps {
   onMouseEnter: () => void;
   onMouseLeave: () => void;
 }
+
 const LeadsCard: React.FC<LeadsCardProps> = ({ name, insta, linkedin, email, img, bio, onMouseEnter, onMouseLeave }) => {
   return (
-    <section onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="h-fit">
+    <section onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="h-fit overflow-hidden">
       <div className="lead-container w-full">
-        <div className="box">
-          <div className="imgBox">
+        <div className="box flex flex-col items-center">
+          <div className="imgBox w-full overflow-hidden">
             <Image
               src={img}
               alt={name}
-              width={600}
-              height={500}
+              width={550}
+              height={400}
+              className="object-cover w-full h-auto"
             />
           </div>
-          <div className="glass">
-            <h3>
+          <div className="glass p-4 w-full">
+            <h3 className="text-center">
               {name}
               <br />
               <span>{bio}</span>
             </h3>
-            <ul className="flex justify-center items-center gap-4 pb-2">
+            <ul className="flex justify-center items-center gap-4 pt-2">
               <a className="cursor-pointer" href={`mailto:${email}`} rel="noopener noreferrer">
                 <CiMail size={24} />
               </a>
@@ -49,5 +52,6 @@ const LeadsCard: React.FC<LeadsCardProps> = ({ name, insta, linkedin, email, img
       </div>
     </section>
   );
-}
+};
+
 export default LeadsCard;

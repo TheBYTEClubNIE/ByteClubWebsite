@@ -19,7 +19,7 @@ const content: React.CSSProperties = {
 export default function Home() {
 
 
-  const [loader, setLoader] = useState(true);
+  const [loader, setLoader] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setLoader(false);
