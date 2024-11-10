@@ -1,4 +1,5 @@
 .msgBox {    
+    visibility: hidden;
     overflow: hidden;
     padding: 2.5rem;
     color: #f3f4f6;
