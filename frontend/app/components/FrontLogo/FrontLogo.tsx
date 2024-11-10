@@ -115,7 +115,7 @@ const FrontLogo = () => {
 
       {/* //MOBILE RESPONSIVE */}
 
-      <div className="relative lg:hidden h-screen w-full bg-gradient-to-r from-gray-800 via-black to-gray-900 flex justify-center items-center">
+      {/* <div className="relative lg:hidden h-screen w-full bg-gradient-to-r from-gray-800 via-black to-gray-900 flex justify-center items-center">
 
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]">
 
@@ -151,7 +151,7 @@ const FrontLogo = () => {
           </div>
         </div>
 
-      </div>
+      </div> */}
 
 
 

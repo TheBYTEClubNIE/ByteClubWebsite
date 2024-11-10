@@ -29,11 +29,12 @@ const reviews = [
 
 const ReviewSection = () => {
   return (
-    <div className="min-h-screen flex items-center gap-7 justify-center flex-col p-3 mt-40">
-      <div className="w-full h-fit p-4 -translate-y-40">
+    <div className="min-h-screen flex items-center gap-7 justify-center flex-col p-3
+    bg-cover bg-center object-fill bg-[url('/review/review-pattern.png')]">
+      <div className="w-full h-fit p-4 translate-y-4">
         <GlitchText text="REVIEWS" />
       </div>
-      <div className="w-96 mx-auto mb-96" style={{ scrollSnapType: "x mandatory" }}>
+      <div className="w-96 mx-auto mb-96 translate-y-36" style={{ scrollSnapType: "x mandatory" }}>
         {reviews.map((review, index) => (
           <Card
             key={index}

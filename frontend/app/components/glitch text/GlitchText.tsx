@@ -9,7 +9,7 @@ interface GlitchTextProps {
 const GlitchText: React.FC<GlitchTextProps> = ({ text }) => {
   return (
     <div className="glitch-container text-2xl sm:text-3xl md:text-5xl lg:text-6xl">
-      <div className="glitch">
+      <div className="glitch ">
         {text}
         <span className=' text-2xl sm:text-3xl md:text-5xl lg:text-6xl'>{text}</span>
         <span className=' text-2xl sm:text-3xl md:text-5xl lg:text-6xl'>{text}</span>

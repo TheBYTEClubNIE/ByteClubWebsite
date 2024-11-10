@@ -31,24 +31,24 @@ const Card: React.FC<CardProps> = ({
         id={currentSlide}
         defaultChecked={currentSlide === "carousel-1"}
       />
-      <div className="w-96 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg transition-all duration-300 opacity-0 peer-checked:opacity-100 peer-checked:z-10 z-0">
+      <div className="w-80 sm:w-96 md:w-[27rem] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-lg transition-all duration-300 opacity-0 peer-checked:opacity-100 peer-checked:z-10 z-0 border border-gray-200">
         <div className="py-4 px-8">
-          <h1 className="hover:cursor-pointer mt-2 text-gray-900 font-bold text-2xl tracking-tight">
+          <h1 className="hover:cursor-pointer text-shadow mt-2 text-white font- font-bold text-2xl tracking-tight">
             {title}
           </h1>
-          <p className="hover:cursor-pointer py-3 text-gray-600 leading-6">
+          <p className="hover:cursor-pointer py-3 text-white leading-6">
             {description}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 w-full place-content-center">
-            <p className="text-sm text-gray-500 font-bold">Name: {name}</p>
-            <p className="text-sm text-gray-500 font-bold">Semester: {sem}</p>
-            <p className="text-sm text-gray-500 font-bold">Branch: {branch}</p>
+            <p className="text-sm text-white ">Name: {name}</p>
+            <p className="text-sm text-white ">Semester: {sem}</p>
+            <p className="text-sm text-white ">Branch: {branch}</p>
           </div>
         </div>
         <div className="absolute top-1/2 w-full flex justify-between z-20">
           <label
             htmlFor={prevSlide}
-            className={`inline-block text-red-600 cursor-pointer -translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5`}
+            className="inline-block text-red-600 cursor-pointer -translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ const Card: React.FC<CardProps> = ({
           </label>
           <label
             htmlFor={nextSlide}
-            className={`inline-block text-red-600 cursor-pointer translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5`}
+            className="inline-block text-red-600 cursor-pointer translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

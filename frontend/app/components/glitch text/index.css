@@ -1,7 +1,6 @@
 .glitch-container {
     width: 100%;
     height: fit-content;
-    background: #000;
     display: grid;
     place-items: center;
     overflow: hidden;
