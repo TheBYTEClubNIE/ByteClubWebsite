@@ -14,9 +14,11 @@ const FrontLogo = () => {
     tl.fromTo(
       ".LogoImg",
       { scale: 0,
+        visibility: 'hidden',
         opacity: 0 },
       {
         scale: 1,
+        visibility: "visible",
         opacity: 1,
         duration: 2.5,
         onComplete: () => {
