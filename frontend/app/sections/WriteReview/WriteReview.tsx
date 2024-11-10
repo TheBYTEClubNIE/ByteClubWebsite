@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import './WriteReview.css';
+import { useForm } from 'react-hook-form';
 
-interface FormData {
+type FormData =  {
     name: string;
     email: string;
     isStudent: string;
@@ -23,25 +24,38 @@ const WriteReview = () => {
         setIsFlipped(!isFlipped);
     };
 
-    const [formData, setFormData] = useState<FormData>({
-        name: '',
-        email: '',
-        isStudent: 'yes',
-        message: '',
-    });
+    // const [formData, setFormData] = useState<FormData>({
+    //     name: '',
+    //     email: '',
+    //     isStudent: 'yes',
+    //     message: '',
+    // });
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: value,
-        }));
-    };
+    // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    //     const { name, value } = e.target;
+    //     setFormData((prevData) => ({
+    //         ...prevData,
+    //         [name]: value,
+    //     }));
+    // };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log('Form data submitted:', formData);
-    };
+
+
+    // const handleSubmit = (e: React.FormEvent) => {
+    //     e.preventDefault();
+    //     console.log('Form data submitted:', formData);
+    // };
+
+    const {register, handleSubmit, formState: { errors }} = useForm<FormData>();
+
+    const onSubmit = handleSubmit((data)=>{
+        console.log('====================================');
+        console.log(JSON.stringify(data));
+        console.log('====================================');
+    })
+
+
+
 
     return (
         <div className="flip-card-3D-wrapper">
@@ -62,26 +76,28 @@ const WriteReview = () => {
                 </div>
                 <div className="flip-card-back">
                     <div className='bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 font-bold text-2xl text-transparent my-4 bg-clip-text'>Write A Review</div>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={onSubmit}>
                         <div className="input-group">
-                            <input type="text" name="name" value={formData.name} onChange={handleChange} />
+                            <input {...register("name", { maxLength: 20 })} type="text" name="name"  />
                             <label className='input-label'>Name</label>
+                            {errors.name && <span className='text-red-600 text-xs p-0'>Max Lenght is 20</span>}
                         </div>
                         <div className="input-group">
-                            <input type="email" name="email" value={formData.email} onChange={handleChange} />
+                            <input {...register("email")} type="email" name="email"  />
                             <label className='input-label'>E-mail</label>
                         </div>
                         <div className="flex justify-evenly w-4/5 mx-auto text-white">
                             <label className="flex items-center text-white">
-                                <input type="radio" name="isStudent" value="yes" checked={formData.isStudent === 'yes'} onChange={handleChange} className="mr-2"/> Student
+                                <input {...register("isStudent")} type="radio" name="isStudent" value="yes" className="mr-2"/> Student
                             </label>
                             <label className=" flex items-center text-white">
-                                <input type="radio" name="isStudent" value="no" checked={formData.isStudent === 'no'} onChange={handleChange} className="mr-2" /> Not a Student
+                                <input {...register("isStudent")} type="radio" name="isStudent" value="no"  className="mr-2" /> Not a Student
                             </label>
                         </div>
                         <div className="input-group">
-                            <textarea name='message' value={formData.message} onChange={handleChange} required />
-                            <label className='textarea-label'>Message*</label>
+                            <textarea {...register("message",{required: true})} name='message' />
+                            <label className='textarea-label'>Message</label>
+                            {errors.message && <span className='text-red-600 text-xs p-0'>This field is required</span>}
                         </div>
                         <div className='input-group'>
                             <button className='button-85-back'
