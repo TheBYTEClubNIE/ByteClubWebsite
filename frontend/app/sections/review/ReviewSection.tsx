@@ -29,8 +29,8 @@ const reviews = [
 
 const ReviewSection = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center flex-col p-3">
-      <div className="w-full h-fit p-4">
+    <div className="min-h-screen flex items-center gap-7 justify-center flex-col p-3 mt-40">
+      <div className="w-full h-fit p-4 -translate-y-40">
         <GlitchText text="REVIEWS" />
       </div>
       <div className="w-96 mx-auto mb-96" style={{ scrollSnapType: "x mandatory" }}>
