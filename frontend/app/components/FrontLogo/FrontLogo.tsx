@@ -160,7 +160,7 @@ const FrontLogo = () => {
 
             <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-300">
               Discover a place where coding meets creativity, innovation flows, and
-              BYTE CLUB members make it happen. Join us, and let's build the future
+              BYTE CLUB members make it happen. Join us, and let&apos;s build the future
               together, one byte at a time. Expand your skills, connect with
               like-minded peers, and dive into the heart of tech.
             </p>
@@ -181,10 +181,10 @@ const FrontLogo = () => {
           <div className="relative flex flex-col justify-center items-center px-6 py-12 text-center sm:px-8 lg:px-16 mt-20 ml-20">
 
             <div className="flex flex-col items-center mb-8">
-              <img
+              <img 
                 src="/byte original logo.jpeg"
                 alt="BYTE CLUB Logo"
-                className="w-60 sm:w-72 md:w-80 rounded-lg shadow-lg"
+                className="w-60 sm:w-72 md:w-80 rounded-lg shadow-lg" 
               />
               <p className="text-lg sm:text-xl text-white font-medium mt-4">Welcome to the Future of Coding</p>
             </div>
