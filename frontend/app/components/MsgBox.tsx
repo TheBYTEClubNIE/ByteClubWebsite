@@ -66,7 +66,7 @@ const MsgBox = () => {
 
   return (
     <>
-      <div className="msgBox overflow-hidden static lg:absolute bg-opacity-90 lg:bg-opacity-75 bg-gray-800/70 text-gray-100 rounded-lg shadow-lg p-6 sm:p-8 lg:p-10 w-11/12 sm:w-2/3 lg:w-1/2 top-16 lg:top-64 right-4 lg:right-10 border border-transparent border-gradient-to-r from-indigo-500 to-purple-600 animate__animated animate__fadeIn animate__delay-1s backdrop-blur-lg">
+      <div className="msgBox hidden md:hidden lg:block overflow-hidden static lg:absolute bg-opacity-90 lg:bg-opacity-75 bg-gray-800/70 text-gray-100 rounded-lg shadow-lg p-6 sm:p-8 lg:p-10 w-11/12 sm:w-2/3 lg:w-1/2 top-16 lg:top-64 right-4 lg:right-10 border border-transparent  border-gradient-to-r from-indigo-500 to-purple-600 animate__animated animate__fadeIn animate__delay-1s backdrop-blur-lg">
         <h1 className="headline text-3xl sm:text-4xl font-semibold mb-4 tracking-tight">
           {Array.from("Welcome to ").map((char, index) => (
             <span

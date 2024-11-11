@@ -25,6 +25,9 @@
     transform: scale(1.05);
     background: rgba(31, 41, 55, 0.9);
   }
+  .LogoImg{
+    visibility: hidden;
+  }
   
   @keyframes borderGlow {
     0%, 100% {
@@ -83,4 +86,7 @@
     -webkit-background-clip: text;
     color: transparent;
   }
+
+
+  
   
