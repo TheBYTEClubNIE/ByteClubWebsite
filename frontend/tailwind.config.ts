@@ -14,7 +14,7 @@ const config: Config = {
       },
       fontFamily:{
         rubic: ['Rubic Glitch','sans-serif'],
-      }
+      },
     },
   },
   plugins: [],

@@ -4,7 +4,6 @@ import Image from "next/image";
 import { CiMail } from "react-icons/ci";
 import { LuInstagram } from "react-icons/lu";
 import { GrLinkedinOption } from "react-icons/gr";
-
 interface LeadsCardProps {
   name: string;
   insta: string;
@@ -15,11 +14,10 @@ interface LeadsCardProps {
   onMouseEnter: () => void;
   onMouseLeave: () => void;
 }
-
 const LeadsCard: React.FC<LeadsCardProps> = ({ name, insta, linkedin, email, img, bio, onMouseEnter, onMouseLeave }) => {
   return (
     <section onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="h-fit">
-      <div className="container w-full">
+      <div className="lead-container w-full">
         <div className="box">
           <div className="imgBox">
             <Image
@@ -52,5 +50,4 @@ const LeadsCard: React.FC<LeadsCardProps> = ({ name, insta, linkedin, email, img
     </section>
   );
 }
-
 export default LeadsCard;

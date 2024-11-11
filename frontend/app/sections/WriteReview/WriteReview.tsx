@@ -83,8 +83,9 @@ const WriteReview = () => {
                             {errors.name && <span className='text-red-600 text-xs p-0'>Max Lenght is 20</span>}
                         </div>
                         <div className="input-group">
-                            <input {...register("email")} type="email" name="email"  />
+                            <input {...register("email", { pattern: /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/ })} type='text' name="email"  />
                             <label className='input-label'>E-mail</label>
+                            {errors.email && <span className='text-red-600 text-xs p-0'>should be in this format example@email.com</span>}
                         </div>
                         <div className="flex justify-evenly w-4/5 mx-auto text-white">
                             <label className="flex items-center text-white">

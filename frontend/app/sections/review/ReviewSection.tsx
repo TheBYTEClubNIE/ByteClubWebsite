@@ -1,68 +1,58 @@
 "use client";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { useEffect, useState } from "react";
-import { useRef } from "react";
-import gsap from "gsap";
+import React from "react";
+import Card from "@/app/components/review card/ReviewCard";
+import GlitchText from "@/app/components/glitch text/GlitchText";
 
-export default function ReviewSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const cards = [
-    { title: "Card 1", description: "This is card 1" },
-    { title: "Card 2", description: "This is card 2" },
-    { title: "Card 3", description: "This is card 3" },
-    { title: "Card 4", description: "This is card 4" },
-  ];
+const reviews = [
+  {
+    name: "Kaushal",
+    sem: "3",
+    branch: "ISE",
+    title: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+  },
+  {
+    name: "Naman",
+    sem: "3",
+    branch: "ISE",
+    title: "Scelerisque eleifend donec pretium vulputate sapien.",
+    description: "Egestas diam in arcu cursus euismod quis.",
+  },
+  {
+    name: "Gulshan",
+    sem: "3",
+    branch: "ISE",
+    title: "Consectetur purus ut faucibus pulvinar elementum.",
+    description: "Aliquam ultrices sagittis orci a scelerisque purus semper.",
+  },
+];
 
-  useEffect(() => {
-    gsap.fromTo(
-      cardsRef.current,
-      { opacity: 0, x: 100 },
-      { opacity: 1, x: 0, duration: 0.5 }
-    );
-  }, [currentIndex]);
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? cards.length - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev === cards.length - 1 ? 0 : prev + 1));
-  };
-
+const ReviewSection = () => {
   return (
-    <div
-      className="h-screen flex justify-center items-center bg-gradient-to-r
-      from-gray-800 to-black "
-    >
-      <button
-        onClick={handlePrev}
-        className="absolute left-0 md:p-6 sm:left-40 md:left-48 lg:left-64 text-white bg-gray-800 p-2 rounded-full"
-      >
-        <IoIosArrowBack size={24} />
-      </button>
-      <div className="w-full sm:max-w-lg md:max-w-xl flex overflow-x-hidden">
-        {cards.map((card, index) => (
-          <div
+    <div className="min-h-screen flex items-center gap-7 justify-center flex-col p-3
+    bg-cover bg-center object-fill bg-[url('/review/review-pattern.png')]">
+      <div className="w-full h-fit p-4 translate-y-4">
+        <GlitchText text="REVIEWS" />
+      </div>
+      <div className="w-96 mx-auto mb-96 translate-y-36" style={{ scrollSnapType: "x mandatory" }}>
+        {reviews.map((review, index) => (
+          <Card
             key={index}
-            className={`flex-none w-full transition-transform duration-500 ${
-              index === currentIndex ? "block" : "hidden"
+            name={review.name}
+            sem={review.sem}
+            branch={review.branch}
+            title={review.title}
+            description={review.description}
+            prevSlide={`carousel-${
+              ((index - 1 + reviews.length) % reviews.length) + 1
             }`}
-          >
-            <div className="bg-white p-6 m-4 rounded-lg shadow-md">
-              <h3 className="text-xl font-bold mb-2">{card.title}</h3>
-              <p className="text-gray-700">{card.description}</p>
-            </div>
-          </div>
+            nextSlide={`carousel-${((index + 1) % reviews.length) + 1}`}
+            currentSlide={`carousel-${index + 1}`}
+          />
         ))}
       </div>
-      <button
-        onClick={handleNext}
-        className="absolute right-0 md:p-6 sm:right-40 md:right-48 lg:right-64 text-white bg-gray-800 p-2 rounded-full"
-      >
-        <IoIosArrowForward size={24} />
-      </button>
     </div>
   );
 };
 
+export default ReviewSection;

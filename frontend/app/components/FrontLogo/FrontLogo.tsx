@@ -4,7 +4,7 @@ import gsap from "gsap";
 import "./Front.css";
 import React from "react";
 import Image from "next/image";
-
+import MsgBox from "../MsgBox";
 
 const FrontLogo = () => {
 
@@ -13,9 +13,10 @@ const FrontLogo = () => {
 
     tl.fromTo(
       ".LogoImg",
-      { y: -300, opacity: 0 },
+      { scale: 0,
+        opacity: 0 },
       {
-        y: 0,
+        scale: 1,
         opacity: 1,
         duration: 2.5,
         onComplete: () => {
@@ -36,11 +37,7 @@ const FrontLogo = () => {
       }
     );
 
-    tl.fromTo(
-      ".msgBox",
-      { opacity: 0, display: "none" },
-      { opacity: 1, display: "block", delay: 3, duration: 2 }
-    );
+    
 
     tl.fromTo(
       ".headline-char.left",
@@ -64,37 +61,7 @@ const FrontLogo = () => {
         scale: 0.7,
       });
     }
-
-    gsap.to(".msgBox p", {
-      y: 10,
-      repeat: -1,
-      yoyo: true,
-      duration: 3,
-      ease: "power1.inOut",
-      color: "#a78bfa",
-      textShadow:
-        "0px 0px 8px rgba(147, 51, 234, 0.7), 0px 0px 12px rgba(75, 85, 99, 0.6)",
-    });
-
-    const headlineRightChars = document.querySelectorAll(".headline-char.right");
-    headlineRightChars.forEach((char) => {
-      let rotationSpeed = 360;
-      const rotationIncrement = 90;
-
-      char.addEventListener("mouseenter", () => {
-        gsap.to(char, {
-          rotate: `+=${rotationSpeed}`,
-          duration: 1,
-          ease: "none",
-        });
-
-        rotationSpeed += rotationIncrement;
-      });
-
-      char.addEventListener("mouseleave", () => {
-        rotationSpeed = 180;
-      });
-    });
+    
   }, []);
 
   return (
@@ -109,7 +76,7 @@ const FrontLogo = () => {
         <div className="absolute  inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]">
           <div className="LogoBox static lg:relative h-[70vh] sm:h-[70vh] md:h-[80vh] lg:h-[85vh] w-screen flex lg:flex-col justify-center items-center top-24">
             <Image
-              className="LogoImg static h-[10vh]  sm:h-[25vh] md:h-[40vh] lg:h-[42vh]"
+              className="LogoImg hidden lg:block static h-[10vh]  sm:h-[25vh] md:h-[40vh] lg:h-[42vh]"
               src="/byte.png"
               alt="Byte Logo"
               width={300}
@@ -117,7 +84,7 @@ const FrontLogo = () => {
             />
 
             <Image
-              className="chakri1 absolute z-10 h-[40vw] sm:h-[35rem] md:h-[40rem] lg:h-[42rem] w-[40vw] sm:w-[35rem] md:w-[40rem] lg:w-[42rem] rounded-full"
+              className="chakri1 hidden lg:block absolute z-10 h-[40vw] sm:h-[35rem] md:h-[40rem] lg:h-[42rem] w-[40vw] sm:w-[35rem] md:w-[40rem] lg:w-[42rem] rounded-full"
               src="/whitepng.png"
               alt="White Chakra"
               priority
@@ -126,7 +93,7 @@ const FrontLogo = () => {
             />
 
             <Image
-              className="chakri2 absolute z-10 h-[30vw] sm:h-[24rem] md:h-[28rem] lg:h-[30rem] w-[30vw] sm:w-[24rem] md:w-[28rem] lg:w-[30rem] rounded-full"
+              className="chakri2 hidden lg:block absolute z-10 h-[30vw] sm:h-[24rem] md:h-[28rem] lg:h-[30rem] w-[30vw] sm:w-[24rem] md:w-[28rem] lg:w-[30rem] rounded-full"
               src="/blue.png"
               alt="Blue Chakra"
               width={700} // Set width here
@@ -134,37 +101,11 @@ const FrontLogo = () => {
             />
           </div>
 
+          <MsgBox/>
 
 
-          <div className="msgBox overflow-hidden static lg:absolute bg-opacity-90 lg:bg-opacity-75 bg-gray-800/70 text-gray-100 rounded-lg shadow-lg p-6 sm:p-8 lg:p-10 w-11/12 sm:w-2/3 lg:w-1/2 top-16 lg:top-64 right-4 lg:right-10 border border-transparent border-gradient-to-r from-indigo-500 to-purple-600 animate__animated animate__fadeIn animate__delay-1s backdrop-blur-lg">
 
-            <h1 className="headline text-3xl sm:text-4xl font-semibold mb-4 tracking-tight">
-              {Array.from("Welcome to ").map((char, index) => (
-                <span
-                  key={index}
-                  className="headline-char left inline-block text-gray-200 tracking-wide"
-                >
-                  {char === " " ? "\u00A0" : char}
-                </span>
-              ))}
-              &nbsp;
-              {Array.from("The BYTE CLUB").map((char, index) => (
-                <span
-                  key={index}
-                  className="headline-char right inline-block bg-gradient-to-br from-purple-400 to-blue-500 bg-clip-text text-transparent font-bold tracking-wide text-shadow-sm"
-                >
-                  {char === " " ? "\u00A0" : char}
-                </span>
-              ))}
-            </h1>
-
-            <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-300">
-              Discover a place where coding meets creativity, innovation flows, and
-              BYTE CLUB members make it happen. Join us, and let&apos;s build the future
-              together, one byte at a time. Expand your skills, connect with
-              like-minded peers, and dive into the heart of tech.
-            </p>
-          </div>
+          
 
         </div>
       </div>
@@ -174,7 +115,7 @@ const FrontLogo = () => {
 
       {/* //MOBILE RESPONSIVE */}
 
-      <div className="relative lg:hidden h-screen w-full bg-gradient-to-r from-gray-800 via-black to-gray-900 flex justify-center items-center">
+      {/* <div className="relative lg:hidden h-screen w-full bg-gradient-to-r from-gray-800 via-black to-gray-900 flex justify-center items-center">
 
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]">
 
@@ -210,7 +151,7 @@ const FrontLogo = () => {
           </div>
         </div>
 
-      </div>
+      </div> */}
 
 
 

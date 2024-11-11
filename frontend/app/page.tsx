@@ -3,11 +3,10 @@
 import { useEffect, useState } from "react";
 import Loading from "./components/Loading/loading";
 import Navbar from "./components/Navbar";
-import ReviewSection from "./sections/review/ReviewSection";
 import Leads from "./sections/leads/Leads";
 import Footer from "./sections/Footer/Footer";
 import FrontLogo from "./components/FrontLogo/FrontLogo";
-import WriteReview from "./sections/WriteReview/WriteReview";
+import ReviewSection from "./sections/review/ReviewSection";
 
 const content: React.CSSProperties = {
   minHeight: '100vh',
@@ -20,7 +19,7 @@ const content: React.CSSProperties = {
 export default function Home() {
 
 
-  const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       setLoader(false);
@@ -35,7 +34,6 @@ export default function Home() {
       <Navbar />
       <FrontLogo/>
       <Leads />
-      <WriteReview/>
       <ReviewSection />
       </div>
       <Footer/>

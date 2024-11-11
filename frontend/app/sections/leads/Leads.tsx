@@ -1,9 +1,7 @@
 'use client';
-
 import LeadsCard from "@/app/components/leads card/LeadsCard";
 import SvgText from "@/app/components/SvgText/AnimatedText";
 import { useState } from "react";
-
 const leads = [
   {
     bio: "Tech lead of our club",
@@ -42,14 +40,12 @@ const leads = [
     bgColor: "bg-yellow-500"
   }
 ];
-
 function Leads() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
   return (
     <div className={`w-screen min-h-screen pt-14 opacity-50 ${hoveredIndex !== null ? leads[hoveredIndex].bgColor : ''}`}>
-      <div className="w-full h-fit relative">
-        <SvgText/>
+      <div>
+        <SvgText />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 h-fit mt-10">
         {leads.map((lead, index) => (
@@ -69,5 +65,4 @@ function Leads() {
     </div>
   );
 }
-
 export default Leads;
