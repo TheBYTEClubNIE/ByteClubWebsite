@@ -137,9 +137,6 @@ const FrontLogo = () => {
       className="w-40 sm:w-48 rounded-full shadow-xl border-4 border-purple-500 mb-6 animate-bounce"
       style={{ marginTop: '20vh' }} // Moves logo down to avoid being hidden by navbar
     />
-    <h1 className="text-4xl sm:text-5xl text-white font-bold leading-tight tracking-wide bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-      BYTE <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">CLUB</span>
-    </h1>
     <p className="text-lg sm:text-xl text-white opacity-90 font-medium">
       Step into the Future of Coding
     </p>
