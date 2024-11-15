@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import './WriteReview.css';
+import './WriteReview.scss';
 import { useForm } from 'react-hook-form';
 
 type FormData =  {
@@ -48,11 +48,31 @@ const WriteReview = () => {
 
     const {register, handleSubmit, formState: { errors }} = useForm<FormData>();
 
-    const onSubmit = handleSubmit((data)=>{
-        console.log('====================================');
-        console.log(JSON.stringify(data));
-        console.log('====================================');
-    })
+    const onSubmit = handleSubmit(async (data) => {
+        try {
+            const response = await fetch('/api/sendReviewEmail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+    
+            const result = await response.json();
+    
+            if (response.ok) {
+                console.log(result.message);
+                handleFlip();
+            } else {
+                console.error(result.message);
+            }
+        } catch (error) {
+            console.error('Error sending email:', error);
+        }
+    });
+    
+
+    
 
 
 
@@ -85,16 +105,18 @@ const WriteReview = () => {
                         <div className="input-group">
                             <input {...register("email", { pattern: /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/ })} type='text' name="email"  />
                             <label className='input-label'>E-mail</label>
-                            {errors.email && <span className='text-red-600 text-xs p-0'>should be in this format example@email.com</span>}
+                            {errors.email && <span className='text-red-600 text-xs p-0'>Should be in this format example@email.com</span>}
                         </div>
                         <div className="flex justify-evenly w-4/5 mx-auto text-white">
                             <label className="flex items-center text-white">
-                                <input {...register("isStudent")} type="radio" name="isStudent" value="yes" className="mr-2"/> Student
+                                <input {...register("isStudent", {required: true})} type="radio" name="isStudent" value="yes" className="mr-2"/> Student
                             </label>
                             <label className=" flex items-center text-white">
-                                <input {...register("isStudent")} type="radio" name="isStudent" value="no"  className="mr-2" /> Not a Student
+                                <input {...register("isStudent", {required: true})} type="radio" name="isStudent" value="no"  className="mr-2" /> Not a Student
                             </label>
+
                         </div>
+                            {errors.isStudent && <span className='text-red-600 text-xs p-0'>This feild is required</span>}
                         <div className="input-group">
                             <textarea {...register("message",{required: true})} name='message' />
                             <label className='textarea-label'>Message</label>
@@ -109,6 +131,7 @@ const WriteReview = () => {
                             </button>
                         </div>
                     </form>
+                    
                 </div>
             </div>
         </div>

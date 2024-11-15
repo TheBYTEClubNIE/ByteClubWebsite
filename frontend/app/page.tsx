@@ -9,6 +9,8 @@ import FrontLogo from "./components/FrontLogo/FrontLogo";
 import ReviewSection from "./sections/review/ReviewSection";
 import SVGAnimation from "./components/SVGAnimation";
 import EventCards from "./sections/Events/EventCards";
+import WriteReview from "./sections/WriteReview/WriteReview";
+import SendReview from "./sections/WriteReview/SendReview";
 
 const content: React.CSSProperties = {
   minHeight: '100vh',
@@ -41,6 +43,8 @@ export default function Home() {
       <EventCards/>
       <SVGAnimation/>
       <ReviewSection />
+      <SVGAnimation/>
+      <SendReview/>
       </div>
       <Footer/>
     </div>
