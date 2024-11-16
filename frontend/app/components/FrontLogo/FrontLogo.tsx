@@ -70,15 +70,13 @@ const FrontLogo = () => {
     <>
 
 
-      <div className="relative hidden sm:hidden md:hidden lg:block h-screen w-full lg:flex-row justify-center items-center bg-slate-950">
+      <div className="relative hidden sm:hidden md:hidden lg:block h-screen w-full  bg-slate-950">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] flex items-center justify-center ">
 
-
-
-
-        <div className="absolute  inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]">
-          <div className="LogoBox static lg:relative h-[70vh] sm:h-[70vh] md:h-[80vh] lg:h-[85vh] w-screen flex lg:flex-col justify-center items-center top-24">
+          <div className="LogoBox static lg:relative h-screen w-full flex lg:flex-col justify-center items-center">
+            
             <Image
-              className="LogoImg hidden lg:block static h-[10vh]  sm:h-[25vh] md:h-[40vh] lg:h-[42vh]"
+              className="LogoImg hidden lg:block static md:h-[22rem] xl:h-[23rem]"
               src="/byte.png"
               alt="Byte Logo"
               width={300}
@@ -103,7 +101,11 @@ const FrontLogo = () => {
             />
           </div>
 
+          
+
           <MsgBox/>
+
+          
 
 
 
