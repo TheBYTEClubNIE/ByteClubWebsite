@@ -83,6 +83,7 @@ const FrontLogo = () => {
               height={300}
             />
 
+
             <Image
               className="chakri1 hidden lg:block absolute z-10 h-[40vw] sm:h-[35rem] md:h-[40rem] lg:h-[42rem] w-[40vw] sm:w-[35rem] md:w-[40rem] lg:w-[42rem] rounded-full"
               src="/whitepng.png"
