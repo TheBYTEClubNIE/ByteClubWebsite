@@ -134,7 +134,9 @@ const FrontLogo = () => {
   
   {/* Logo and Welcome Text */}
   <div className="relative flex flex-col items-center justify-center z-10 p-8 text-center space-y-6">
-    <img 
+    <Image
+    width={10}
+    height={10}
       src="/ByteLogo.png" 
       alt="BYTE CLUB Logo" 
       className="w-40 sm:w-48 rounded-full shadow-xl border-4 border-purple-500 mb-6 animate-bounce"

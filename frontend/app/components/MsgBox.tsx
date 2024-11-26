@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import gsap from "gsap";
-import VanillaTilt from "vanilla-tilt";
+// import VanillaTilt from "vanilla-tilt";
 
 const MsgBox = () => {
   useEffect(() => {
@@ -46,23 +46,9 @@ const MsgBox = () => {
       });
     });
 
-    const msgBoxElement = document.querySelector(".msgBox") as HTMLElement;
-    if (msgBoxElement) {
-      VanillaTilt.init(msgBoxElement, {
-        max: 15,
-        speed: 300,
-        glare: true,
-        "max-glare": 0.5,
-      });
-    }
+    
 
-    // Clean up on component unmount
-    return () => {
-        if (msgBoxElement && (msgBoxElement as any).vanillaTilt) {
-          (msgBoxElement as any).vanillaTilt.destroy();
-        }
-      };
-  }, []);
+  },[])
 
   return (
     <>
