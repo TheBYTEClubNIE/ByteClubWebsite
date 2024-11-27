@@ -1,0 +1,16 @@
+.input {
+  @apply w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-400 focus:text-black active:text-black;
+}
+
+.Form-screen {
+  background-image: url("../../public/FormBG.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Form-screen Form {
+  background-image: url("../../public/FormBG.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
