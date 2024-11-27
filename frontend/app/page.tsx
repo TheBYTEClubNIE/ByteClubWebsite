@@ -36,7 +36,7 @@ export default function Home() {
     <div>
       <div style={content}>
       <Navbar />
-      <FrontLogo/>
+      <FrontLogo />
       <SVGAnimation/>
       <Leads />
       <SVGAnimation/>

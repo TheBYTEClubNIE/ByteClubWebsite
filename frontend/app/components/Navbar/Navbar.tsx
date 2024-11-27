@@ -39,31 +39,31 @@ const Navbar: React.FC = () => {
   return (
     <div className="flex items-center justify-center w-full h-fit z-50 absolute ">
       <nav className="navbar fixed w-max backdrop:blur-md bg-transparent mt-28 shadow-sm backdrop-blur-md">
-        <button type="button">
-          <span className="material-symbols-outlined">
+        <button type="button" title="Events">
+          <a className="material-symbols-outlined" href="#events">
             
             <MdEmojiEvents />
-          </span>
+          </a>
         </button>
-        <button type="button">
-          <span className="material-symbols-outlined">
+        <button type="button" title="About">
+          <a className="material-symbols-outlined" href="#about">
             <MdInfo />
-          </span>
+          </a>
         </button>
-        <button type="button" className="active">
-          <span className="material-symbols-outlined">
+        <button type="button" className="active" title="Home">
+          <a className="material-symbols-outlined" href="#home">
             <MdHome />
-          </span>
+          </a>
         </button>
-        <button type="button">
-          <span className="material-symbols-outlined">
+        <button type="button" title="Review">
+          <a className="material-symbols-outlined" href="#review">
             <MdRateReview />
-          </span>
+          </a>
         </button>
-        <button type="button">
-          <span className="material-symbols-outlined">
+        <button type="button" title="Feedback">
+          <a className="material-symbols-outlined" href="#feedback">
             <MdEmail />
-          </span>
+          </a>
         </button>
       </nav>
     </div>

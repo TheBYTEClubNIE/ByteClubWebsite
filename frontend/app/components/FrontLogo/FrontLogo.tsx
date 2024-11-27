@@ -70,7 +70,7 @@ const FrontLogo = () => {
     <>
 
 
-      <div className="relative hidden sm:hidden md:hidden lg:block h-screen w-full  bg-slate-950">
+      <div className="relative hidden sm:hidden md:hidden lg:block h-screen w-full  bg-slate-950" id="home">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] flex items-center justify-center ">
 
           <div className="LogoBox static lg:relative h-screen w-full flex lg:flex-col justify-center items-center">

@@ -30,7 +30,7 @@ const EventCards = () => {
   }, []);
 
   return (
-    <div className="box-wrapper w-full min-h-screen">
+    <div className="box-wrapper w-full min-h-screen" id="events">
       <div className="w-full bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] flex justify-center items-center flex-col">
         <div className="main lg:h-72 h-44 flex justify-center items-center text-6xl lg:text-8xl m-0 relative w-full">
           <img className="imgg h-36 lg:h-56" src="/textBackground2.png" alt="" />

@@ -29,7 +29,13 @@ body {
   color: green;
 }
 
+body{
+  scroll-behavior: smooth;
+}
 
+*{
+  scroll-behavior: smooth;
+}
 
 
 

@@ -30,7 +30,7 @@ const reviews = [
 
 const ReviewSection = () => {
   return (
-    <div className="relative min-h-screen w-full flex items-center gap-7 justify-center flex-col p-3 overflow-hidden">
+    <div className="relative min-h-screen w-full flex items-center gap-7 justify-center flex-col p-3 overflow-hidden" id="review">
       <BgTransition />
       <div className="relative z-10 w-full h-fit p-4 translate-y-4">
         <GlitchText text="REVIEWS" />

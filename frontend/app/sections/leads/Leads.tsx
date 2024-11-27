@@ -43,7 +43,7 @@ const leads = [
 function Leads() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   return (
-    <div className={`min-h-screen pt-14 opacity-70 ${hoveredIndex !== null ? leads[hoveredIndex].bgColor : ''}`}>
+    <div className={`min-h-screen pt-14 opacity-70 ${hoveredIndex !== null ? leads[hoveredIndex].bgColor : ''}`} id="about">
       <div>
         <SvgText />
       </div>
