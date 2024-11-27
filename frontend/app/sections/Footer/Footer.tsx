@@ -86,7 +86,7 @@ const Footer = () => {
                                     <p>Don’t forget to subscribe to our new feeds, to not to miss any info.</p>
                                 </div>
                                 <div className="copyright-text max-[640px]:text-xs">
-                <p>&copy; 2024, All Rights Reserved <a className='a' href="https://en.wikipedia.org/wiki/Sean_Combs" target='#blank'>Diddy</a></p>
+                <p>&copy; 2024, All Rights Reserved <a className='a' href="https://en.wikipedia.org/wiki/Sean_Combs" target='#blank'>The BYTE Club</a></p>
             </div>
                             </div>
                         </div>

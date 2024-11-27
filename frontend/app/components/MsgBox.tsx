@@ -53,7 +53,7 @@ const MsgBox = () => {
   return (
     <>
     
-        <div className="msgBox hidden lg:block overflow-hidden static lg:absolute  text-gray-100 rounded-lg shadow-lg p-6 sm:p-8 lg:p-10 sm:w-2/3 lg:w-1/2 right-4 ">
+        <div className="msgBox hidden lg:block overflow-hidden static lg:absolute  text-gray-100 rounded-lg shadow-lg p-6 sm:p-8 lg:p-10 sm:w-2/3 lg:w-1/2 right-4 hover:scale-100">
 
 
           <h1 className="headline text-3xl sm:text-4xl font-semibold mb-4 tracking-tight">
