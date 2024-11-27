@@ -83,6 +83,7 @@ const FrontLogo = () => {
               height={300}
             />
 
+
             <Image
               className="chakri1 hidden lg:block absolute z-10 h-[40vw] sm:h-[35rem] md:h-[40rem] lg:h-[42rem] w-[40vw] sm:w-[35rem] md:w-[40rem] lg:w-[42rem] rounded-full"
               src="/whitepng.png"
@@ -133,7 +134,9 @@ const FrontLogo = () => {
   
   {/* Logo and Welcome Text */}
   <div className="relative flex flex-col items-center justify-center z-10 p-8 text-center space-y-6">
-    <img 
+    <Image
+    width={10}
+    height={10}
       src="/ByteLogo.png" 
       alt="BYTE CLUB Logo" 
       className="w-40 sm:w-48 rounded-full shadow-xl border-4 border-purple-500 mb-6 animate-bounce"
