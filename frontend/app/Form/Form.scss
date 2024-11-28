@@ -1,0 +1,61 @@
+.input {
+  @apply w-full  px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-400 focus:text-black active:text-black;
+}
+
+div{
+  color: black;
+}
+
+.Form-screen {
+  background-color: rgb(0, 0, 0);
+  
+}
+
+@media (min-width: 768px) {
+  .Form-screen {
+    background-image: url("../../public/FormBG.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(189, 69, 9);
+  }
+  .Form-screen Form{
+    background-color: rgb(255, 255, 255,0.6);
+
+  }
+}
+
+.Form-screen Form {
+  // background-image: url("../..//public/FormBG.jpg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: top;
+  scrollbar-width: none;
+  @apply max-md:text-white;
+}
+
+.Form-screen Form label{
+  @apply max-md:text-white ;
+  font-family: "Parkinsans", sans-serif;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Yatra+One&display=swap');
+
+@keyframes jump {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-30px); }
+  50% { transform: translateY(0); }
+  75% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+/* Apply the jump animation to the image */
+.Image {
+  position: relative;
+  animation: jump 2s infinite;
+  // box-shadow:2px 2px 20px 2px rgba(0,0,0);
+  // border-bottom: 2px solid black;
+}
+div{
+  font-family: "Parkinsans", sans-serif;
+
+}
