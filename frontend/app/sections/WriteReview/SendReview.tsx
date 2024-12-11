@@ -7,7 +7,7 @@ import "./WriteReview.scss"
 const SendReview = () => {
 
   return (
-    <div className="h-full pt-16 bg-stone-950">
+    <div className="h-full pt-28 bg-stone-950">
  
       <div className="text-6xl max-md:text-4xl text-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent font-extrabold shadow-md shadow-green-300/10 pb-2 mb-4">Send Review</div>
 
