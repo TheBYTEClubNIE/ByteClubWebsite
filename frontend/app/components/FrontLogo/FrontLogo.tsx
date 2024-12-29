@@ -20,7 +20,7 @@ const FrontLogo = () => {
         scale: 1,
         visibility: "visible",
         opacity: 1,
-        duration: 2.5,
+        duration: 1,
         onComplete: () => {
           gsap.to(".chakri1", {
             rotate: 360,
@@ -55,11 +55,11 @@ const FrontLogo = () => {
     );
 
     if (window.innerWidth >= 1024) {
-      const boxTl = gsap.timeline({ delay: 4 });
+      const boxTl = gsap.timeline({ delay: 1 });
 
       boxTl.to(".LogoBox", {
         x: "-30vw",
-        duration: 2.5,
+        duration: 1,
         scale: 0.7,
       });
     }

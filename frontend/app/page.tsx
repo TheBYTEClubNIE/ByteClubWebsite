@@ -23,11 +23,11 @@ const content: React.CSSProperties = {
 export default function Home() {
 
 
-  const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       setLoader(false);
-    }, 5500);
+    }, 1900);
   }, []);
 
   return loader ? (

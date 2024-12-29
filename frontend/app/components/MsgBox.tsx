@@ -10,7 +10,7 @@ const MsgBox = () => {
     tl.fromTo(
         ".msgBox",
         { opacity: 0, visibility: "hidden", display: "block" },
-        { opacity: 1, visibility: "visible", display: "block", delay: 5, duration: 4 }
+        { opacity: 1, visibility: "visible", display: "block", delay: 1.2, duration: 4 }
       );
 
     gsap.to(".msgBox p", {
