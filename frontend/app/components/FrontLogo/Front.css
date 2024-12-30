@@ -23,7 +23,6 @@
   
   .msgBox:hover {
     transform: scale(1.05);
-    background: rgba(31, 41, 55, 0.9);
   }
   .LogoImg{
     visibility: hidden;
