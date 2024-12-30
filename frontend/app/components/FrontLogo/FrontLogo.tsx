@@ -135,11 +135,11 @@ const FrontLogo = () => {
   {/* Logo and Welcome Text */}
   <div className="relative flex flex-col items-center justify-center z-10 p-8 text-center space-y-6">
     <Image
-    width={10}
+    width={150}
     height={10}
       src="/ByteLogo.png" 
       alt="BYTE CLUB Logo" 
-      className="w-40 sm:w-48 rounded-full shadow-xl border-4 border-purple-500 mb-6 animate-bounce"
+      className="rounded-full shadow-xl border-4 border-purple-500 mb-6 animate-bounce"
       style={{ marginTop: '20vh' }} // Moves logo down to avoid being hidden by navbar
     />
     <p className="text-lg sm:text-xl text-white opacity-90 font-medium">
