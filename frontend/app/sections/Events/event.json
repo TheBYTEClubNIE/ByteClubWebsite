@@ -1,31 +1,17 @@
 [
     {
       "id": 1,
-      "imageUrl": "https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "imageUrl": "/bitsToBytes.png",
       "cardNo": "01",
-      "title": "Design",
-      "content": "Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions."
+      "title": "Bits to Bytes",
+      "content": "From Bits to Bytes, we decoded the path to success! Stay curious, keep learning, and let’s build the future together!"
     },
     {
       "id": 2,
-      "imageUrl": "https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80",
+      "imageUrl": "/promptQuest.png",
       "cardNo": "02",
-      "title": "DEVELOP",
-      "content": "Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions."
-    },
-    {
-      "id": 3,
-      "imageUrl": "https://images.unsplash.com/photo-1498075702571-ecb018f3752d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=757&q=80",
-      "cardNo": "03",
-      "title": "RESEARCH",
-      "content": "Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions."
-    },
-    {
-      "id": 4,
-      "imageUrl": "https://images.unsplash.com/photo-1534669740902-e09e38a6a29f?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
-      "cardNo": "04",
-      "title": "PROMOTION",
-      "content": "Customer interactions, study and analysis of company branding through creative briefs. Creation of mock-up designs by using UI tools that simulate actions and pre-visualize the reactions."
+      "title": "Prompt Quest",
+      "content": "A creative storytelling event where students craft unique narratives using AI-generated images based on their prompts, blending imagination with technology."
     }
   ]
   

@@ -4,7 +4,7 @@ import SvgText from "@/app/components/SvgText/AnimatedText";
 import { useState } from "react";
 const leads = [
   {
-    bio: "Club lead of our club",
+    bio: "Lead of our club",
     name: "Rhea Crasto",
     insta: "https://www.instagram.com/rhheeaaa._/profilecard/?igsh=MXY4cXZtd2IweWQzcg==",
     linkedin: "https://www.linkedin.com/in/rhea-crasto-a972aa294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -15,8 +15,8 @@ const leads = [
   {
     bio: "Tech lead of our club",
     name: "Satwik Kini",
-    insta: "https://instagram.com/satwik",
-    linkedin: "https://linkedin.com/in/satwik",
+    insta: "https://instagram.com/satwik_kini.official",
+    linkedin: "https://linkedin.com/in/satwikkini",
     email: "",
     img: "/leads/lead-1.png",
     bgColor: "bg-blue-500"
@@ -52,11 +52,11 @@ const leads = [
 function Leads() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   return (
-    <div className={`min-h-screen pt-14 opacity-70 ${hoveredIndex !== null ? leads[hoveredIndex].bgColor : ''}`} id="about">
+    <div className={`min-h-screen pt-24 opacity-70 ${hoveredIndex !== null ? leads[hoveredIndex].bgColor : ''}`} id="about">
       <div>
         <SvgText />
       </div>
-      <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 h-fit mt-10">
+      <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 h-fit mt-20">
         {leads.map((lead, index) => (
           <LeadsCard
             key={index}
