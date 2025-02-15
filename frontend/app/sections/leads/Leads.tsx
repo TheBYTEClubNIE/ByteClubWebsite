@@ -4,7 +4,7 @@ import SvgText from "@/app/components/SvgText/AnimatedText";
 import { useState } from "react";
 const leads = [
   {
-    bio: "Lead of our club",
+    bio: "Lead",
     name: "Rhea Crasto",
     insta: "https://www.instagram.com/rhheeaaa._/profilecard/?igsh=MXY4cXZtd2IweWQzcg==",
     linkedin: "https://www.linkedin.com/in/rhea-crasto-a972aa294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -13,7 +13,7 @@ const leads = [
     bgColor: "bg-red-500"
   },
   {
-    bio: "Tech lead of our club",
+    bio: "Tech lead",
     name: "Satwik Kini",
     insta: "https://instagram.com/satwik_kini.official",
     linkedin: "https://linkedin.com/in/satwikkini",
@@ -22,7 +22,7 @@ const leads = [
     bgColor: "bg-blue-500"
   },
   {
-    bio: "Creative lead of our club",
+    bio: "Creative lead",
     name: "Somashekhar G B",
     insta: "https://www.instagram.com/somashekhar_gb",
     linkedin: "https://www.linkedin.com/in/somashekhar-g-b-r",
@@ -31,7 +31,7 @@ const leads = [
     bgColor: "bg-green-500"
   },
   {
-    bio: "Sponsorship lead of our club",
+    bio: "Sponsorship lead",
     name: "Soujanya R",
     insta: "https://instagram.com/",
     linkedin: "https://www.linkedin.com/in/soujanya-r-1a46722a8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
@@ -40,8 +40,8 @@ const leads = [
     bgColor: "bg-yellow-500"
   },
   {
-    bio: "Management lead of our club",
-    name: "Priyanshu Sharma",
+    bio: "Management lead",
+    name: "Prianshu Sharma",
     insta: "https://www.instagram.com/prianshu_61/profilecard/?igsh=MWh4cGE1bGprcncwNw==",
     linkedin: "https://www.linkedin.com/in/prianshusharma?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     email: "",
