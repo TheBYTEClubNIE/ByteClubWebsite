@@ -7,24 +7,31 @@ import BgTransition from "@/app/components/review bg transition/BgTransition";
 const reviews = [
   {
     name: "Gulshan Kr. Jha",
-    sem: "3",
+    sem: "4",
     branch: "ISE",
-    title: "Hello evryone!",
+    title: "Hello everyone!",
     description: "The Byte Club is a tech lovers' group where members explore coding, robotics, and new tech together. They host fun workshops and projects, making it a great place to learn and grow.",
   },
   {
     name: "Naman Sharma",
-    sem: "3",
+    sem: "4",
     branch: "ISE",
     title: "",
     description: "The Byte Club is a cool spot for tech fans. Dive into coding, robotics, and the latest gadgets. With fun projects and events, it's the perfect place to learn and meet like-minded people.",
   },
   {
-    name: "Kaushal Prakasj",
-    sem: "3",
+    name: "Kaushal Prakash",
+    sem: "4",
     branch: "ISE",
     title: "Hii!",
     description: "The Byte Club is a tech enthusiasts' paradise. Members delve into coding, and the latest technology. It's a fun place to learn, share ideas, and work on cool projects together.",
+  },
+  {
+    name: "Dipanshu Shaw",
+    sem: "4",
+    branch: "ISE",
+    title: "Exploring Tech Together!",
+    description: "The Byte Club is a hub for tech lovers! From coding to robotics, it's a place to learn, collaborate, and build awesome projects with like-minded enthusiasts.",
   },
 ];
 
