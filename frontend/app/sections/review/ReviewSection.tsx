@@ -10,7 +10,7 @@ const reviews = [
     sem: "4",
     branch: "ISE",
     title: "Hello everyone!",
-    description: "The Byte Club is a tech lovers' group where members explore coding, robotics, and new tech together. They host fun workshops and projects, making it a great place to learn and grow.",
+    description: "The Byte Club is a tech lovers group where members explore coding, robotics, and new tech together. They host fun workshops and projects, making it a great place to learn and grow.",
   },
   {
     name: "Naman Sharma",
