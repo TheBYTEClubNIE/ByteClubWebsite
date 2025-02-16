@@ -3,6 +3,7 @@ import "./Events.css";
 import events from "./event.json";
 import VanillaTilt from "vanilla-tilt";
 import Image from "next/image";
+import Link from "next/link";
 // Extend HTMLElement to include the vanillaTilt property
 interface TiltHTMLElement extends HTMLElement {
     vanillaTilt?: VanillaTilt;
@@ -61,9 +62,11 @@ const EventCards = () => {
                             <figcaption>
                                 <div className="show-cont">
                                     <h3 className="card-no">{event.cardNo}</h3>
+                                    <Link href={`/sections/events/${event.id}`}>
                                     <h4 className="card-main-title">
                                         {event.title}
                                     </h4>
+                                    </Link>
                                 </div>
                                 <p className="card-content">{event.content}</p>
                                 {/* <a href="#" className="read-more-btn">

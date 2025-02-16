@@ -47,6 +47,15 @@ const leads = [
     email: "",
     img: "/leads/pr.jpg",
     bgColor: "bg-yellow-500"
+  },
+  {
+    bio: "Open Source Guru",
+    name: "Rohan G",
+    insta: "https://www.instagram.com/prianshu_61/profilecard/?igsh=MWh4cGE1bGprcncwNw==",
+    linkedin: "https://www.linkedin.com/in/prianshusharma?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    email: "",
+    img: "/leads/rohan.jpeg",
+    bgColor: "bg-yellow-500"
   }
 ];
 function Leads() {
