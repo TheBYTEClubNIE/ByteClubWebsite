@@ -28,7 +28,7 @@ const Winners = ({ eventId }: WinnersProps) => {
     <div className="min-h-screen bg-gradient-to-r from-indigo-900 to-purple-600 p-8 relative">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center z-0"
+        className="md:block hidden absolute inset-0 bg-cover bg-center z-0"
         style={{
           backgroundImage: `url(${bg})`,
         }}
@@ -43,8 +43,8 @@ const Winners = ({ eventId }: WinnersProps) => {
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-20">
           {Object.entries(event.winner).map(([teamName, members], index) => (
-            <div key={index} className="bg-black/20 p-6 w-52 gap-32 rounded-xl shadow-lg">
-              <h2 className="text-3xl font-semibold text-center text-white mb-4">
+            <div key={index} className="bg-black/20 p-6 md:w-44 lg:w-52 gap-32 rounded-xl shadow-lg">
+              <h2 className="lg:text-3xl md:text-2xl text-xl font-semibold text-center text-white mb-4">
                 {teamName}
               </h2>
               <div className="space-y-4">
