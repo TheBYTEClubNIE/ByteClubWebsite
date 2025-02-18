@@ -1,17 +1,74 @@
 [
-    {
-      "id": 1,
-      "imageUrl": "/bitsToBytes.png",
-      "cardNo": "01",
-      "title": "Bits to Bytes",
-      "content": "From Bits to Bytes, we decoded the path to success! Stay curious, keep learning, and let’s build the future together!"
-    },
-    {
-      "id": 2,
-      "imageUrl": "/promptQuest.png",
-      "cardNo": "02",
-      "title": "Prompt Quest",
-      "content": "A creative storytelling event where students craft unique narratives using AI-generated images based on their prompts, blending imagination with technology."
+  {
+    "id": 1,
+    "imageUrl": "/bitToByte/bitsToBytes.png",
+    "images": [
+      "/promptQuest/prompt1.jpeg",
+      "/promptQuest/prompt2.jpeg",
+      "/promptQuest/prompt3.jpeg",
+      "/promptQuest/prompt4.jpeg",
+      "/promptQuest/prompt5.jpeg",
+      "/promptQuest/prompt6.jpeg",
+      "/promptQuest/prompt7.jpeg",
+      "/promptQuest/prompt8.jpeg",
+      "/promptQuest/prompt9.jpeg"
+    ],
+    
+    "cardNo": "01",
+    "title": "Bits to Bytes",
+    "content": "From Bits to Bytes, we decoded the path to success! Stay curious, keep learning, and let's build the future together!",
+    "winner": ""
+  },
+  {
+    "id": 2,
+    "imageUrl": "/promptQuest.png",
+    "cardNo": "02",
+    "images": [
+      "/bitToByte/bit4.jpeg",
+      "/bitToByte/bit5.jpeg",
+      "/bitToByte/bit6.jpeg"
+    ],
+    "title": "Prompt Quest",
+    "content": "A creative storytelling event where students craft unique narratives using AI-generated images based on their prompts, blending imagination with technology.",
+    "winner": {
+      "Team 1": [
+        {
+          "name": "Faheem",
+          "image":"/promptQuest/winners/team1/Faheem.png"
+        },
+        {
+          "name": "Abhi",
+          "image": "/promptQuest/winners/team1/abhi.png"
+        },
+        {
+          "name": "Abhijeet",
+          "image": "/promptQuest/winners/team1/abhijeet.png"
+        }
+      ],
+      "Team Mavericks": [
+        {
+          "name": "Raunaq Dubey",
+          "image": "/promptQuest/winners/teamMav/raunaq.png"
+        },
+        {
+          "name": "Shivam Anand",
+          "image": "/promptQuest/winners/teamMav/shivam.png"
+        },
+        {
+          "name": "Sameer Bharadwaj",
+          "image": "/promptQuest/winners/teamMav/sameer.png"
+        }
+      ],
+      "Team Midnight Reverie": [
+        {
+          "name": "Mohammad Laraib",
+          "image": "/promptQuest/winners/teamMid/mohammad.png"
+        },
+        {
+          "name": "Tanmay Pathak",
+          "image": "/promptQuest/winners/teamMid/pathak.png"
+        }
+      ]
     }
-  ]
-  
+  }
+]

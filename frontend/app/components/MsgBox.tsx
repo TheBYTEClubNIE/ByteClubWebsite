@@ -77,10 +77,9 @@ const MsgBox = () => {
           </h1>
 
           <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-300">
-            Discover a place where coding meets creativity, innovation flows, and
-            BYTE CLUB members make it happen. Join us, and let&apos;s build the
-            future together, one byte at a time. Expand your skills, connect with
-            like-minded peers, and dive into the heart of tech.
+          The BYTE (Build Your Technical Expertise) Club, established by the Google Developer Student Club (GDSC) NIE core team [23-24].
+            A place where coding meets creativity. Join us, and let&apos;s build the
+            future together, one byte at a time.
           </p>
         </div>
     </>

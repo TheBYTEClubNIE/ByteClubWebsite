@@ -149,7 +149,7 @@ const FrontLogo = () => {
 
             <div className="relative lg:hidden h-screen w-full bg-gradient-to-b from-purple-800 via-gray-900 to-black overflow-hidden z-20">
                 {/* Background Animations */}
-                <div className="absolute inset-0 overflow-hidden">
+                              <div className="absolute inset-0 overflow-hidden">
                     <div
                         className="absolute w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,0,128,0.15),transparent)] 
       animate-[spin_30s_linear_infinite] z-0"
@@ -167,11 +167,11 @@ const FrontLogo = () => {
                         height={10}
                         src="/ByteLogo.png"
                         alt="BYTE CLUB Logo"
-                        className="rounded-full shadow-xl border-4 border-purple-500 mb-6 animate-bounce"
+                        className="rounded-full shadow-xl border-4 border-purple-500  animate-bounce"
                         style={{ marginTop: "20vh" }} // Moves logo down to avoid being hidden by navbar
                     />
-                    <p className="text-lg sm:text-xl text-white opacity-90 font-medium">
-                        Step into the Future of Coding
+                    <p className="text-lg sm:text-sm text-white opacity-90 font-medium">
+                    The BYTE (Build Your Technical Expertise) Club, established by the Google Developer Student Club (GDSC) NIE core team [23-24]
                     </p>
                 </div>
 
