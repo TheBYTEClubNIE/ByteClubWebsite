@@ -21,7 +21,6 @@ const Winners = ({ eventId }: WinnersProps) => {
     return null; // Don't render anything if no winners
   }
 
-  const bg = event.imageUrl || "/defaultBackground.png";
 
 
   return (
