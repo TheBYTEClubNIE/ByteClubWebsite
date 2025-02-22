@@ -24,9 +24,14 @@
     "imageUrl": "/promptQuest.png",
     "cardNo": "02",
     "images": [
+      "/bitToByte/bit1.jpg",
+      "/bitToByte/bit2.jpg",
+      "/bitToByte/bit3.jpg",
       "/bitToByte/bit4.jpeg",
       "/bitToByte/bit5.jpeg",
-      "/bitToByte/bit6.jpeg"
+      "/bitToByte/bit6.jpeg",
+      "/bitToByte/bit7.jpg",
+      "/bitToByte/bit8.jpg"
     ],
     "title": "Prompt Quest",
     "content": "A creative storytelling event where students craft unique narratives using AI-generated images based on their prompts, blending imagination with technology.",
