@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
           </a>
         </button>
         <button type="button" title="Feedback">
-          <a className="material-symbols-outlined" href="#WriteReview">
+          <a className="material-symbols-outlined" href="#write-review">
             <MdEmail />
           </a>
         </button>
