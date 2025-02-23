@@ -28,7 +28,7 @@ const Page = () => {
         </h1>
 
         {/* Gallery Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-6 mb-8">
           {event?.images?.map((img, index) => (
             <div key={index} className="relative group overflow-hidden rounded-xl shadow-lg w-full">
               <Image
