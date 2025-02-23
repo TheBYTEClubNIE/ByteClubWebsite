@@ -51,8 +51,8 @@ const leads = [
   {
     bio: "Open Source Guru",
     name: "Rohan G",
-    insta: "https://www.instagram.com/prianshu_61/profilecard/?igsh=MWh4cGE1bGprcncwNw==",
-    linkedin: "https://www.linkedin.com/in/prianshusharma?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    insta: "https://www.instagram.com/rohan_g___/",
+    linkedin: "https://www.linkedin.com/in/rohan-g-kami/",
     email: "",
     img: "/leads/rohan.jpeg",
     bgColor: "bg-yellow-500"
