@@ -1,12 +1,11 @@
 "use client";
 import React from "react";
-import events from "@/app/sections/events/event.json";
+import events from "@/app/sections/Events/event.json";
 
 interface Member {
   name: string;
   image: string;
 }
-
 
 
 interface WinnersProps {
