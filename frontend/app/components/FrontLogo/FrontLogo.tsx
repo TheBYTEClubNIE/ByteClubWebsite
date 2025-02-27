@@ -170,18 +170,18 @@ const FrontLogo = () => {
                         className="rounded-full shadow-xl border-4 border-purple-500  animate-bounce"
                         style={{ marginTop: "20vh" }} // Moves logo down to avoid being hidden by navbar
                     />
-                    <p className="text-lg sm:text-sm text-white opacity-90 font-medium">
+                    <p className="text-lg sm:text-xs text-white opacity-90 md:font-medium">
                     The BYTE (Build Your Technical Expertise) Club, established by the Google Developer Student Club (GDSC) NIE core team [23-24]
                     </p>
                 </div>
 
                 {/* Floating Info Boxes */}
-                <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 w-[90%] space-y-4 z-20 px-4">
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-[90%] space-y-4 z-20 px-4">
                     <div
                         className="p-6 bg-gradient-to-br from-purple-700 to-blue-600 text-white rounded-2xl shadow-xl text-center 
       transform transition duration-500 hover:scale-105 ease-in-out"
                     >
-                        <h2 className="text-xl font-semibold">
+                        <h2 className="md:text-xl text-base font-semibold">
                             Community of Innovators
                         </h2>
                         <p className="text-sm opacity-80 mt-1">
@@ -192,7 +192,7 @@ const FrontLogo = () => {
                         className="p-6 bg-gradient-to-br from-pink-600 to-purple-500 text-white rounded-2xl shadow-xl text-center 
       transform transition duration-500 hover:scale-105 ease-in-out"
                     >
-                        <h2 className="text-xl font-semibold">
+                        <h2 className="md:text-xl text-base font-semibold">
                             Collaborate & Create
                         </h2>
                         <p className="text-sm opacity-80 mt-1">

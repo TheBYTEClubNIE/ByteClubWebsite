@@ -24,7 +24,7 @@ const Winners = ({ eventId }: WinnersProps) => {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-indigo-900 to-purple-600 p-8 relative">
+    <div className="min-h-screen bg-gradient-to-r from-indigo-900 to-purple-600 md:p-8 relative">
       {/* Background Image */}
       <div
         className="md:block hidden absolute inset-0 bg-cover bg-center z-0"
@@ -34,8 +34,8 @@ const Winners = ({ eventId }: WinnersProps) => {
       </div>
 
       {/* Winners Section */}
-      <div className="max-w-6xl mx-auto relative z-20 bg-white/20 backdrop-blur-lg shadow-lg rounded-lg p-8 border border-white/30">
-        <h1 className="text-4xl font-extrabold text-center text-white mb-8 ">
+      <div className="max-w-6xl  p-2 relative z-20 bg-white/20 backdrop-blur-lg shadow-lg rounded-lg md:p-8 border border-white/30">
+        <h1 className="md:text-4xl text-2xl font-extrabold text-center text-white mb-8 ">
           🏆 Winners Teams 🏆
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-20">

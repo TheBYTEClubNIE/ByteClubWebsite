@@ -11,7 +11,7 @@ const Page = () => {
   const event = events.find((event) => event.id.toString() === id);
 
   return (
-    <div className="h-full w-screen bg-[url('/dotted-pattern.svg')]  p-6">
+    <div className="h-full w-screen bg-[url('/dotted-pattern.svg')] p-2 md:p-6">
       <div className="max-w-4xl mx-auto bg-gradient-to-r from-indigo-900 to-purple-600 backdrop-blur-lg shadow-lg rounded-lg p-8 border border-white/30">
         <h1 className="text-4xl font-extrabold text-center text-white mb-6 drop-shadow-lg">
           {event?.title}
