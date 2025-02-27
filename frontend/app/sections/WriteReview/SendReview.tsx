@@ -1,8 +1,6 @@
 import React from 'react'
 import WriteReview from './WriteReview'
 import "./WriteReview.scss"
-// import MsgBox from '@/app/components/MsgBox'
-
 
 const SendReview = () => {
 
