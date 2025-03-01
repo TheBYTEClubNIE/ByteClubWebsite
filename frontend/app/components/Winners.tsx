@@ -40,18 +40,18 @@ const Winners = ({ eventId }: WinnersProps) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-20">
           {Object.entries(event.winner).map(([teamName, members], index) => (
             <div key={index} className="bg-black/20 p-6 md:w-44 lg:w-52 gap-32 rounded-xl shadow-lg">
-              <h2 className=" md:text-2xl text-xl font-semibold text-center text-white mb-4">
+              <h2 className=" md:text-2xl text-xl font-semibold text-center text-white mb-10">
                 {teamName}
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-4 mb-4">
                 {members.map((member: Member, idx: number) => (
-                  <div key={idx} className="group relative overflow-hidden rounded-lg shadow-md">
+                  <div key={idx} className="group relative mb-10 overflow-hidden rounded-lg shadow-md">
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-40 object-cover rounded-lg transition-transform duration-500 ease-in-out group-hover:scale-105"
+                      className="w-full h-40 object-cover mb-4 rounded-lg transition-transform duration-500 ease-in-out group-hover:scale-105"
                     />
-                    <p className="text-white text-lg font-semibold">{member.name}</p>
+                    <p className="text-white text-lg font-semibold mb-4">{member.name}</p>
                   </div>
                 ))}
               </div>
