@@ -14,13 +14,13 @@ const Footer = () => {
             <div className="">
                 <div className="footer-content pt-5 pb-5 -z-10">
                     <div className="row">
-                        <div className="col-xl-4 col-lg-4 mb-4">
+                        <div className="col-xl-4 col-lg-4 mb-2">
                             <div className="footer-widget">
-                                <div className="footer-logo sm:float-left px-8" id='logo'>
-                                    <a href="index.html" className=' a shadowfilter max-[640px]:flex max-[640px]:justify-center '><Image  src={logo} alt="logo" className="sm:size-24 max-[640px]:size-28" /></a>
+                                <div className="footer-logo flex justify-center px-8" id='logo'>
+                                    <a href="index.html" className=' a shadowfilter max-[640px]:flex max-[640px]:justify-center '><Image src={logo} alt="logo" className="sm:size-28 md:size-32 max-[640px]:size-28" /></a>
                                 </div>
                                 <div className="footer-text">
-                                    <p className='max-[640px]:w-full max-[640px]:text-center max-[640px]:p-4 w-2/3 sm:h-24 content-center max-[640px]:text-xs'>The premier technical club of our college, fostering innovation and collaboration in coding, design, and emerging technologies through hands-on projects, events, and workshops.</p>
+                                    <p className='max-[640px]:w-full max-[640px]:text-center lg:text-lg max-[640px]:p-4 w-2/3 mx-auto mt-4 sm:h-24 text-center max-[640px]:text-xs'>The premier technical club of our college, fostering innovation and collaboration in coding, design, and emerging technologies through hands-on projects, events, and workshops.</p>
                                 </div>
                             </div>
                         </div>
@@ -29,40 +29,30 @@ const Footer = () => {
                                 <div className="footer-widget-heading">
                                     <h3 className='px-8'>Useful Links</h3>
                                 </div>
-                                {/* <div className='sm:grid sm:grid-cols-2 w-full sm:justify-between '>
-                                    <ul className='sm:inline-block text-center justify-center'>
-                                        <li><p className='ease-in-out duration-300 text-lg font-bold underline foot-subhead'>Navigate</p></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/home">Home</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/events">Events</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/about">About</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/contact">Contact</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/review">Review</a></li>
-                                    </ul>
-                                    <ul  className='sm:inline-block text-center  justify-center'>
-                                        <li><p className='ease-in-out duration-300 text-lg font-bold underline foot-subhead'>More Info</p></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/home">Term & Services</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/events">Sponsors</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/about">Privacy Policy</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/contact">Know More</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/review">Review</a></li>
-                                    </ul>
-                                </div> */}
-                                <div className='sm:grid sm:grid-cols-2 w-full sm:justify-between '>
-                                    <ul className='sm:inline-block text-center max-[640px]:flex max-[640px]:flex-wrap max-[640px]:gap-x-4 justify-center'>
-                                        <li><p className='ease-in-out duration-300 text-lg font-bold underline foot-subhead max-[640px]:hidden'>Navigate</p></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/home">Home</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/events">Events</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/about">About</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/contact">Contact</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/review">Review</a></li>
-                                    </ul>
-                                    <ul  className='sm:inline-block text-center max-[640px]:flex max-[640px]:gap-x-4 max-[640px]:flex-wrap justify-center'>
-                                        <li><p className='ease-in-out duration-300 text-lg font-bold underline foot-subhead max-[640px]:hidden'>More Info</p></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/home">Term & Services</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/events">Sponsors</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/about">Privacy Policy</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/contact">Know More</a></li>
-                                        <li><a className='a ease-in-out duration-300 text-md font-semibold' href="/review">Review</a></li>
+                                <div className='w-full '>
+                                    <ul className='flex md:w-2/3 lg:w-1/2 mx-auto justify-evenly max-[640px]:flex-wrap max-[640px]:gap-x-4 '>
+                                        <li><a className="a ease-in-out duration-300  text-md font-semibold text-gray-400 cursor-pointer hover:text-emerald-300" onClick={() => window.location.href = "#home"}>
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li><a className="a ease-in-out duration-300  text-md font-semibold text-gray-400 cursor-pointer hover:text-emerald-300" onClick={() => window.location.href = "#about"}>
+                                                About
+                                            </a>
+                                        </li>
+                                        <li><a className="a ease-in-out duration-300  text-md font-semibol text-gray-400 cursor-pointer hover:text-emerald-300" onClick={() => window.location.href = "#events"}>
+                                                Events
+                                            </a>
+                                        </li>
+                                        <li><a className='a ease-in-out duration-300  text-md font-semibold'>
+                                            <a type="button" title="About" className="text-gray-400 cursor-pointer hover:text-emerald-300" onClick={() => window.location.href = "#review"}>
+                                                Reviews
+                                            </a>
+                                        </a></li>
+                                        <li><a className='a ease-in-out duration-300  text-md font-semibold'>
+                                            <a type="button" title="About" className="text-gray-400 cursor-pointer hover:text-emerald-300" onClick={() => window.location.href = "#feedback"}>
+                                                Feedback
+                                            </a>
+                                        </a></li>
                                     </ul>
                                 </div>
 
@@ -82,8 +72,8 @@ const Footer = () => {
                                     <p>Don’t forget to subscribe to our new feeds, to not to miss any info.</p>
                                 </div>
                                 <div className="copyright-text max-[640px]:text-xs">
-                <p>&copy; 2024, All Rights Reserved <a className='a' href="https://en.wikipedia.org/wiki/Sean_Combs" target='#blank'>The BYTE Club</a></p>
-            </div>
+                                    <p>&copy; 2024, All Rights Reserved <a className='a' href="https://en.wikipedia.org/wiki/Sean_Combs" target='#blank'>The BYTE Club</a></p>
+                                </div>
                             </div>
                         </div>
                     </div>

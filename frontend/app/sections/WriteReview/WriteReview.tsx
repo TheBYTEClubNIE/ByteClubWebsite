@@ -81,11 +81,11 @@ const WriteReview = () => {
         <div className="flip-card-3D-wrapper" id='feedback'>
             <div id="flip-card" className={isFlipped ? 'do-flip' : ''}>
                 <div className="flip-card-front">
-                    <div>
-                    <div className='text-xl p-4'>
-                        Some random text
+                    <div className='w-2/3 h-4/5 my-auto relative'>
+                    <div className='text-xl text-center p-4 absolute top-32 font-mono'>
+                     <q> Leave a review and help others discover the best features! </q>
                     </div>
-                    <button className='button-85-front'
+                    <button className='button-85-front absolute -bottom-80'
                         id=""
                         onClick={handleFlip}
                         style={{ visibility: buttonsVisible ? 'visible' : 'hidden' }}
