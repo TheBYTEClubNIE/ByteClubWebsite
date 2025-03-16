@@ -1,6 +1,9 @@
 import React from "react";
 import ByteHackathonNavbar from "@/app/components/ByteHackathon/ByteHackathonNavbar";
 import ByteHackathonHeroSection from "../components/ByteHackathon/ByteHackathonHeroSection";
+import { ByteTimeline } from "../components/ByteHackathon/ByteTimeline";
+import AboutUs from "../components/ByteHackathon/AboutUs";
+import { ByteFooter } from "../components/ByteHackathon/hackathonFooter";
 
 const Page = () => {
   return (
@@ -24,14 +27,13 @@ const Page = () => {
           <ByteHackathonHeroSection />
         </div>
       </div>
+      <AboutUs/>
 
-      <div className="relative w-screen h-screen">
-        <div className="absolute inset-0 -z-10 h-full w-full [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+     
+        <ByteTimeline/>
 
-        <h1 className="relative flex items-center justify-center h-full text-6xl font-bold text-white">
-          Hello
-        </h1>
-      </div>
+        <ByteFooter/>
+      
     </>
   );
 };

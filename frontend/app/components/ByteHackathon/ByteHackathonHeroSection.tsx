@@ -13,7 +13,6 @@ const ByteHackathonHeroSection = () => {
   const countdownRef = useRef(null);
   const buttonRef = useRef<HTMLDivElement | null>(null);
 
-
   useEffect(() => {
     function getTimeRemaining() {
       const now = new Date().getTime();
@@ -39,10 +38,10 @@ const ByteHackathonHeroSection = () => {
 
   useEffect(() => {
     const tl = gsap.timeline();
-  
+
     if (!heroRef.current || !titleRef.current || !taglineRef.current || !countdownRef.current || !buttonRef.current) return;
-  
-    // Floating effect (Faster)
+
+    // Floating effect
     gsap.to(heroRef.current, {
       y: -5,
       duration: 1.5,
@@ -50,36 +49,28 @@ const ByteHackathonHeroSection = () => {
       yoyo: true,
       ease: "power1.inOut",
     });
-  
+
     // Title animation
     tl.fromTo(titleRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" });
-  
+
     // Tagline animation
     tl.fromTo(taglineRef.current, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.4)" }, "-=0.4");
-  
-    // Countdown animation (Faster bounce)
+
+    // Countdown animation
     tl.fromTo(countdownRef.current, { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "elastic.out(1,0.6)" });
-  
-    // Check if buttonRef.current is available before animating
+
+    // Button animation
     if (buttonRef.current) {
       tl.fromTo(buttonRef.current, { opacity: 0 }, { opacity: 1, duration: 0.4 });
-  
+
       if (buttonRef.current.children) {
         tl.fromTo(buttonRef.current.children, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.6, ease: "bounce.out", stagger: 0.1 });
       }
     }
   }, []);
-  
 
   return (
     <div ref={heroRef} className="text-white text-center py-24 px-4 max-w-[800px] mx-auto relative">
-      {/* Floating animated elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute w-6 h-6 bg-pink-400 rounded-full top-1/4 left-10 blur-xl opacity-60 animate-bounce"></div>
-        <div className="absolute w-8 h-8 bg-blue-400 rounded-full top-3/4 right-10 blur-xl opacity-60 animate-pulse"></div>
-        <div className="absolute w-5 h-5 bg-green-400 rounded-full bottom-16 left-1/3 blur-xl opacity-60 animate-spin-slow"></div>
-      </div>
-
       <h1
         ref={titleRef}
         className="text-7xl font-extrabold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500"
@@ -97,10 +88,15 @@ const ByteHackathonHeroSection = () => {
         <span className="text-purple-400 font-bold">cutting-edge tech stacks</span>.
       </p>
 
-      <p className="text-xl mb-8 font-semibold text-yellow-400">📅 Mark your calendars: 4th to 6th April</p>
+      {/* UPDATED DATE STYLING */}
+      <p className="text-xl mb-8 font-semibold">
+        📅 Mark your calendars:{" "}
+        <span className="text-blue-400 text-bold text-2xl">4th</span> to{" "}
+        <span className="text-red-400 text-bold text-2xl">6th April</span>
+      </p>
 
       {/* Countdown Timer */}
-      <div ref={countdownRef} className="text-4xl font-bold mb-8 bg-gradient-to-r from-green-400 to-blue-400 text-transparent bg-clip-text animate-pulse">
+      <div ref={countdownRef} className="text-7xl font-bold mb-8 bg-gradient-to-r from-green-400 to-blue-400 text-transparent bg-clip-text animate-pulse">
         {timeLeft.days}d {timeLeft.hours}h : {timeLeft.minutes}m : {timeLeft.seconds}s
       </div>
 
