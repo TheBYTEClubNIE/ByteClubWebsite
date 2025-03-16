@@ -70,41 +70,41 @@ const ByteHackathonHeroSection = () => {
   }, []);
 
   return (
-    <div ref={heroRef} className="text-white text-center py-24 px-4 max-w-[800px] mx-auto relative">
+    <div ref={heroRef} className="text-white text-center py-16 px-4 max-w-[800px] mx-auto relative">
       <h1
         ref={titleRef}
-        className="text-7xl font-extrabold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500"
+        className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500"
       >
         BYTE HACKATHON&apos;25
       </h1>
 
-      <p ref={taglineRef} className="text-lg sm:text-2xl md:text-3xl font-extrabold uppercase text-white shadow-glow animate-pulse">
+      <p ref={taglineRef} className="text-md sm:text-xl md:text-2xl lg:text-3xl font-extrabold uppercase text-white shadow-glow animate-pulse">
         CODE. <span className="text-yellow-400">COMPETE.</span> CELEBRATE.
       </p>
 
-      <p className="text-xl mb-8 text-gray-200">
+      <p className="text-sm sm:text-lg md:text-xl mb-6 sm:mb-8 text-gray-200">
         Byte Hackathon &apos;25 is a <span className="text-cyan-400 font-bold">national-level hackathon</span> where students from across the country will have{" "}
         <span className="text-green-400 font-bold">36 hours</span> to develop real-world solutions using{" "}
         <span className="text-purple-400 font-bold">cutting-edge tech stacks</span>.
       </p>
 
       {/* UPDATED DATE STYLING */}
-      <p className="text-xl mb-8 font-semibold">
+      <p className="text-sm sm:text-lg md:text-xl mb-6 sm:mb-8 font-semibold">
         📅 Mark your calendars:{" "}
-        <span className="text-blue-400 text-bold text-2xl">4th</span> to{" "}
-        <span className="text-red-400 text-bold text-2xl">6th April</span>
+        <span className="text-blue-400 text-bold sm:text-2xl">4th</span> to{" "}
+        <span className="text-red-400 text-bold sm:text-2xl">6th April</span>
       </p>
 
       {/* Countdown Timer */}
-      <div ref={countdownRef} className="text-7xl font-bold mb-8 bg-gradient-to-r from-green-400 to-blue-400 text-transparent bg-clip-text animate-pulse">
+      <div ref={countdownRef} className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-green-400 to-blue-400 text-transparent bg-clip-text animate-pulse">
         {timeLeft.days}d {timeLeft.hours}h : {timeLeft.minutes}m : {timeLeft.seconds}s
       </div>
 
-      <div ref={buttonRef} className="flex justify-center space-x-4 opacity-0">
-        <button className="bg-gradient-to-r from-yellow-400 to-red-500 text-black px-8 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-xl">
+      <div ref={buttonRef} className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 opacity-0">
+        <button className="bg-gradient-to-r from-yellow-400 to-red-500 text-black px-6 sm:px-8 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-xl">
           Register Now!
         </button>
-        <button className="border border-white text-white px-8 py-3 rounded-full font-bold transition-all duration-300 hover:bg-white hover:text-black">
+        <button className="border border-white text-white px-6 sm:px-8 py-3 rounded-full font-bold transition-all duration-300 hover:bg-white hover:text-black">
           Community Page
         </button>
       </div>

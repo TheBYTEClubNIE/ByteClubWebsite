@@ -4,6 +4,7 @@ import ByteHackathonHeroSection from "../components/ByteHackathon/ByteHackathonH
 import { ByteTimeline } from "../components/ByteHackathon/ByteTimeline";
 import AboutUs from "../components/ByteHackathon/AboutUs";
 import { ByteFooter } from "../components/ByteHackathon/hackathonFooter";
+import ByteHackathonFAQ from "../components/ByteHackathon/FAQ";
 
 const Page = () => {
   return (
@@ -31,6 +32,7 @@ const Page = () => {
 
      
         <ByteTimeline/>
+        <ByteHackathonFAQ/>
 
         <ByteFooter/>
       

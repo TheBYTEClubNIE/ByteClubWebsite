@@ -53,7 +53,7 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <section
+    <section id="about"
       ref={sectionRef}
       className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-12"
     >
