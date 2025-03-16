@@ -45,7 +45,7 @@ const Winners = ({ eventId }: WinnersProps) => {
               </h2>
               <div className="space-y-4 mb-4">
                 {members.map((member: Member, idx: number) => (
-                  <div key={idx} className="group relative mb-10 overflow-hidden rounded-lg shadow-md">
+                  <div key={idx} className="group relative mb-10 overflow-hidden `rounded-lg shadow-md">
                     <img
                       src={member.image}
                       alt={member.name}
