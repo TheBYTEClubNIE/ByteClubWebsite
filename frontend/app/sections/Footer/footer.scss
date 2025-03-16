@@ -12,13 +12,10 @@ footer {
 
 .footer-section {
   background-color: black;
-  // background-image: url('');
   color: white;
   position: sticky;
   bottom: 0;
   left: 0;
-  background: #000000;
-  // position: relative;
 }
 
 .footer-content {
@@ -56,7 +53,7 @@ footer {
 }
 
 .footer-logo Image {
-  max-width: 200px;
+  max-width: 10rem;
 }
 
 .footer-text p {
@@ -83,21 +80,21 @@ footer {
   font-family: 'Poppins', sans-serif;
 }
 
-.footer-widget ul li {
-  margin-bottom: 12px;
-}
+// .footer-widget ul li {
+//   margin-top: 12px;
+// }
 
-.footer-widget ul li a:hover {
-  color: #84eadd;
-}
-.foot-subhead{
-  color: #84eadd;
-}
+// .footer-widget ul li a:hover {
+//   color: hsl(172, 71%, 72%);
+// }
+// .foot-subhead{
+//   color: #84eadd;
+// }
 
-.footer-widget ul li a {
-  color: #878787;
-  text-transform: capitalize;
-}
+// .footer-widget ul li a {
+//   color: #878787;
+//   text-transform: capitalize;
+// }
 
 
 .copyright-area {
