@@ -1,0 +1,169 @@
+@keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-in-left {
+    from {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 1.5s ease-out forwards;
+    animation-timeline: view();
+    animation-range-end: 30%;
+  }
+  
+  .animate-slide-in-left {
+    animation: slide-in-left 1s ease-out forwards;
+    animation-timeline: view();
+    animation-range-end: 30%;
+  }
+  
+  .animate-slide-in-right {
+    animation: slide-in-right 1s ease-out forwards;
+    animation-timeline: view();
+    animation-range-end: 30%;
+  }
+  
+  @keyframes glow-pulse {
+    0% {
+      filter: drop-shadow(0 0 10px rgba(128, 0, 128, 0.8))
+        drop-shadow(0 0 20px rgba(0, 128, 0, 0.7));
+    }
+    50% {
+      filter: drop-shadow(0 0 15px rgba(185, 9, 185, 0.9))
+        drop-shadow(0 0 30px rgba(8, 171, 8, 0.9));
+    }
+    100% {
+      filter: drop-shadow(0 0 10px rgba(128, 0, 128, 0.7))
+        drop-shadow(0 0 20px rgba(0, 128, 0, 0.7));
+    }
+  }
+  
+  .upcoming-main {
+    background: url("/upcoming-event.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .upcoming-main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/doodles.svg") no-repeat center center;
+    background-size: contain;
+    pointer-events: none;
+  }
+  
+  .glow {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+  
+  /* Floating Balloons */
+  .floating-balloon {
+    position: absolute;
+    width: 80px; /* Smaller size for mobile */
+    height: auto;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  /* Position Balloons */
+  .balloon-1 {
+    top: 5%;
+    left: 5%;
+    animation-delay: 0s;
+  }
+  
+  .balloon-2 {
+    top: 15%;
+    right: 5%;
+    animation-delay: 2s;
+  }
+  
+  .balloon-3 {
+    bottom: 10%;
+    left: 10%;
+    animation-delay: 4s;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .upcoming-main {
+      background-attachment: scroll; /* Disable fixed background on mobile */
+    }
+  
+    .floating-balloon {
+      display: none; /* Hide balloons on mobile */
+    }
+  
+    .upcoming-main::before {
+      opacity: 0.4; /* Reduce doodle opacity on mobile */
+    }
+  
+    .main-text {
+      font-size: 2rem; /* Smaller heading on mobile */
+    }
+  
+    .grid {
+      gap: 1.5rem; /* Reduce gap between cards on mobile */
+    }
+  
+    .bg-gray-800 {
+      padding: 1rem; /* Reduce padding inside cards on mobile */
+    }
+  
+    h2 {
+      font-size: 1.5rem; /* Smaller event titles on mobile */
+    }
+  
+    p {
+      font-size: 0.875rem; /* Smaller text on mobile */
+    }
+  
+    button {
+      font-size: 0.875rem; /* Smaller button text on mobile */
+      padding: 0.5rem 1rem; /* Adjust button padding */
+    }
+}
+
+.upcoming-card-1 {
+background: linear-gradient(135deg, grey 0%, purple 50%);
+}
+
+.upcoming-card-2 {
+background: linear-gradient(135deg, grey 0%, green 50%);
+}

@@ -11,6 +11,7 @@ import SVGAnimation from "./components/SVGAnimation";
 import EventCards from "./sections/Events/EventCards";
 // import WriteReview from "./sections/WriteReview/WriteReview";
 import SendReview from "./sections/WriteReview/SendReview";
+import UpcomingEvents from "./components/UpcomingEvents/UpcomingEvents";
 
 const content: React.CSSProperties = {
   minHeight: '100vh',
@@ -37,7 +38,7 @@ export default function Home() {
       <div style={content}>
       <Navbar />
       <FrontLogo />
-      <SVGAnimation/>
+      <UpcomingEvents/>
       <Leads />
       <SVGAnimation/>
       <EventCards/>
