@@ -75,7 +75,7 @@ const ByteHackathonHeroSection = () => {
         ref={titleRef}
         className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500"
       >
-        BYTE HACKATHON&apos;25
+        BEYOND BYTE
       </h1>
 
       <p ref={taglineRef} className="text-md sm:text-xl md:text-2xl lg:text-3xl font-extrabold uppercase text-white shadow-glow animate-pulse">
@@ -83,7 +83,7 @@ const ByteHackathonHeroSection = () => {
       </p>
 
       <p className="text-sm sm:text-lg md:text-xl mb-6 sm:mb-8 text-gray-200">
-        Byte Hackathon &apos;25 is a <span className="text-cyan-400 font-bold">national-level hackathon</span> where students from across the country will have{" "}
+        Beyond Byte is a <span className="text-cyan-400 font-bold">national-level hackathon</span> where students from across the country will have{" "}
         <span className="text-green-400 font-bold">36 hours</span> to develop real-world solutions using{" "}
         <span className="text-purple-400 font-bold">cutting-edge tech stacks</span>.
       </p>
@@ -103,9 +103,6 @@ const ByteHackathonHeroSection = () => {
       <div ref={buttonRef} className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 opacity-0">
         <button className="bg-gradient-to-r from-yellow-400 to-red-500 text-black px-6 sm:px-8 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-xl">
           Register Now!
-        </button>
-        <button className="border border-white text-white px-6 sm:px-8 py-3 rounded-full font-bold transition-all duration-300 hover:bg-white hover:text-black">
-          Community Page
         </button>
       </div>
     </div>
