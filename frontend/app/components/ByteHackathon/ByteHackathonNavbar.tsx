@@ -38,7 +38,7 @@ const ByteHackathonNavbar = () => {
           className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-blue-500 text-transparent bg-clip-text cursor-pointer"
           onClick={() => scrollToSection("hero")}
         >
-          <Link href={"/bytehackathon"}>Byte Hackathon</Link>
+          <Link href={"/bytehackathon"}>Beyond Byte</Link>
         </h1>
 
         {/* 🌟 Navigation Links */}

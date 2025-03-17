@@ -133,7 +133,7 @@ const AboutUs = () => {
               <div className="w-full h-full bg-gray-900 rounded-lg flex items-center justify-center">
                 <Image
                   src="/bitToByte/bit5.jpeg"
-                  className="w-96 h-64 object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-300"
+                  className="w-96 h-[15.5rem] object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-300"
                   alt="Byte Club Team"
                   width={500}
                   height={500}
@@ -151,10 +151,10 @@ const AboutUs = () => {
           >
             <h3 className="text-3xl font-bold flex items-center gap-3 text-purple-400">
               <Image src="/byteLogo.png" alt="Byte Club" width={40} height={40} />
-              Byte Club - NIE Mysore
+              The Byte Club - NIE Mysore
             </h3>
             <p className="mt-4 text-lg text-gray-300">
-              Byte Club is a student-run developer community at NIE Mysore. We
+              The Byte Club is a student-run developer community at NIE Mysore. We
               are a passionate group of budding developers who work together to
               build solutions for local businesses and communities with
               cutting-edge technologies. Our goal is to promote a healthy
