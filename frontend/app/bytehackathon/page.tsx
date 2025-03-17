@@ -23,7 +23,7 @@ const Page = () => {
         </div>
 
         {/* Main Content */}
-        <div className="relative z-10 w-screen h-screen flex flex-col items-center justify-center">
+        <div className="relative z-50 w-screen h-screen flex flex-col items-center justify-center">
           <ByteHackathonNavbar />
           <ByteHackathonHeroSection />
         </div>

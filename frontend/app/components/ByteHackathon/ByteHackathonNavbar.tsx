@@ -30,7 +30,9 @@ const ByteHackathonNavbar = () => {
   return (
     <nav
       ref={navRef}
-      className="text-white p-4 h-20 flex justify-center items-center fixed top-0 left-0 w-full backdrop-blur-xl bg-white/10 border-b border-white/20 z-50"
+      className="text-white p-4 h-20 flex justify-center items-center fixed top-0 left-0 w-full backdrop-blur-xl bg-white/10 border-b border-white/20" style={{
+        zIndex: 1000,
+      }}
     >
       <div className="container mx-auto flex justify-between items-center px-4 sm:px-8">
         {/* 🔥 Brand Logo */}
