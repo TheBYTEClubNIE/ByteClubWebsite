@@ -41,7 +41,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         <h2 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 relative">
           TRACKS
           {/* Underline Effect */}
-          <span className="absolute left-1/2 bottom-0 w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 transform -translate-x-1/2 rounded-lg"></span>
+          <span className="w-48 mx-auto text-center mt-4 absolute left-1/2 -bottom-3 h-1 bg-gradient-to-r from-blue-400 to-purple-600 transform -translate-x-1/2 rounded-lg"></span>
         </h2>
 
         {/* Cool Subtitle */}
