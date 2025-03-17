@@ -32,9 +32,24 @@ export default function AboutUs() {
         <h2 className="text-5xl font-extrabold text-yellow-400">About Us</h2>
         <div className="h-1 w-24 bg-yellow-500"></div>
         <p className="text-lg text-gray-300 leading-relaxed">
-          Byte Ideathon is a premier national-level event where students, developers, and tech enthusiasts come together to 
-          showcase their innovative skills. Compete, learn, and celebrate technology with like-minded peers from across the country.
-        </p>
+  <span className="text-orange-400 font-extrabold">Byte Ideathon</span> is a premier 
+  <span className="text-teal-400 font-bold"> national-level hackathon</span> that brings together 
+  <span className="text-purple-400 font-bold"> students, developers, and tech enthusiasts</span> 
+  to <span className="text-pink-400 font-bold"> innovate, collaborate,</span> and solve 
+  <span className="text-yellow-400 font-bold"> real-world challenges</span>. It serves as a platform for 
+  <span className="text-green-400 font-bold"> problem-solvers and creative minds</span> to showcase their skills, 
+  learn from <span className="text-red-400 font-bold"> industry experts</span>, and compete for 
+  <span className="text-blue-400 font-bold"> exciting rewards</span>.
+</p>
+
+<p className="text-lg text-gray-300 leading-relaxed mt-4">
+  🚀 <span className="text-orange-400 font-extrabold text-2xl">Why Participate?</span>  
+  <br />✅ <span className="text-teal-400 font-bold"> Innovate & Build</span> – Transform ideas into reality.  
+  <br />✅ <span className="text-purple-400 font-bold"> Collaborate & Network</span> – Connect with peers & industry leaders.  
+  <br />✅ <span className="text-pink-400 font-bold"> Learn & Grow</span> – Gain hands-on experience & mentorship.  
+  <br />✅ <span className="text-yellow-400 font-bold"> Compete & Win</span> – Unlock career opportunities & exciting prizes.  
+</p>
+
       </motion.div>
     </section>
   );
