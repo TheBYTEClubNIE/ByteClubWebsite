@@ -59,7 +59,10 @@ const Navbar: React.FC = () => {
           type="button"
           title="Home"
           className={`btn ${activeSection === "home" ? "active" : ""}`}
-          onClick={() => (window.location.href = "#home")}
+          onClick={() => {
+            window.location.href = "#home";
+            window.location.href = "#home-mb";
+          }}
         >
           <MdHome />
         </button>

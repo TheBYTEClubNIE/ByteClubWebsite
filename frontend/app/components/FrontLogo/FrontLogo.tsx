@@ -91,10 +91,10 @@ const FrontLogo = () => {
     }, []);
 
     return (
-        <>
+        <div id="home">
             <div
                 className="relative hidden sm:hidden md:hidden lg:block h-screen w-full bg-slate-950 overflow-hidden"
-                id="home"
+                
             >
                 {/* Background Slideshow */}
                 <div className="absolute inset-0 transition-opacity duration-1000">
@@ -147,7 +147,7 @@ const FrontLogo = () => {
 
             {/* //MOBILE RESPONSIVE */}
 
-            <div className="relative lg:hidden h-screen w-full bg-gradient-to-b from-purple-800 via-gray-900 to-black overflow-hidden z-20" id="home-mb">
+            <div className="relative lg:hidden h-screen w-full bg-gradient-to-b from-purple-800 via-gray-900 to-black overflow-hidden z-20">
                 {/* Background Animations */}
                               <div className="absolute inset-0 overflow-hidden">
                     <div
@@ -213,7 +213,7 @@ const FrontLogo = () => {
                     ></div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
