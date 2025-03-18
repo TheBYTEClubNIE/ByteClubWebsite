@@ -5,7 +5,7 @@ import byteLogo from "@/public/NoBgLogo.png"
 
 export default function AboutUs() {
   return (
-<section className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-gray-900 text-white px-8 lg:px-16 py-12">
+<section className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-gray-900 text-white px-8 lg:px-16 py-12" id="about">
   {/* Image at the top on smaller screens */}
   <motion.div 
     initial={{ opacity: 0, y: -50 }} 

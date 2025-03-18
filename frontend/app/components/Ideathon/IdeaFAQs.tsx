@@ -42,7 +42,7 @@ const IdeaFAQs = () => {
   };
 
   return (
-    <section className="py-4 bg-gray-900 text-white text-center px-6 h-screen">
+    <section className="py-4 bg-gray-900 text-white text-center px-6 h-screen" id="faqs">
       <h2 className="text-5xl font-extrabold  text-yellow-400">FAQs</h2>
       <div className="h-1 w-32 bg-yellow-500 mb-20 mx-auto mt-2 rounded-full"></div>
 

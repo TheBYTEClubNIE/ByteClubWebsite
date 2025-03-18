@@ -62,7 +62,7 @@ const leads = [
 
 const IdeaTeamInfo = () => {
   return (
-    <div className="w-full py-16 bg-gray-900 text-white">
+    <div className="w-full py-16 bg-gray-900 text-white " id="team">
       <h2 className="text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-blue-600">Meet the Team</h2>
       <div className="h-1 w-72 bg-yellow-500 mx-auto mt-4 bg-gradient-to-r from-red-400 to-blue-600 rounded-full"></div>
 

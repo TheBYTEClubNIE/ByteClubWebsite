@@ -63,34 +63,47 @@ const Page = () => {
 
       {/* Navigation Bar */}
       <motion.div 
-  initial={{ y: -50, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  transition={{ duration: 1 }}
-  className="w-full p-4 fixed top-0 bg-gradient-to-r from-blue-800 to-pink-700 z-20"
->
-  <div className="container mx-auto flex flex-wrap items-center justify-between">
-    <div className="text-2xl font-bold text-white">Byte Ideathon</div>
-    <button className="lg:hidden text-white focus:outline-none" onClick={() => setMenuOpen(!menuOpen)}>
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-      </svg>
-    </button>
-    <nav className={`w-full lg:w-auto lg:flex ${menuOpen ? 'block' : 'hidden'}`}>
-      <ul className="flex flex-col lg:flex-row font-semibold align-baseline lg:space-x-6">
-        {["Home", "About", "Sponsors", "Prizes", "FAQs", "Tracks", "Team Info", "Contact"].map((item) => (
-          <li key={item} className="text-center lg:text-left my-2 lg:my-0">
-            <a 
-              href="#" 
-              className="text-gray-300 hover:text-yellow-400 transition-all duration-300 hover:scale-110 block px-4 lg:px-0"
-            >
-              {item}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  </div>
-</motion.div>
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="w-full p-4 fixed top-0 bg-gradient-to-r from-blue-800 to-pink-700 z-20"
+    >
+      <div className="container mx-auto flex flex-wrap items-center justify-between">
+        <div className="text-2xl font-bold text-white">Byte Ideathon</div>
+        
+        {/* Mobile Menu Button */}
+        <button className="lg:hidden text-white focus:outline-none" onClick={() => setMenuOpen(!menuOpen)}>
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+
+        {/* Navigation Links */}
+        <nav className={`w-full lg:w-auto lg:flex ${menuOpen ? 'block' : 'hidden'}`}>
+          <ul className="flex flex-col lg:flex-row font-semibold align-baseline lg:space-x-6">
+            {[
+              { name: "Home", id: "home" },
+              { name: "About", id: "about" },
+              { name: "Prizes", id: "prizes" },
+              { name: "FAQs", id: "faqs" },
+              { name: "Tracks", id: "timeline" },
+              { name: "Team Info", id: "team" },
+              { name: "Contact", id: "contact" }
+            ].map((item) => (
+              <li key={item.id} className="text-center lg:text-left my-2 lg:my-0">
+                <a 
+                  href={`#${item.id}`} 
+                  className="text-gray-300 hover:text-yellow-400 transition-all duration-300 hover:scale-110 block px-4 lg:px-0"
+                  onClick={() => setMenuOpen(false)} // Close menu after clicking
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </motion.div>
 
 
       {/* Main Content */}
