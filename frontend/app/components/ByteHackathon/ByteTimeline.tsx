@@ -103,9 +103,7 @@ export function ByteTimeline() {
 
   return (
     <div id="timeline" className="w-full bg-gray-100 dark:bg-gray-900 py-12 px-6 rounded-lg">
-      <h2 className="text-center text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6">
-        🏆 Explore Our Tracks
-      </h2>
+      
       <Timeline data={data} />
     </div>
   );

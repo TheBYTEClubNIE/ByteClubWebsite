@@ -30,19 +30,18 @@ const ByteHackathonNavbar = () => {
   return (
     <nav
       ref={navRef}
-      className="text-white p-4 h-20 flex justify-center items-center fixed top-0 left-0 w-full backdrop-blur-xl bg-white/10 border-b border-white/20" style={{
+      className="text-white px-auto sm:p-4 h-20 flex justify-center items-center fixed top-0 left-0 w-full backdrop-blur-xl bg-white/10 border-b border-white/20" style={{
         zIndex: 1000,
       }}
     >
       <div className="container mx-auto flex justify-between items-center px-4 sm:px-8">
         {/* 🔥 Brand Logo */}
         <h1
-          className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-blue-500 text-transparent bg-clip-text cursor-pointer"
+          className="text-4xl tracking-tighter font-mono text-center w-full sm:w-max font-extrabold bg-gradient-to-r from-pink-400 to-blue-500 text-transparent bg-clip-text cursor-pointer"
           onClick={() => scrollToSection("hero")}
         >
           <Link href={"/bytehackathon"}>Beyond Byte</Link>
         </h1>
-
         {/* 🌟 Navigation Links */}
         <div className="hidden sm:flex space-x-6 text-lg font-semibold">
           <NavItem label="About" sectionId="about" scrollToSection={scrollToSection} />
@@ -50,10 +49,7 @@ const ByteHackathonNavbar = () => {
           <NavItem label="FAQs" sectionId="faqs" scrollToSection={scrollToSection} />
         </div>
 
-        {/* 📱 Mobile Menu Placeholder (Future Expandable) */}
-        <div className="sm:hidden">
-          <button className="text-2xl">☰</button>
-        </div>
+       
       </div>
     </nav>
   );

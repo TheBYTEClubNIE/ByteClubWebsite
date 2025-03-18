@@ -55,7 +55,7 @@ const AboutUs = () => {
   return (
     <section id="about"
       ref={sectionRef}
-      className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-12"
+      className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 pt-20 md:pt-0 md:px-12"
     >
       {/* Background Gradient */}
       <div className="absolute inset-0 -z-10 h-full w-full bg-gray-900"></div>
@@ -81,11 +81,11 @@ const AboutUs = () => {
           className="flex flex-col md:flex-row items-center gap-12 mb-16"
         >
           {/* Left - NIE Text */}
-          <div className="max-w-2xl bg-white/10 backdrop-blur-md shadow-lg p-6 rounded-lg border border-white/20">
-            <h3 className="text-3xl font-bold text-blue-400">
+          <div className="max-w-2xl w-80 sm:w-full bg-white/10 backdrop-blur-md shadow-lg p-6 rounded-lg border border-white/20">
+            <h3 className="md:text-3xl text-xl font-bold text-blue-400">
               The National Institute of Engineering
             </h3>
-            <p className="mt-4 text-lg text-gray-300">
+            <p className="mt-4 text-base md:text-lg text-gray-300">
               Established in 1946, The National Institute of Engineering (NIE),
               Mysore, is one of India&apos;s premier engineering colleges. It
               provides a world-class education that sharpens technical expertise
@@ -127,10 +127,10 @@ const AboutUs = () => {
             ref={(el) => {
               if (el) contentRefs.current[3] = el;
             }}
-            className="relative w-96 h-64 group hover:scale-105 transition-transform duration-300"
+            className="relative w-[300px] h-64 group hover:scale-105 transition-transform duration-300"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg p-[4px]">
-              <div className="w-full h-full bg-gray-900 rounded-lg flex items-center justify-center">
+            <div className="absolute sm:w-full w-[300px] inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg p-[4px]">
+              <div className="w-72 sm:w-full h-full bg-gray-900 rounded-lg ">
                 <Image
                   src="/bitToByte/bit5.jpeg"
                   className="w-96 h-[15.5rem] object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-300"
@@ -147,13 +147,13 @@ const AboutUs = () => {
             ref={(el) => {
               if (el) contentRefs.current[4] = el;
             }}
-            className="max-w-2xl bg-white/10 backdrop-blur-md shadow-lg p-6 rounded-lg border border-white/20"
+            className="max-w-2xl w-80 sm:w-full bg-white/10 backdrop-blur-md shadow-lg p-6 rounded-lg border border-white/20"
           >
-            <h3 className="text-3xl font-bold flex items-center gap-3 text-purple-400">
+            <h3 className="md:text-3xl text-xl font-bold flex items-center gap-3 text-purple-400">
               <Image src="/byteLogo.png" alt="Byte Club" width={40} height={40} />
               The Byte Club - NIE Mysore
             </h3>
-            <p className="mt-4 text-lg text-gray-300">
+            <p className="mt-4 text-base md:text-lg text-gray-300">
               The Byte Club is a student-run developer community at NIE Mysore. We
               are a passionate group of budding developers who work together to
               build solutions for local businesses and communities with

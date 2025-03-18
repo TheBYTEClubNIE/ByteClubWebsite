@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import events from "../sections/Events/event.json"
+import events from "../sections/events/event.json"
 
 interface Member {
   name: string;

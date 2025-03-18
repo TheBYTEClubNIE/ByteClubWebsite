@@ -67,7 +67,7 @@ const ByteHackathonFAQ = () => {
   };
 
   return (
-    <div ref={sectionRef} id="FAQs" className="min-h-screen bg-gray-950 text-white px-6 py-12 flex items-center justify-center">
+    <div ref={sectionRef} id="FAQs" className="min-h-screen bg-gray-900 text-white px-6 py-12 flex items-center justify-center">
       <div className="max-w-3xl w-full">
         <h2 className="text-4xl font-extrabold text-center bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text mb-8">
           🔥 Frequently Asked Questions

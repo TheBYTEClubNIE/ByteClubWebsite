@@ -1,9 +1,5 @@
 "use client";
-import {
-  useScroll,
-  useTransform,
-  motion,
-} from "motion/react";
+import { useScroll, useTransform, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
@@ -44,13 +40,45 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           <span className="w-48 mx-auto text-center mt-4 absolute left-1/2 -bottom-3 h-1 bg-gradient-to-r from-blue-400 to-purple-600 transform -translate-x-1/2 rounded-lg"></span>
         </h2>
 
-        {/* Cool Subtitle */}
-        <p className="mt-4 text-neutral-700 dark:text-neutral-300 text-lg md:text-xl max-w-md opacity-80 leading-relaxed">
-          All Events Of{" "}
-          <span className="font-semibold text-blue-500 dark:text-blue-400">
-            BYTE Club
-          </span>
-        </p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }} // Ensures animation happens only once
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="mt-4 text-neutral-700 dark:text-neutral-300 text-lg md:text-xl max-w-md opacity-80 leading-relaxed"
+        >
+          Embark on a journey where{" "}
+          <motion.span
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-yellow-500 font-bold"
+          >
+            boundaries
+          </motion.span>{" "}
+          of possibilities are pushed to new{" "}
+          <motion.span
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-purple-500 font-bold"
+          >
+            horizons
+          </motion.span>{" "}
+          in{" "}
+          <motion.span
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1, rotate: [0, 3, -3, 0] }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.7, ease: "easeInOut" }}
+            className="font-semibold text-blue-500 dark:text-blue-400"
+          >
+            THE BYTE Club
+          </motion.span>
+          .
+        </motion.p>
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
@@ -74,7 +102,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               </h3>
               {item.content}{" "}
             </div>
-          </div> 
+          </div>
         ))}
         <div
           style={{

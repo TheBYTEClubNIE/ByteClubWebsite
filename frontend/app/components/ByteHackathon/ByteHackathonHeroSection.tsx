@@ -117,7 +117,7 @@ const ByteHackathonHeroSection = () => {
         >
             <h1
                 ref={titleRef}
-                className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500"
+                className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500"
             >
                 BEYOND BYTE
             </h1>
@@ -170,7 +170,7 @@ const ByteHackathonHeroSection = () => {
                 <button
                     className="bg-gradient-to-r from-yellow-400 to-red-500 text-black px-6 sm:px-8 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-xl"
                     onClick={() =>
-                        router.push("/app/sections/Registration/register")
+                        router.push("/sections/Registration")
                     }
                 >
                     Register Now!
