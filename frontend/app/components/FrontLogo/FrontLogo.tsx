@@ -147,7 +147,7 @@ const FrontLogo = () => {
 
             {/* //MOBILE RESPONSIVE */}
 
-            <div className="relative lg:hidden h-screen w-full bg-gradient-to-b from-purple-800 via-gray-900 to-black overflow-hidden z-20">
+            <div className="relative lg:hidden h-screen w-full bg-gradient-to-b from-purple-800 via-gray-900 to-black overflow-hidden z-20" id="home-mb">
                 {/* Background Animations */}
                               <div className="absolute inset-0 overflow-hidden">
                     <div
