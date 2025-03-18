@@ -58,7 +58,7 @@ const AboutUs = () => {
       className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-12"
     >
       {/* Background Gradient */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(circle_at_top,#121212,#1a1a2e)]"></div>
+      <div className="absolute inset-0 -z-10 h-full w-full bg-gray-900"></div>
 
       {/* Content Container */}
       <div className="max-w-6xl text-white">

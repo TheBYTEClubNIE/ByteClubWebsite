@@ -12,6 +12,8 @@ const Page = () => {
     <>
       <div className="relative h-max overflow-hidden">
         {/* Celebration Confetti */}
+        
+
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full confetti"></div>
         </div>
