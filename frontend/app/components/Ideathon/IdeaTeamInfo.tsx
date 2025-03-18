@@ -1,8 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaMailBulk, FaInstagram } from "react-icons/fa";
+import { FaLinkedin,  FaInstagram } from "react-icons/fa";
 import "./ideathon.css";
-import Image from "next/image";
 
 const leads = [
     {
@@ -74,14 +73,14 @@ const IdeaTeamInfo = () => {
         transition={{ duration: 1 }}
         className="overflow-x-auto no-scrollbar whitespace-nowrap scroll-smooth mt-10 px-4 py-4"
       >
-        <div className="grid grid-cols-3 items-center place-items-center gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 items-center place-items-center gap-12">
           {leads.map((member, index) => (
             <motion.div 
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="bg-gray-800 p-6 rounded-2xl h-80 shadow-lg min-w-[250px] max-w-[250px] text-center"
+              className="bg-gray-800 p-6 rounded-2xl h-40 shadow-lg min-w-[225px] max-w-[225px] text-center"
             >
-              <Image src={member.image} width={100} height={100} alt={member.name} className="w-32 h-32 mx-auto rounded-full border-2 border-yellow-400" />
+              {/* <Image src={member.image} width={100} height={100} alt={member.name} className="w-32 h-32 mx-auto rounded-full border-2 border-yellow-400" /> */}
               <h3 className="text-xl font-semibold mt-4">{member.name}</h3>
               <p className="text-gray-400 text-sm">{member.role}</p>
 
@@ -89,9 +88,6 @@ const IdeaTeamInfo = () => {
               <div className="mt-4 flex justify-center space-x-4">
                 <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400">
                   <FaLinkedin size={24} />
-                </a>
-                <a href={member.email} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-gray-200">
-                  <FaMailBulk size={24} />
                 </a>
                 <a href={member.insta} target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:text-blue-300">
                   <FaInstagram size={24} />
