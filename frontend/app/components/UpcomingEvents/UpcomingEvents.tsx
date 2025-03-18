@@ -57,7 +57,7 @@ function UpcomingEvents() {
               Code, collaborate, and create. Participate in our hackathon to
               build innovative solutions and compete for amazing prizes.
             </p>
-            <Link href={"/"} className="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors font-semibold text-sm md:text-base tracking-wider shadow-lg hover:shadow-green-500/50">
+            <Link href={"/bytehackathon"} className="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors font-semibold text-sm md:text-base tracking-wider shadow-lg hover:shadow-green-500/50">
               Learn More
             </Link>
           </div>
