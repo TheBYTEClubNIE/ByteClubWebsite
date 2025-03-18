@@ -91,10 +91,10 @@ const FrontLogo = () => {
     }, []);
 
     return (
-        <>
+        <div id="home">
             <div
                 className="relative hidden sm:hidden md:hidden lg:block h-screen w-full bg-slate-950 overflow-hidden"
-                id="home"
+                
             >
                 {/* Background Slideshow */}
                 <div className="absolute inset-0 transition-opacity duration-1000">
@@ -213,7 +213,7 @@ const FrontLogo = () => {
                     ></div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

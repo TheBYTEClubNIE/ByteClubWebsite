@@ -1,8 +1,7 @@
 "use client";
 
 import "./navbar.css";
-
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MdHome,
   MdInfo,
@@ -12,48 +11,75 @@ import {
 } from "react-icons/md";
 
 const Navbar: React.FC = () => {
+  const [activeSection, setActiveSection] = useState<string>("home");
+
   useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      const target = (e.target as HTMLElement).closest("button");
-
-      if (!target) return;
-
-      const activeButton = document.querySelector(".btn.active");
-      if (activeButton) {
-        activeButton.classList.remove("active");
+    // Function to handle scroll events
+    const handleScroll = () => {
+      const sections = ["home", "about", "events", "review", "write-review"];
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveSection(section);
+            break;
+          }
+        }
       }
-
-      target.classList.add("active");
     };
 
-    const nav = document.querySelector("nav");
-    if (nav) {
-      nav.addEventListener("click", handleClick);
-    }
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      if (nav) {
-        nav.removeEventListener("click", handleClick);
-      }
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <div className="flex items-center justify-center w-full h-fit z-50 absolute">
       <nav className="navbar fixed w-max backdrop:blur-md bg-transparent mt-28 shadow-sm backdrop-blur-md">
-        <button type="button" title="About" className="btn" onClick={() => window.location.href = "#about"}>
+        <button
+          type="button"
+          title="About"
+          className={`btn ${activeSection === "about" ? "active" : ""}`}
+          onClick={() => (window.location.href = "#about")}
+        >
           <MdInfo />
         </button>
-        <button type="button" title="Events" className="btn" onClick={() => window.location.href = "#events"}>
+        <button
+          type="button"
+          title="Events"
+          className={`btn ${activeSection === "events" ? "active" : ""}`}
+          onClick={() => (window.location.href = "#events")}
+        >
           <MdEmojiEvents />
         </button>
-        <button type="button" className="active btn" title="Home" onClick={() => window.location.href = "#home"}>
+        <button
+          type="button"
+          title="Home"
+          className={`btn ${activeSection === "home" ? "active" : ""}`}
+          onClick={() => {
+            window.location.href = "#home";
+            window.location.href = "#home-mb";
+          }}
+        >
           <MdHome />
         </button>
-        <button type="button" title="Review" className="btn" onClick={() => window.location.href = "#review"}>
+        <button
+          type="button"
+          title="Review"
+          className={`btn ${activeSection === "review" ? "active" : ""}`}
+          onClick={() => (window.location.href = "#review")}
+        >
           <MdRateReview />
         </button>
-        <button type="button" title="Feedback" className="btn" onClick={() => window.location.href = "#write-review"}>
+        <button
+          type="button"
+          title="Feedback"
+          className={`btn ${activeSection === "write-review" ? "active" : ""}`}
+          onClick={() => (window.location.href = "#write-review")}
+        >
           <MdEmail />
         </button>
       </nav>

@@ -21,6 +21,8 @@ const calculateTimeLeft = () => {
 
 const Page = () => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [menuOpen, setMenuOpen] = useState(false);
+
 
   useEffect(() => {
     const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 1000);
@@ -28,7 +30,7 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen text-white overflow-hidden z-0">
+    <div className="relative flex flex-col items-center justify-center min-h-screen pb-8 text-white overflow-hidden z-0">
       {/* Background with Animated Particles */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-black to-gray-950">
         <div className="absolute inset-0 overflow-hidden">
@@ -61,27 +63,48 @@ const Page = () => {
 
       {/* Navigation Bar */}
       <motion.div 
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="w-full z-10 p-4 fixed top-0 bg-opacity-80 backdrop-blur-lg bg-gradient-to-r from-gray-800 to-gray-900"
-      >
-        <div className="text-2xl font-bold text-white float-left">Byte Ideathon</div>
-        <nav className="float-right">
-          <ul className="flex font-semibold align-baseline">
-            {["Home", "About", "Sponsors", "Prizes", "FAQs", "Tracks", "Team Info", "Contact"].map((item) => (
-              <li key={item}>
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="w-full p-4 fixed top-0 bg-gradient-to-r from-blue-800 to-pink-700 z-20"
+    >
+      <div className="container mx-auto flex flex-wrap items-center justify-between">
+        <div className="text-2xl font-bold text-white">Byte Ideathon</div>
+        
+        {/* Mobile Menu Button */}
+        <button className="lg:hidden text-white focus:outline-none" onClick={() => setMenuOpen(!menuOpen)}>
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+
+        {/* Navigation Links */}
+        <nav className={`w-full lg:w-auto lg:flex ${menuOpen ? 'block' : 'hidden'}`}>
+          <ul className="flex flex-col lg:flex-row font-semibold align-baseline lg:space-x-6">
+            {[
+              { name: "Home", id: "home" },
+              { name: "About", id: "about" },
+              { name: "Prizes", id: "prizes" },
+              { name: "FAQs", id: "faqs" },
+              { name: "Tracks", id: "timeline" },
+              { name: "Team Info", id: "team" },
+              { name: "Contact", id: "contact" }
+            ].map((item) => (
+              <li key={item.id} className="text-center lg:text-left my-2 lg:my-0">
                 <a 
-                  href="#" 
-                  className="text-gray-300 hover:text-yellow-400 mx-6 transition-all duration-300 hover:scale-110"
+                  href={`#${item.id}`} 
+                  className="text-gray-300 hover:text-yellow-400 transition-all duration-300 hover:scale-110 block px-4 lg:px-0"
+                  onClick={() => setMenuOpen(false)} // Close menu after clicking
                 >
-                  {item}
+                  {item.name}
                 </a>
               </li>
             ))}
           </ul>
         </nav>
-      </motion.div>
+      </div>
+    </motion.div>
+
 
       {/* Main Content */}
       <motion.div 
@@ -90,7 +113,7 @@ const Page = () => {
         transition={{ duration: 1.2 }}
         className="text-center pt-56 relative z-0 h-screen"
       >
-        <h2 className="text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-400 to-pink-500 animate-pulse">
+        <h2 className="text-5xl sm:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-400 to-pink-500 animate-pulse">
           BYTE IDEATHON &apos;25
         </h2>
         <p className="text-gray-400 mt-2 text-lg font-semibold">CODE. COMPETE. CELEBRATE.</p>
@@ -108,7 +131,7 @@ const Page = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1 }}
-          className="mt-6 text-2xl font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-2 rounded-lg shadow-lg inline-block hover:scale-110 transition-all duration-300"
+          className="mt-6 text-2xl font-bold text-white  px-6 py-2 rounded-lg shadow-lg inline-block hover:scale-110 transition-all duration-300"
         >
           {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
         </motion.div>
@@ -121,13 +144,6 @@ const Page = () => {
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition-all duration-300"
           >
             Register Now
-          </motion.button>
-          <motion.button 
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className="border border-gray-400 py-2 px-6 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-yellow-300 transition-all duration-300"
-          >
-            Community Page
           </motion.button>
         </div>
       </motion.div>
