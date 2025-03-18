@@ -1,6 +1,5 @@
 import React from "react";
 import "./UpcomingEvents.css";
-import Link from "next/link";
 
 function UpcomingEvents() {
   return (
@@ -41,9 +40,10 @@ function UpcomingEvents() {
               Unleash your creativity and pitch your groundbreaking ideas. Join
               us for an exciting ideathon where innovation meets opportunity.
             </p>
-            <Link href={"/"} className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors font-semibold text-sm md:text-base tracking-wider shadow-lg hover:shadow-blue-500/50">
+            
+            <a onClick={()=>{window.location.href="/Ideathon"}} className="cursor-pointer bg-blue-500 text-white px-2 py-2 rounded-full hover:bg-blue-600 transition-colors font-semibold text-sm md:text-base tracking-tighter shadow-lg hover:shadow-blue-500/50">
               Learn More
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -57,9 +57,10 @@ function UpcomingEvents() {
               Code, collaborate, and create. Participate in our hackathon to
               build innovative solutions and compete for amazing prizes.
             </p>
-            <Link href={"/bytehackathon"} className="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors font-semibold text-sm md:text-base tracking-wider shadow-lg hover:shadow-green-500/50">
+            
+            <a onClick={()=>{window.location.href="/bytehackathon"}} className="cursor-pointer bg-green-500 text-white px-2 py-2 rounded-full hover:bg-green-600 transition-colors font-semibold text-sm md:text-base tracking-wider shadow-lg hover:shadow-green-500/50">
               Learn More
-            </Link>
+            </a>
           </div>
         </div>
       </div>

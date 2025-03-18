@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-
 const RegistrationForm = () => {
   const [teamSize, setTeamSize] = useState(2);
   const [formData, setFormData] = useState({
