@@ -85,22 +85,26 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
-      <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-lg">
-        <h2 className="text-2xl font-bold text-center mb-4">Register for the Event</h2>
+   <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 to-gray-800  p-4 text-white">
+        <div className="bg-gray-950 p-8 rounded-lg shadow-xl w-full max-w-lg border border-gray-700">
+        <h2 className="text-3xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-6">
+      Register for the Event
+    </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-6">
           {/* Team Size Selection */}
           <div>
-            <label className="block text-gray-700 font-semibold">Team Size</label>
-            <div className="flex space-x-2 mt-1">
+          <label className="block text-gray-300 font-semibold">Team Size</label>
+            <div className="flex space-x-3 mt-2">
               {[2, 3, 4].map((size) => (
                 <button
                   key={size}
                   type="button"
                   onClick={() => handleTeamSizeChange(size)}
-                  className={`px-4 py-2 rounded-md ${
-                    teamSize === size ? "bg-blue-500 text-white" : "bg-gray-200"
+                  className={`px-5 py-2 rounded-md font-bold transition-all ${
+                    teamSize === size
+                      ? "bg-blue-500 text-white shadow-lg"
+                      : "bg-gray-700 text-gray-300 hover:bg-gray-600"
                   }`}
                 >
                   {size}
@@ -111,27 +115,29 @@ const RegistrationForm = () => {
 
           {/* Dynamic Member Fields */}
           {formData.members.map((member, index) => (
-            <div key={index} className="border p-3 rounded-md bg-gray-50">
-              <h3 className="text-lg font-semibold">Member {index + 1}</h3>
-              <div className="mt-2">
-                <label className="block text-gray-700 font-semibold">Name</label>
+            <div key={index} className="border border-gray-700 p-4 rounded-md bg-gray-900">
+              <h3 className="text-lg font-bold text-blue-400">Member {index + 1}</h3>
+              <div className="mt-3">
+                <label className="block text-gray-400 font-semibold">Name</label>
                 <input
                   type="text"
                   name="name"
                   value={member.name}
+                  placeholder="Enter Name"
                   onChange={(e) => handleChange(e, index)}
-                  className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full mt-2 p-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
                   required
                 />
               </div>
-              <div className="mt-2">
-                <label className="block text-gray-700 font-semibold">USN</label>
+              <div className="mt-3">
+            <label className="block text-gray-400 font-semibold">USN</label>
                 <input
                   type="text"
                   name="usn"
+                  placeholder="Enter College USN"
                   value={member.usn}
                   onChange={(e) => handleChange(e, index)}
-                  className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full mt-2 p-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
                   required
                 />
               </div>
@@ -140,12 +146,13 @@ const RegistrationForm = () => {
 
           {/* Department Dropdown */}
           <div>
-            <label className="block text-gray-700 font-semibold">Department</label>
+          <label className="block text-gray-300 font-semibold">Department</label>
             <select
               name="department"
               value={formData.department}
               onChange={handleChange}
-              className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full mt-2 p-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
+
             >
               <option>Computer Science and Engineering</option>
               <option>Information Science and Engineering</option>
@@ -160,13 +167,13 @@ const RegistrationForm = () => {
 
           {/* Semester Dropdown */}
           <div>
-            <label className="block text-gray-700 font-semibold">Semester</label>
+          <label className="block text-gray-300 font-semibold">Semester</label>
             <select
               name="semester"
               value={formData.semester}
               onChange={handleChange}
-              className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-            >
+              className="w-full mt-2 p-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
+        >
               {[1, 2, 3, 4, 5, 6, 7, 8].map((sem) => (
                 <option key={sem}>{sem}</option>
               ))}
@@ -175,12 +182,12 @@ const RegistrationForm = () => {
 
           {/* Section Dropdown */}
           <div>
-            <label className="block text-gray-700 font-semibold">Section</label>
-            <select
+          <label className="block text-gray-300 font-semibold">Section</label>            <select
               name="section"
               value={formData.section}
               onChange={handleChange}
-              className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full mt-2 p-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
+
             >
               {["A", "B", "C", "D"].map((sec) => (
                 <option key={sec}>{sec}</option>
@@ -190,39 +197,42 @@ const RegistrationForm = () => {
 
           {/* College Name */}
           <div>
-            <label className="block text-gray-700 font-semibold">College</label>
-            <input
+          <label className="block text-gray-300 font-semibold">College</label>
+          <input
               type="text"
               name="college"
               value={formData.college}
+              placeholder="Enter College Name"
               onChange={handleChange}
-              className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full mt-2 p-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
+
               required
             />
           </div>
 
           {/* Problem Statement Number */}
           <div>
-            <label className="block text-gray-700 font-semibold">Problem Statement Number</label>
+            <label className="block text-gray-300 font-semibold">Problem Statement Number</label>
             <input
               type="text"
               name="problemStatement"
               value={formData.problemStatement}
               onChange={handleChange}
-              className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+              placeholder="Enter Problem Number"
+              className="w-full mt-2 p-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
 
           {/* PPT Upload */}
           <div>
-            <label className="block text-gray-700 font-semibold">Upload PPT</label>
+            <label className="block text-gray-300 font-semibold">Upload PPT</label>
             <input
               type="file"
               name="pptFile"
               accept=".ppt,.pptx"
               onChange={handleChange}
-              className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full mt-2 p-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
               required
             />
             {formData.pptFile && <p className="text-sm text-gray-600 mt-1">Uploaded: {formData.pptFile.name}</p>}
