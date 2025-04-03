@@ -1,6 +1,5 @@
 import React from "react";
 import { Dropdown } from "./IdeaDropdown";
-import { Link } from "lucide-react";
 
 const IdeaProblem = () => {
   return (
