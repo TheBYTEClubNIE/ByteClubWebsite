@@ -53,7 +53,7 @@ const EventCards = () => {
                             key={event.id}
                             className="shape-box shape-box_half w-full md:w-1/2 lg:w-1/3 2xl:w-1/4"
                         >
-                            <Image
+                            <img
                                 className="imgg h-36 lg:h-56"
                                 src={event.imageUrl}
                                 alt=""
