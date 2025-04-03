@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 // Countdown Timer Logic
 const calculateTimeLeft = () => {
-  const eventDate = new Date("2025-03-31T00:00:00").getTime();
+  const eventDate = new Date("2025-04-07T11:00:00").getTime();
   const now = new Date().getTime();
   const difference = eventDate - now;
 
@@ -30,7 +30,7 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen pb-8 text-white overflow-hidden z-0">
+    <div className="relative flex flex-col items-center justify-center min-h-screen pb-8 text-white overflow-hidden z-0" id="home">
       {/* Background with Animated Particles */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-black to-gray-950">
         <div className="absolute inset-0 overflow-hidden">
@@ -84,7 +84,7 @@ const Page = () => {
             {[
               { name: "Home", id: "home" },
               { name: "About", id: "about" },
-              { name: "Prizes", id: "prizes" },
+              { name: "Problem Statement", id: "problems" },
               { name: "FAQs", id: "faqs" },
               { name: "Tracks", id: "timeline" },
               { name: "Team Info", id: "team" },
@@ -124,7 +124,10 @@ const Page = () => {
           ( Only for students of National Institute of Engineering )
         </p>
 
-        <p className="text-yellow-400 font-semibold mt-4 text-xl">Mark your calendars: March 31st</p>
+        <p className="text-yellow-400 font-semibold mt-4 text-xl">Mark your calendars: <br/>
+          <span className="text-gray-300 text-[1rem]">(7th April for North Campus Hostellers)</span><br/>
+          <span className="text-gray-300 text-[1rem]">(8th-9th for South Campus Hostellers & Day Scholars)</span>
+        </p>
 
         {/* Countdown Timer */}
         <motion.div 

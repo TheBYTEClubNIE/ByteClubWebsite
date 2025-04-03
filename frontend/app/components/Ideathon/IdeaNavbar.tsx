@@ -7,7 +7,7 @@ const IdeaNavbar = () => {
                 <h1 className="text-2xl font-bold text-white">Byte Ideathon</h1>
                 <nav className="float-right">
                     <ul className="flex font-semibold">
-                        {["Home", "About", "Sponsors", "Prizes", "FAQs", "Team Info", "Contact"].map((item) => (
+                        {["Home", "About", "Problem Statement", "FAQs", "Team Info", "Contact"].map((item) => (
                             <li key={item}>
                                 <a href="#" className="text-gray-300 hover:text-yellow-400 mx-6 transition duration-300">{item}</a>
                             </li>

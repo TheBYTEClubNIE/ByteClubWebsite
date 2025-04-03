@@ -41,7 +41,7 @@ function UpcomingEvents() {
               us for an exciting ideathon where innovation meets opportunity.
             </p>
             
-            <a onClick={()=>{window.location.href="/Ideathon"}} className="cursor-pointer bg-blue-500 text-white px-2 py-2 rounded-full hover:bg-blue-600 transition-colors font-semibold text-sm md:text-base tracking-tighter shadow-lg hover:shadow-blue-500/50">
+            <a onClick={()=>{window.location.href="/Ideathon"}} className="cursor-pointer bg-blue-500 text-white px-2 py-2 rounded-full hover:bg-blue-600 transition-colors font-semibold text-sm md:text-base tracking-wider shadow-lg hover:shadow-blue-500/50">
               Learn More
             </a>
           </div>
