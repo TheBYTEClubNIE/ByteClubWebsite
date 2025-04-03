@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "lucide-react";
 
 // Countdown Timer Logic
 const calculateTimeLeft = () => {
