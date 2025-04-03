@@ -136,7 +136,7 @@ const ByteHackathonHeroSection = () => {
                     national-level hackathon
                 </span>{" "}
                 where students from across the country will have{" "}
-                <span className="text-green-400 font-bold">36 hours</span> to
+                <span className="text-green-400 font-bold">24 hours</span> to
                 develop real-world solutions using{" "}
                 <span className="text-purple-400 font-bold">
                     cutting-edge tech stacks
@@ -159,7 +159,7 @@ const ByteHackathonHeroSection = () => {
                 ref={countdownRef}
                 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-green-400 to-blue-400 text-transparent bg-clip-text animate-pulse"
             >
-                {timeLeft.days}d {timeLeft.hours}h : {timeLeft.minutes}m :{" "}
+                {timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m :{" "}
                 {timeLeft.seconds}s
             </div>
 

@@ -136,7 +136,7 @@ const Page = () => {
           transition={{ duration: 1 }}
           className="mt-6 text-2xl font-bold text-white  px-6 py-2 rounded-lg shadow-lg inline-block hover:scale-110 transition-all duration-300"
         >
-          {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
+          {timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m : {timeLeft.seconds}s
         </motion.div>
 
         {/* Buttons */}
