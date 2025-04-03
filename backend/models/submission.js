@@ -12,6 +12,7 @@ const submissionSchema = new mongoose.Schema({
   section: { type: String, required: true },
   college: { type: String, required: true },
   problemStatement: { type: String, required: true },
+  place: { type: String, required: true },
   pptFile: { type: String } // Store the Cloudinary URL or file path
 }, { timestamps: true });
 

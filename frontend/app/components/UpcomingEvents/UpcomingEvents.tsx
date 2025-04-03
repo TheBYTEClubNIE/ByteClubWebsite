@@ -29,7 +29,8 @@ function UpcomingEvents() {
       </h1>
 
       {/* Event Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full max-w-6xl px-4 z-10">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full max-w-6xl px-4 z-10"> */}
+      <div className="flex justify-center items-center w-full max-w-xl px-4 z-10">
         <div className="bg-gray-800 rounded-lg shadow-2xl overflow-hidden transform transition-all md:hover:scale-105 md:animate-slide-in-left upcoming-card-1">
             {/* Event 2: Hackathon */}
           <div className="p-4 md:p-8">
@@ -48,7 +49,7 @@ function UpcomingEvents() {
         </div>
 
         {/* Event 2: Hackathon */}
-        <div className="bg-gray-800 rounded-lg shadow-2xl overflow-hidden transform transition-all md:hover:scale-105 md:animate-slide-in-right upcoming-card-2">
+        {/* <div className="bg-gray-800 rounded-lg shadow-2xl overflow-hidden transform transition-all md:hover:scale-105 md:animate-slide-in-right upcoming-card-2">
           <div className="p-4 md:p-8">
             <h2 className="text-2xl md:text-3xl font-bold text-green-400 mb-2 md:mb-4" style={{textShadow : "black 0px 0px 50px"}}>
               Hackathon
@@ -62,7 +63,7 @@ function UpcomingEvents() {
               Learn More
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

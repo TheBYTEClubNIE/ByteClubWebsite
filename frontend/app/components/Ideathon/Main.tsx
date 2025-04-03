@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "lucide-react";
 
 // Countdown Timer Logic
 const calculateTimeLeft = () => {
@@ -79,20 +80,19 @@ const Page = () => {
         </button>
 
         {/* Navigation Links */}
-        <nav className={`w-full lg:w-auto lg:flex ${menuOpen ? 'block' : 'hidden'}`}>
+        <nav style={{zIndex: 1000}} className={`w-full lg:w-auto lg:flex ${menuOpen ? 'block' : 'hidden'}`}>
           <ul className="flex flex-col lg:flex-row font-semibold align-baseline lg:space-x-6">
             {[
-              { name: "Home", id: "home" },
-              { name: "About", id: "about" },
-              { name: "Problem Statement", id: "problems" },
-              { name: "FAQs", id: "faqs" },
-              { name: "Tracks", id: "timeline" },
-              { name: "Team Info", id: "team" },
-              { name: "Contact", id: "contact" }
+              { name: "Home", id: "/" },
+              { name: "About", id: "#about" },
+              { name: "Problem Statement", id: "#problems" },
+              { name: "FAQs", id: "#faqs" },
+              { name: "Team Info", id: "#team" },
+              { name: "Contact", id: "#contact" }
             ].map((item) => (
               <li key={item.id} className="text-center lg:text-left my-2 lg:my-0">
                 <a 
-                  href={`#${item.id}`} 
+                  href={`${item.id}`} 
                   className="text-gray-300 hover:text-yellow-400 transition-all duration-300 hover:scale-110 block px-4 lg:px-0"
                   onClick={() => setMenuOpen(false)} // Close menu after clicking
                 >
@@ -141,7 +141,10 @@ const Page = () => {
 
         {/* Buttons */}
         <div className="mt-6 flex space-x-6 justify-center">
+          
           <motion.button 
+            onClick={()=>window.location.href = "/sections/Registration"}
+          
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition-all duration-300"

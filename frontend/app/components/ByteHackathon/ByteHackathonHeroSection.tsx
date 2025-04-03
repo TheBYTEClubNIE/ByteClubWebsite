@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 const ByteHackathonHeroSection = () => {
   const router = useRouter();
-    const eventDate = new Date("2025-04-04T00:00:00").getTime();
+  const eventDate = new Date("2025-04-07T00:00:00").getTime();
     const [timeLeft, setTimeLeft] = useState({
         days: 0,
         hours: 0,
@@ -147,10 +147,10 @@ const ByteHackathonHeroSection = () => {
             {/* UPDATED DATE STYLING */}
             <p className="text-sm sm:text-lg md:text-xl mb-6 sm:mb-8 font-semibold">
                 📅 Mark your calendars:{" "}
-                <span className="text-blue-400 text-bold sm:text-2xl">4th</span>{" "}
+                <span className="text-blue-400 text-bold sm:text-2xl">7th</span>{" "}
                 to{" "}
                 <span className="text-red-400 text-bold sm:text-2xl">
-                    6th April
+                    9th April
                 </span>
             </p>
 
