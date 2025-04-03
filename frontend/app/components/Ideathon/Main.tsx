@@ -69,7 +69,7 @@ const Page = () => {
       className="w-full p-4 fixed top-0 bg-gradient-to-r from-blue-800 to-pink-700 z-20"
     >
       <div className="container mx-auto flex flex-wrap items-center justify-between">
-        <div className="text-2xl font-bold text-white">Byte Ideathon</div>
+        <div onClick={()=> window.location.href = "#home"} className="text-2xl font-bold text-white cursor-pointer">Byte Ideathon</div>
         
         {/* Mobile Menu Button */}
         <button className="lg:hidden text-white focus:outline-none" onClick={() => setMenuOpen(!menuOpen)}>
@@ -112,7 +112,8 @@ const Page = () => {
         transition={{ duration: 1.2 }}
         className="text-center pt-56 relative z-0 h-screen"
       >
-        <h2 className="text-5xl sm:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-400 to-pink-500 animate-pulse">
+
+        <h2  className="text-5xl sm:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-400 to-pink-500 animate-pulse">
           BYTE IDEATHON &apos;25
         </h2>
         <p className="text-gray-400 mt-2 text-lg font-semibold">CODE. COMPETE. CELEBRATE.</p>
