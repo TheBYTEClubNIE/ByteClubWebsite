@@ -6,16 +6,18 @@ const cors = require("cors");
 const admin = require("firebase-admin");
 const fs = require("fs");
 
-// Initialize Firebase Admin SDK
-if (!admin.apps.length) {
-    admin.initializeApp({
-        credential: admin.credential.cert(
-            process.env.GOOGLE_APPLICATION_CREDENTIALS
-        ),
-    });
-}
+const admin = require("firebase-admin");
 
-const db = admin.firestore(); // Firestore Database
+// Parse Firebase credentials from environment variable
+const firebaseCredentials = JSON.parse(process.env.FIREBASE_CREDENTIALS);
+
+// Initialize Firebase Admin SDK
+admin.initializeApp({
+  credential: admin.credential.cert(firebaseCredentials),
+});
+
+const db = admin.firestore();
+module.exports = db;
 
 const app = express();
 app.use(express.json());
