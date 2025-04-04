@@ -9,8 +9,8 @@ interface FAQ {
 
 const faqs : FAQ[] =[
   {
-    question: "What is Byte Ideathon?",
-    answer: "Byte Ideathon is a premier national-level hackathon where students, developers, and tech enthusiasts collaborate to solve real-world problems through technology and innovation."
+    question: "What is BeyondBYTE Ideathon?",
+    answer: "BeyondBYTE Ideathon is a premier national-level hackathon where students, developers, and tech enthusiasts collaborate to solve real-world problems through technology and innovation."
   },
   {
     question: "Who can participate?",
