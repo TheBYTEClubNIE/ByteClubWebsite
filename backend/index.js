@@ -11,13 +11,24 @@ if (!credentialsBase64) {
   throw new Error("Missing FIREBASE_CREDENTIALS_BASE64");
 }
 
-const firebaseCredentials = JSON.parse(
-  Buffer.from(credentialsBase64, "base64").toString("utf8")
-);
+let firebaseCredentials;
+try {
+  const decoded = Buffer.from(credentialsBase64, "base64").toString("utf8");
+  firebaseCredentials = JSON.parse(decoded);
 
-admin.initializeApp({
-  credential: admin.credential.cert(firebaseCredentials),
-});
+  // Optional check: Ensure private key has newlines
+  if (!firebaseCredentials.private_key.includes("-----BEGIN PRIVATE KEY-----")) {
+    throw new Error("Private key format incorrect — missing PEM header.");
+  }
+
+  admin.initializeApp({
+    credential: admin.credential.cert(firebaseCredentials),
+  });
+} catch (err) {
+  console.error("Firebase credential error:", err.message);
+  throw err;
+}
+
 const db = admin.firestore();
 
 // --- Express App ---
@@ -49,7 +60,7 @@ app.post("/upload", upload.single("ppt"), async (req, res) => {
     } = req.body;
 
     if (!members || !req.file) {
-      return res.status(400).json({ error: "Missing data or file" });
+      return res.status(400).json({ error: "Missing members or file" });
     }
 
     const parsedMembers = JSON.parse(members);
@@ -79,7 +90,7 @@ app.post("/upload", upload.single("ppt"), async (req, res) => {
 
     res.json({ message: "Upload successful", id: submissionRef.id, data: submissionData });
   } catch (error) {
-    console.error(error);
+    console.error("Upload Error:", error);
     res.status(500).json({ error: "Upload failed", message: error.message });
   }
 });
