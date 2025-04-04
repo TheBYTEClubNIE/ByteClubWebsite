@@ -3,18 +3,28 @@ const express = require("express");
 const multer = require("multer");
 const cloudinary = require("cloudinary").v2;
 const cors = require("cors");
-const admin = require("firebase-admin");
 const fs = require("fs");
 
-// Initialize Firebase Admin SDK
+const admin = require("firebase-admin");
+
 if (!admin.apps.length) {
-  const serviceAccount = require("./firebase.json");
+  const base64 = process.env.FIREBASE_CREDENTIALS;
+
+  if (!base64) {
+    throw new Error("Missing FIREBASE_CREDENTIALS environment variable");
+  }
+
+  const serviceAccount = JSON.parse(
+    Buffer.from(base64, "base64").toString("utf8")
+  );
+
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
   });
 }
 
 const db = admin.firestore(); // Firestore Database
+
 
 const app = express();
 app.use(express.json());
