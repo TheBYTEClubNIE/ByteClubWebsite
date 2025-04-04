@@ -7,7 +7,14 @@ const admin = require("firebase-admin");
 const fs = require("fs");
 
 const credentialsBase64 = process.env.FIREBASE_CREDENTIALS_BASE64;
-const firebaseCredentials = JSON.parse(Buffer.from(credentialsBase64, "base64").toString("utf8"));
+
+if (!credentialsBase64) {
+  throw new Error("Missing FIREBASE_CREDENTIALS_BASE64");
+}
+
+const firebaseCredentials = JSON.parse(
+  Buffer.from(credentialsBase64, "base64").toString("utf8")
+);
 
 admin.initializeApp({
   credential: admin.credential.cert(firebaseCredentials),
