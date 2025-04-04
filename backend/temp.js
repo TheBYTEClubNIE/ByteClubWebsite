@@ -1,5 +1,8 @@
-const fs = require("fs");
+const credentialsBase64 = process.env.FIREBASE_CREDENTIALS_BASE64;
 
-const raw = fs.readFileSync("firebaseJson.json", "utf8");
-const base64 = Buffer.from(raw).toString("base64");
-console.log(base64);
+const firebaseCredentials = JSON.parse(
+    Buffer.from(credentialsBase64, "base64").toString("utf8")
+  );
+  
+  console.log("Firebase email:", firebaseCredentials.client_email);
+  
