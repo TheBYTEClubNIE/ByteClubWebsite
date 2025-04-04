@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         {/* Left Section - About */}
         <div>
-          <h3 className="text-2xl font-bold text-orange-400">Byte Ideathon</h3>
+          <h3 className="text-2xl font-bold text-orange-400">BeyondBYTE Ideathon</h3>
           <p className="mt-2 text-sm text-gray-400">
             A premier national-level hackathon fostering innovation, collaboration, and technology-driven problem-solving.
           </p>
@@ -41,7 +41,7 @@ const Footer = () => {
 
       {/* Copyright Section */}
       <div className="mt-10 text-center text-sm border-t border-gray-700 pt-5">
-        © {new Date().getFullYear()} Byte Ideathon. All Rights Reserved.
+        © {new Date().getFullYear()} BeyondBYTE Ideathon. All Rights Reserved.
       </div>
     </footer>
   );

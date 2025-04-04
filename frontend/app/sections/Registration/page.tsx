@@ -105,7 +105,7 @@ const RegistrationForm = () => {
                         download
                         className="inline-block px-6 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold rounded-md shadow-md hover:scale-105 transform transition duration-300"
                     >
-                        📥 Download Template PPT
+                        📥 Download PPT Template
                     </a>
                 </div>
 

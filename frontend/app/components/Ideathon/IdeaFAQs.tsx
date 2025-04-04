@@ -9,20 +9,16 @@ interface FAQ {
 
 const faqs : FAQ[] =[
   {
-    question: "What is Byte Ideathon?",
-    answer: "Byte Ideathon is a premier national-level hackathon where students, developers, and tech enthusiasts collaborate to solve real-world problems through technology and innovation."
+    question: "What is BeyondBYTE Ideathon?",
+    answer: "BeyondBYTE Ideathon is a premier national-level hackathon where students, developers, and tech enthusiasts collaborate to solve real-world problems through technology and innovation."
   },
   {
     question: "Who can participate?",
     answer: "Anyone passionate about technology, innovation, and problem-solving can participate! Whether you're a beginner or an experienced coder, Byte Ideathon welcomes everyone."
   },
   {
-    question: "Is there any registration fee?",
-    answer: "No, Byte Ideathon is completely free to participate. Just register and get ready to innovate!"
-  },
-  {
     question: "Do I need to have a team?",
-    answer: "You can participate solo or in a team (typically 2-5 members). If you don’t have a team, we’ll help you find one!"
+    answer: "You can participate solo or in a team (typically 2-4 members). If you don’t have a team, we’ll help you find one!"
   },
   {
     question: "What are the prizes?",
