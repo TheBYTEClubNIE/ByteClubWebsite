@@ -32,7 +32,7 @@ export default function AboutUs() {
     <h2 className="text-4xl lg:text-5xl font-extrabold text-yellow-400">About Us</h2>
     <div className="h-1 w-24 bg-yellow-500 mx-auto lg:mx-0"></div>
     <p className="text-lg text-gray-300 leading-relaxed">
-      <span className="text-orange-400 font-extrabold">Byte Ideathon</span> is a premier 
+      <span className="text-orange-400 font-extrabold">BeyondBYTE</span> is a premier 
       <span className="text-teal-400 font-bold"> national-level hackathon</span> that brings together 
       <span className="text-purple-400 font-bold"> students, developers, and tech enthusiasts</span> 
       to <span className="text-pink-400 font-bold"> innovate, collaborate,</span> and solve 
