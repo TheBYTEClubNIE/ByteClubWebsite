@@ -75,7 +75,7 @@ const RegistrationForm = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:5050/upload", {
+            const response = await fetch("https://byteclubwebsite.onrender.com/upload", {
                 method: "POST",
                 body: formDataToSend,
             });
