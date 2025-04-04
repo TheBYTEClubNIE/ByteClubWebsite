@@ -247,14 +247,14 @@ const IdeaProblem = () => {
                     </div>
                 </Dropdown>
 
-                <div className="w-full text-center">
+                {/* <div className="w-full text-center">
                     <button
                         onClick={() => (window.location.href = "/")}
                         className="px-4 py-2 bg-blue-600 text-white font-medium text-lg rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300"
                     >
                         Download PDF
                     </button>
-                </div>
+                </div> */}
             </div>
         </div>
     );
