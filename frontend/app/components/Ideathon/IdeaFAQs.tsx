@@ -17,12 +17,8 @@ const faqs : FAQ[] =[
     answer: "Anyone passionate about technology, innovation, and problem-solving can participate! Whether you're a beginner or an experienced coder, Byte Ideathon welcomes everyone."
   },
   {
-    question: "Is there any registration fee?",
-    answer: "No, Byte Ideathon is completely free to participate. Just register and get ready to innovate!"
-  },
-  {
     question: "Do I need to have a team?",
-    answer: "You can participate solo or in a team (typically 2-5 members). If you don’t have a team, we’ll help you find one!"
+    answer: "You can participate solo or in a team (typically 2-4 members). If you don’t have a team, we’ll help you find one!"
   },
   {
     question: "What are the prizes?",

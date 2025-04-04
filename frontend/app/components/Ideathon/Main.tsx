@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-// Countdown Timer Logic
 const calculateTimeLeft = () => {
   const eventDate = new Date("2025-04-07T11:00:00").getTime();
   const now = new Date().getTime();
@@ -69,7 +68,7 @@ const Page = () => {
       className="w-full p-4 fixed top-0 bg-gradient-to-r from-blue-800 to-pink-700 z-20"
     >
       <div className="container mx-auto flex flex-wrap items-center justify-between">
-        <div onClick={()=> window.location.href = "#home"} className="text-2xl font-bold text-white cursor-pointer">Byte Ideathon</div>
+        <div onClick={()=> window.location.href = "#home"} className="text-2xl font-bold text-white cursor-pointer">BeyondBYTE IDEATHON</div>
         
         {/* Mobile Menu Button */}
         <button className="lg:hidden text-white focus:outline-none" onClick={() => setMenuOpen(!menuOpen)}>
@@ -114,19 +113,16 @@ const Page = () => {
       >
 
         <h2  className="text-5xl sm:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-400 to-pink-500 animate-pulse">
-          BYTE IDEATHON &apos;25
+        BeyondBYTE IDEATHON &apos;25
         </h2>
         <p className="text-gray-400 mt-2 text-lg font-semibold">CODE. COMPETE. CELEBRATE.</p>
         <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
           A national-level event with a mission to <q>BUILD YOUR TECHNICAL EXPERTISE</q>
         </p>
-        <p className="mt-4 text-lg text-red-300 max-w-2xl mx-auto">
-          ( Only for students of National Institute of Engineering )
-        </p>
 
         <p className="text-yellow-400 font-semibold mt-4 text-xl">Mark your calendars: <br/>
-          <span className="text-gray-300 text-[1rem]">(7th April for North Campus Hostellers)</span><br/>
-          <span className="text-gray-300 text-[1rem]">(8th-9th for South Campus Hostellers & Day Scholars)</span>
+          <span className="text-gray-300 text-[1rem]">(7th April for North Campus Hostellers - 5:30 pm onwards)</span><br />
+          <span className="text-gray-300 text-[1rem]">(8th-9th for South Campus Hostellers & Day Scholars - 5:30 pm onwards)</span>
         </p>
 
         {/* Countdown Timer */}
