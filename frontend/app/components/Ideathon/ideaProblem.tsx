@@ -4,7 +4,7 @@ import { Dropdown } from "./IdeaDropdown";
 const IdeaProblem = () => {
   return (
     <div className="container mx-auto px-20 pb-16 pt-24" id="problems">
-      <h1 className="w-[32rem] mb-4 text-center text-yellow-500 mx-auto text-2xl font-extrabold pb-2 md:text-5xl border-b-4 border-yellow-500 ">
+      <h1 className="mb-4 text-center text-yellow-500 mx-auto text-2xl font-extrabold pb-2 md:text-5xl border-b-4 border-yellow-500 ">
         Problem Statement
       </h1>
 
