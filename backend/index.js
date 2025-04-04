@@ -4,76 +4,62 @@ const multer = require("multer");
 const cloudinary = require("cloudinary").v2;
 const cors = require("cors");
 const admin = require("firebase-admin");
+const fs = require("fs");
 
-// --- Firebase Admin Initialization ---
-const credentialsBase64 = process.env.FIREBASE_CREDENTIALS_BASE64;
-if (!credentialsBase64) {
-  throw new Error("Missing FIREBASE_CREDENTIALS_BASE64");
-}
-
-let firebaseCredentials;
-try {
-  const decoded = Buffer.from(credentialsBase64, "base64").toString("utf8");
-  firebaseCredentials = JSON.parse(decoded);
-
-  // Optional check: Ensure private key has newlines
-  if (!firebaseCredentials.private_key.includes("-----BEGIN PRIVATE KEY-----")) {
-    throw new Error("Private key format incorrect — missing PEM header.");
-  }
-
+// Initialize Firebase Admin SDK
+if (!admin.apps.length) {
+  const serviceAccount = require("./firebase.json");
   admin.initializeApp({
-    credential: admin.credential.cert(firebaseCredentials),
+    credential: admin.credential.cert(serviceAccount),
   });
-} catch (err) {
-  console.error("Firebase credential error:", err.message);
-  throw err;
 }
 
-const db = admin.firestore();
+const db = admin.firestore(); // Firestore Database
 
-// --- Express App ---
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "*" })); // Allow all origins
 
-// --- Cloudinary Config ---
+// Configure Cloudinary
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.API_KEY,
   api_secret: process.env.API_SECRET,
 });
 
-// --- Multer Setup ---
+// Configure Multer for File Uploads (Memory Storage)
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
-// --- Upload Endpoint ---
+// Middleware for CORS headers
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+// Upload PPT and Store Team Info in Firestore
 app.post("/upload", upload.single("ppt"), async (req, res) => {
   try {
-    const {
-      members,
-      department,
-      semester,
-      section,
-      college,
-      problemStatement,
-    } = req.body;
+    const { members, department, semester, section, college, problemStatement } = req.body;
 
     if (!members || !req.file) {
-      return res.status(400).json({ error: "Missing members or file" });
+      return res.status(400).json({ error: "Missing data or file" });
     }
 
-    const parsedMembers = JSON.parse(members);
+    const parsedMembers = JSON.parse(members); // Convert back to array
 
+    // Upload PPT to Cloudinary
     const uploadResult = await new Promise((resolve, reject) => {
-      cloudinary.uploader
-        .upload_stream(
-          { resource_type: "raw", folder: "submissions" },
-          (error, result) => (error ? reject(error) : resolve(result))
-        )
-        .end(req.file.buffer);
+      cloudinary.uploader.upload_stream(
+        { resource_type: "raw", folder: "submissions" },
+        (error, result) => (error ? reject(error) : resolve(result))
+      ).end(req.file.buffer);
     });
 
+    // Save to Firestore
+    const submissionRef = db.collection("submissions").doc(); // Generate a new document
     const submissionData = {
       members: parsedMembers,
       department,
@@ -85,21 +71,20 @@ app.post("/upload", upload.single("ppt"), async (req, res) => {
       createdAt: admin.firestore.FieldValue.serverTimestamp(),
     };
 
-    const submissionRef = db.collection("submissions").doc();
     await submissionRef.set(submissionData);
 
     res.json({ message: "Upload successful", id: submissionRef.id, data: submissionData });
   } catch (error) {
-    console.error("Upload Error:", error);
+    console.error(error);
     res.status(500).json({ error: "Upload failed", message: error.message });
   }
 });
 
-// --- Get All Submissions ---
+// Get All Submissions from Firestore
 app.get("/submissions", async (req, res) => {
   try {
-    const snapshot = await db.collection("submissions").orderBy("createdAt", "desc").get();
-    const submissions = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    const submissionsSnapshot = await db.collection("submissions").orderBy("createdAt", "desc").get();
+    const submissions = submissionsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     res.json(submissions);
   } catch (error) {
     console.error("Fetch Error:", error);
@@ -107,6 +92,6 @@ app.get("/submissions", async (req, res) => {
   }
 });
 
-// --- Start Server ---
+// Start Server
 const PORT = process.env.PORT || 5050;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
