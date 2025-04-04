@@ -6,7 +6,6 @@ const cors = require("cors");
 const admin = require("firebase-admin");
 const fs = require("fs");
 
-const admin = require("firebase-admin");
 
 // Parse Firebase credentials from environment variable
 const firebaseCredentials = JSON.parse(process.env.FIREBASE_CREDENTIALS);
