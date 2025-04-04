@@ -81,6 +81,7 @@ app.post("/upload", upload.single("ppt"), async (req, res) => {
                 .end(req.file.buffer);
         });
 
+        console.log("Lets see")
         // Save to Firestore
         const submissionRef = db.collection("submissions").doc(); // Generate a new document
         const submissionData = {
