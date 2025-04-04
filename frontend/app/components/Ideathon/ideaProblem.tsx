@@ -2,333 +2,262 @@ import React from "react";
 import { Dropdown } from "./IdeaDropdown";
 
 const IdeaProblem = () => {
-  return (
-    <div className="container mx-auto px-20 pb-16 pt-24" id="problems">
-      <h1 className="mb-4 text-center text-yellow-500 mx-auto text-2xl font-extrabold pb-2 md:text-5xl border-b-4 border-yellow-500 ">
-        Problem Statement
-      </h1>
+    return (
+        <div className="container mx-auto px-20 pb-16 pt-24" id="problems">
+            <h1 className="mb-4 text-center text-yellow-500 mx-auto text-2xl font-extrabold pb-2 md:text-5xl border-b-4 border-yellow-500 ">
+                Problem Statement
+            </h1>
 
-      <div className="space-y-4">
-        <Dropdown title="AI & Automation">
-          <div className="space-y-4">
-            <ul className="ml-5 list-disc space-y-2 ">
-              <li>
-                Durable construction with premium materialsMany companies
-                struggle with high employee attrition due to workload
-                mismanagement. How can AI optimize task distribution to reduce
-                burnout?
-              </li>
-              <li>
-                Email overload reduces productivity as employees spend hours
-                managing their inboxes. How can AI help prioritize and summarize
-                emails efficiently?
-              </li>
-              <li>
-                People waste time finding relevant information across multiple
-                applications and documents. How can AI assist in faster data
-                retrieval and contextual search?
-              </li>
-              <li>
-                Manual customer support often leads to slow response times and
-                inconsistent service. How can AI automate support while
-                maintaining human-like interaction?
-              </li>
-              <li>
-                Traditional recruitment processes are time-consuming and biased.
-                How can AI improve fairness and efficiency in candidate
-                screening?
-              </li>
-            </ul>
-          </div>
-        </Dropdown>
+            <div className="space-y-4 text-white">
+                <Dropdown title="Artificial Intelligence and Machine Learning">
+                    <div className="space-y-4">
+                        <ul className="ml-5 list-disc space-y-2 ">
+                            <li>
+                                The Resume Black Hole
+                                <p>
+                                    Every job posting receives hundreds of
+                                    applications, but most candidates never hear
+                                    back. Recruiters spend hours manually
+                                    screening resumes, often overlooking great
+                                    talent due to keyword mismatches or
+                                    unconscious biases. The hiring process
+                                    remains slow, inconsistent, and frustrating
+                                    for both employers and job seekers. How can
+                                    we create a fair, efficient, and scalable
+                                    way to match candidates with job openings
+                                    while ensuring diversity and inclusion?
+                                </p>
+                            </li>
+                            <li>
+                                News or Noise?
+                                <p>
+                                    Social media is flooded with misinformation,
+                                    and distinguishing fact from fiction has
+                                    become nearly impossible. Fake news spreads
+                                    faster than real news, shaping public
+                                    opinion and even influencing elections.
+                                    Manual fact-checking is too slow to keep up.
+                                    How can we build a system that helps people
+                                    instantly verify the credibility of news
+                                    articles, tweets, and posts before they
+                                    share them?
+                                </p>
+                            </li>
+                            <li>
+                                The Traffic Jam That Shouldn’t Exist
+                                <p>
+                                    Every day, millions of people waste hours
+                                    stuck in traffic due to poorly optimized
+                                    traffic signals and outdated road planning.
+                                    Many intersections still operate on fixed
+                                    timers, even when no cars are present.
+                                    Emergency vehicles struggle to get through
+                                    congested roads, causing preventable delays.
+                                    How can we make traffic management smarter,
+                                    more dynamic, and responsive to real-time
+                                    road conditions?
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </Dropdown>
 
-        <Dropdown title="Fintech & Digital Payments">
-          <div className="space-y-4">
-            <ul className="ml-5 list-disc space-y-2">
-              <li>
-                Students and young professionals often struggle with managing
-                their monthly expenses. How can technology assist in better
-                budgeting and financial tracking?{" "}
-              </li>
-              <li>
-                Online transactions are vulnerable to fraud and identity theft.
-                How can a software-based solution improve digital payment
-                security?{" "}
-              </li>
-              <li>
-                Many small businesses face difficulties in managing invoices and
-                payments. How can fintech solutions automate financial
-                operations for them?
-              </li>
-              <li>
-                Splitting expenses among friends is often confusing and leads to
-                disputes. How can a digital solution simplify group payments and
-                settlements?
-              </li>
-              <li>
-                raditional credit scoring methods exclude many potential
-                borrowers. How can technology create an alternative, fairer
-                credit evaluation system?{" "}
-              </li>
-            </ul>
-          </div>
-        </Dropdown>
+                <Dropdown title="Ecommerce">
+                    <div className="space-y-4">
+                        <ul className="ml-5 list-disc space-y-2">
+                            <li>
+                                The Shopping Maze
+                                <p>
+                                    Online shoppers are bombarded with thousands
+                                    of product choices, leading to decision
+                                    fatigue. Many rely on fake reviews,
+                                    misleading ads, or outdated recommendations.
+                                    As a result, people either buy the wrong
+                                    product or give up altogether. How can we
+                                    create a system that helps shoppers quickly
+                                    find the perfect product without wasting
+                                    time and money?
+                                </p>
+                            </li>
+                            <li>
+                                The Discount That Disappeared
+                                <p>
+                                    Online prices fluctuate constantly, and
+                                    shoppers often miss out on the best deals.
+                                    Many add items to their carts, only to see
+                                    the price increase at checkout. Others spend
+                                    hours manually comparing prices across
+                                    different websites. How can we ensure that
+                                    customers always get the best possible price
+                                    without the hassle?
+                                </p>
+                            </li>
+                            <li>
+                                Reviews You Can’t Trust
+                                <p>
+                                    Most product reviews are either fake,
+                                    biased, or misleading. Some are paid
+                                    promotions, while others come from users
+                                    with no real experience. Shoppers don’t know
+                                    which reviews to trust, leading to bad
+                                    purchase decisions and frustration. How can
+                                    we create a system that verifies and
+                                    prioritizes authentic, unbiased customer
+                                    feedback?
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </Dropdown>
 
-        <Dropdown title="HealthTech & Wellbeing">
-          <div className="space-y-4">
-            <ul className="ml-5 list-disc space-y-2">
-              <li>
-                Many people struggle with following prescribed medication
-                schedules. How can technology help improve medication adherence?
-              </li>
-              <li>
-                Students and working professionals experience high stress and
-                anxiety. How can digital tools help track and manage mental
-                well-being?
-              </li>
-              <li>
-                In rural areas, access to doctors is limited. How can software
-                bridge the gap and provide remote healthcare assistance?
-              </li>
-              <li>
-                Medical records are often scattered across different hospitals
-                and clinics. How can a unified digital system enhance patient
-                record management?
-              </li>
-              <li>
-                Poor posture while using digital devices leads to long-term
-                health issues. How can technology help users maintain better
-                posture?
-              </li>
-            </ul>
-          </div>
-        </Dropdown>
+                <Dropdown title="Web3/Blockchain">
+                    <div className="space-y-4">
+                        <ul className="ml-5 list-disc space-y-2">
+                            <li>
+                                The Vote That Vanished
+                                <p>
+                                    Elections and surveys are plagued with
+                                    fraud, manipulation, and lack of
+                                    transparency. People don’t trust the
+                                    process, and results are often disputed.
+                                    Voter turnout remains low because the system
+                                    is inconvenient or inaccessible. How can we
+                                    create a voting system that is secure,
+                                    transparent, and fraud-proof?
+                                </p>
+                            </li>
+                            <li>
+                                Who Owns This?
+                                <p>
+                                    Digital content—art, music, and documents—is
+                                    constantly stolen, copied, and resold
+                                    without crediting the original creators.
+                                    Musicians lose royalties, artists see their
+                                    work used without permission, and businesses
+                                    struggle to track ownership of intellectual
+                                    property. How can we build a system that
+                                    ensures creators get fair recognition and
+                                    control over their work?
+                                </p>
+                            </li>
+                            <li>
+                                Where Did My Donation Go?
+                                <p>
+                                    People donate millions to charities and
+                                    crowdfunding campaigns, yet most never know
+                                    how their money is actually used.
+                                    Corruption, mismanagement, and high
+                                    administrative costs reduce the impact of
+                                    donations. How can we build a system that
+                                    tracks donations transparently and ensures
+                                    funds are used for their intended purpose?
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </Dropdown>
 
-        <Dropdown title="Cybersecurity & Privacy">
-          <div className="space-y-4">
-            <ul className="ml-5 list-disc space-y-2">
-              <li>
-                Fake news and misinformation spread rapidly on social media. How
-                can technology detect and prevent the spread of false
-                information?
-              </li>
-              <li>
-                Users often unknowingly share excessive personal data with
-                websites and apps. How can software help individuals control
-                their online privacy?
-              </li>
-              <li>
-                Phishing attacks are becoming more sophisticated, tricking users
-                into revealing sensitive information. How can technology detect
-                and prevent phishing attempts?
-              </li>
-              <li>
-                Many people reuse weak passwords, making them vulnerable to
-                hacks. How can a software solution encourage better password
-                habits without compromising convenience?
-              </li>
-              <li>
-                Data breaches expose user information stored on online
-                platforms. How can technology improve the security of personal
-                data in cloud storage?
-              </li>
-            </ul>
-          </div>
-        </Dropdown>
+                <Dropdown title="Cybersecurity">
+                    <div className="space-y-4">
+                        <ul className="ml-5 list-disc space-y-2">
+                            <li>
+                                The Link You Shouldn’t Have Clicked
+                                <p>
+                                    Phishing scams trick millions of people into
+                                    giving away sensitive information, leading
+                                    to stolen identities and drained bank
+                                    accounts. Fake emails and websites look
+                                    increasingly real, making them hard to
+                                    detect. How can we help users instantly
+                                    recognize and avoid phishing attacks?
+                                </p>
+                            </li>
+                            <li>
+                                The File You Shouldn’t Have Downloaded
+                                <p>
+                                    Malicious files disguised as documents,
+                                    apps, or attachments are one of the biggest
+                                    cybersecurity threats. Employees and
+                                    individuals frequently download harmful
+                                    software without realizing it. How can we
+                                    create a system that detects and blocks
+                                    suspicious files before they cause damage?
+                                </p>
+                            </li>
+                            <li>
+                                The Camera That’s Watching You
+                                <p>
+                                    Smart home devices, security cameras, and
+                                    IoT gadgets can be hacked, allowing
+                                    attackers to spy on people in their own
+                                    homes. Most users don’t know if their
+                                    devices have been compromised. How can we
+                                    create a system that monitors and alerts
+                                    users if their connected devices are being
+                                    accessed by unauthorized parties?
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </Dropdown>
 
-        <Dropdown title="EdTech & Learning">
-          <div className="space-y-4">
-            <ul className="ml-5 list-disc space-y-2">
-              <li>
-                Students have different learning paces, but traditional
-                education follows a one-size-fits-all model. How can technology
-                enable personalized learning experiences?
-              </li>
-              <li>
-                Many students struggle with note-taking and summarization of
-                long lectures. How can software assist in generating structured
-                study notes?
-              </li>
-              <li>
-                Language barriers prevent many students from accessing quality
-                education. How can technology improve multilingual learning
-                support?
-              </li>
-              <li>
-                Remote learning often leads to reduced engagement and
-                participation. How can digital tools make online education more
-                interactive and immersive?
-              </li>
-              <li>
-                Many students lack access to mentorship and career guidance. How
-                can a digital solution connect learners with industry experts
-                for guidance?
-              </li>
-            </ul>
-          </div>
-        </Dropdown>
+                <Dropdown title="Smart Cities">
+                    <div className="space-y-4">
+                        <ul className="ml-5 list-disc space-y-2">
+                            <li>
+                                The Pollution You Can’t See
+                                <p>
+                                    Air pollution levels vary across different
+                                    city areas, yet most people rely on generic
+                                    weather apps that don’t provide real-time,
+                                    localized air quality data. How can we
+                                    create a system that gives people live,
+                                    location-based air pollution updates to help
+                                    them make informed decisions?
+                                </p>
+                            </li>
+                            <li>
+                                The Streetlight That Never Sleeps
+                                <p>
+                                    Many streetlights remain on during the day,
+                                    wasting energy, while others fail at night,
+                                    creating unsafe areas. Traditional lighting
+                                    systems lack adaptive control, leading to
+                                    unnecessary electricity consumption and
+                                    increased maintenance costs. How can we
+                                    build an intelligent street lighting system
+                                    that optimizes energy use and ensures public
+                                    safety?
+                                </p>
+                            </li>
+                            <li>
+                                The Parking Spot You’ll Never Find
+                                <p>
+                                    Drivers spend a significant amount of time
+                                    searching for parking, causing unnecessary
+                                    congestion and fuel waste. Many available
+                                    parking spots remain unused simply because
+                                    they are not visible or properly managed.
+                                    How can we develop a real-time parking
+                                    solution that efficiently guides drivers to
+                                    the nearest available spots?
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </Dropdown>
 
-        <Dropdown title="E-Commerce & Retail Tech">
-          <div className="space-y-4">
-            <ul className="ml-5 list-disc space-y-2">
-              <li>
-                Online shoppers often struggle with finding the best deals
-                across multiple platforms. How can technology simplify price
-                comparisons?
-              </li>
-              <li>
-                Returns and refunds in e-commerce cause frustration for both
-                customers and businesses. How can software streamline the return
-                process efficiently?
-              </li>
-              <li>
-                Counterfeit products are a major issue in online marketplaces.
-                How can technology help verify product authenticity?
-              </li>
-              <li>
-                Customers abandon carts due to lack of personalized
-                recommendations. How can AI improve e-commerce personalization?
-              </li>
-              <li>
-                Small businesses struggle to compete with large e-commerce
-                platforms. How can technology help them increase visibility and
-                reach customers more effectively?
-              </li>
-            </ul>
-          </div>
-        </Dropdown>
-
-        <Dropdown title=" Content Creation & Social Media">
-          <div className="space-y-4">
-            <ul className="ml-5 list-disc space-y-2">
-              <li>
-                Digital content creators face challenges in generating unique,
-                engaging content consistently. How can AI assist in the content
-                creation process?
-              </li>
-              <li>
-                Online hate speech and toxic comments are increasing. How can
-                technology detect and reduce harmful interactions on social
-                media?
-              </li>
-              <li>
-                Video editing requires technical skills and consumes time. How
-                can AI simplify video editing for content creators?
-              </li>
-              <li>
-                Fake profiles and bot accounts manipulate engagement on social
-                media. How can technology detect and eliminate fake accounts?
-              </li>
-              <li>
-                Social media addiction is a growing concern. How can digital
-                tools encourage healthier social media usage habits?
-              </li>
-            </ul>
-          </div>
-        </Dropdown>
-
-        <Dropdown title="Gaming & Interactive Media">
-          <div className="space-y-4">
-            <ul className="ml-5 list-disc space-y-2">
-              <li>
-                Online multiplayer games often suffer from toxic behavior and
-                harassment. How can technology create a safer gaming
-                environment?
-              </li>
-              <li>
-                Gamers face long matchmaking times in online multiplayer games.
-                How can software optimize matchmaking for better player
-                experience?
-              </li>
-              <li>
-                Players with disabilities find it challenging to enjoy video
-                games due to accessibility barriers. How can technology make
-                gaming more inclusive?
-              </li>
-              <li>
-                Cheating in online games ruins fair competition. How can AI help
-                detect and prevent in-game cheating?
-              </li>
-              <li>
-                In esports, analyzing gameplay for improvement is complex. How
-                can software provide automated performance analysis for
-                competitive gamers?
-              </li>
-            </ul>
-          </div>
-        </Dropdown>
-
-        <Dropdown title="SaaS & Productivity Tools">
-          <div className="space-y-4">
-            <ul className="ml-5 list-disc space-y-2">
-              <li>
-                Employees waste time searching for documents and emails across
-                multiple platforms. How can software improve information
-                retrieval and organization?
-              </li>
-              <li>
-                Task and project management tools often overwhelm users with
-                complex interfaces. How can a digital solution make task
-                tracking more intuitive and user-friendly?
-              </li>
-              <li>
-                Team communication across different time zones is challenging.
-                How can technology enhance asynchronous collaboration?
-              </li>
-              <li>
-                Keeping track of multiple deadlines leads to stress and missed
-                tasks. How can software automate and optimize deadline
-                management?
-              </li>
-              <li>
-                People struggle with maintaining work-life balance due to poor
-                time management. How can technology help users create healthier
-                schedules?
-              </li>
-            </ul>
-          </div>
-        </Dropdown>
-
-        <Dropdown title="DevOps & Cloud Computing">
-          <div className="space-y-4">
-            <ul className="ml-5 list-disc space-y-2">
-              <li>
-                Cloud computing costs often escalate due to inefficient resource
-                usage. How can software optimize cloud expenses dynamically?
-              </li>
-              <li>
-                Debugging and fixing system failures in large applications takes
-                too much time. How can technology assist in faster error
-                detection and resolution?
-              </li>
-              <li>
-                Deployment failures in software development lead to downtime.
-                How can an intelligent monitoring system improve deployment
-                success rates?
-              </li>
-              <li>
-                Cyberattacks on cloud servers cause major data losses. How can
-                security solutions enhance cloud infrastructure protection?
-              </li>
-              <li>
-                Developers often struggle with managing different versions of
-                APIs. How can software improve API version control and
-                compatibility?
-              </li>
-            </ul>
-          </div>
-        </Dropdown>
-        <div className="w-full text-center">
-        <button
-          onClick={() => (window.location.href = "/")}
-          className="px-4 py-2 bg-blue-600 text-white font-medium text-lg rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300"
-        >
-          Download PDF
-        </button>
+                <div className="w-full text-center">
+                    <button
+                        onClick={() => (window.location.href = "/")}
+                        className="px-4 py-2 bg-blue-600 text-white font-medium text-lg rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300"
+                    >
+                        Download PDF
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default IdeaProblem;
