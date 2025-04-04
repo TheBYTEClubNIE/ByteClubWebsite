@@ -12,9 +12,6 @@ const RegistrationForm = () => {
         pptFile: null,
     });
 
-    const [, setIsModalOpen] = useState(false);
-    const [, setSubmitted] = useState(false);
-
     // Handle team size change
     const handleTeamSizeChange = (size) => {
         setTeamSize(size);
@@ -25,11 +22,14 @@ const RegistrationForm = () => {
     };
 
     // Handle form field change
-    const handleChange = (e, index = null) => {
-        const { name, value, files } = e.target;
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+        index?: number
+    ) => {
+        const { name, value } = e.target;
 
-        if (index !== null) {
-            // Updating specific member's name or USN
+        if (index !== undefined) {
+            // Member field (name/usn)
             setFormData((prev) => {
                 const updatedMembers = [...prev.members];
                 updatedMembers[index] = {
@@ -39,11 +39,23 @@ const RegistrationForm = () => {
                 return { ...prev, members: updatedMembers };
             });
         } else {
-            // Updating other fields
-            setFormData((prev) => ({
-                ...prev,
-                [name]: files ? files[0] : value,
-            }));
+            // General form fields
+            if (
+                e.target instanceof HTMLInputElement &&
+                e.target.type === "file" &&
+                e.target.files
+            ) {
+                const file = e.target.files[0];
+                setFormData((prev) => ({
+                    ...prev,
+                    [name]: file,
+                }));
+            } else {
+                setFormData((prev) => ({
+                    ...prev,
+                    [name]: value,
+                }));
+            }
         }
     };
 
@@ -78,12 +90,6 @@ const RegistrationForm = () => {
             console.error("Error:", error);
             alert("An error occurred while submitting. Please try again.");
         }
-    };
-
-    const confirmSubmission = () => {
-        setSubmitted(true);
-        setIsModalOpen(false);
-        setTimeout(() => setSubmitted(false), 3000);
     };
 
     return (
@@ -274,7 +280,7 @@ const RegistrationForm = () => {
                         />
                         {formData.pptFile && (
                             <p className="text-sm text-gray-600 mt-1">
-                                Uploaded: {formData.pptFile.name}
+                                Uploaded: {(formData.pptFile as File).name}
                             </p>
                         )}
                     </div>
