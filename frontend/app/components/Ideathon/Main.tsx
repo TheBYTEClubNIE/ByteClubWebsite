@@ -82,8 +82,8 @@ const Page = () => {
           <ul className="flex flex-col lg:flex-row font-semibold align-baseline lg:space-x-6">
             {[
               { name: "Home", id: "/" },
-              { name: "About", id: "#about" },
               { name: "Problem Statement", id: "#problems" },
+              { name: "About", id: "#about" },
               { name: "FAQs", id: "#faqs" },
               { name: "Team Info", id: "#team" },
               { name: "Contact", id: "#contact" }

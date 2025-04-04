@@ -2,32 +2,23 @@ require("dotenv").config();
 const express = require("express");
 const multer = require("multer");
 const cloudinary = require("cloudinary").v2;
-const mongoose = require("mongoose");
 const cors = require("cors");
-const Submission = require("./models/submission");
+const admin = require("firebase-admin");
+const fs = require("fs");
 
+// Initialize Firebase Admin SDK
+if (!admin.apps.length) {
+  const serviceAccount = require("./firebaseJson.json");
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+  });
+}
+
+const db = admin.firestore(); // Firestore Database
 
 const app = express();
 app.use(express.json());
 app.use(cors({ origin: "*" })); // Allow all origins
-
-// Ensure all required environment variables are set
-if (!process.env.MONGO_URI || !process.env.CLOUD_NAME || !process.env.API_KEY || !process.env.API_SECRET) {
-  console.error("Missing environment variables. Check your .env file.");
-  process.exit(1);
-}
-
-// Connect to MongoDB
-mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((error) => {
-    console.error("MongoDB connection error:", error);
-    process.exit(1);
-  });
 
 // Configure Cloudinary
 cloudinary.config({
@@ -48,47 +39,52 @@ app.use((req, res, next) => {
   next();
 });
 
-// Upload PPT and Store Team Info in MongoDB
-app.post("/upload", upload.single("ppt"), async (req, res) => { // Keep "ppt" as in frontend
-    try {
-      const { members, department, semester, section, college, problemStatement } = req.body;
-  
-      if (!members || !req.file) {
-        return res.status(400).json({ error: "Missing data or file" });
-      }
-  
-      const parsedMembers = JSON.parse(members); // Convert back to array
-  
-      const uploadResult = await new Promise((resolve, reject) => {
-        cloudinary.uploader.upload_stream(
-          { resource_type: "raw", folder: "submissions" },
-          (error, result) => (error ? reject(error) : resolve(result))
-        ).end(req.file.buffer);
-      });
-  
-      // Save to MongoDB
-      const newSubmission = new Submission({
-        members: parsedMembers,
-        department,
-        semester,
-        section,
-        college,
-        problemStatement,
-        pptUrl: uploadResult.secure_url,
-      });
-  
-      await newSubmission.save();
-      res.json({ message: "Upload successful", data: newSubmission });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: "Upload failed", message: error.message });
-    }
-  });  
+// Upload PPT and Store Team Info in Firestore
+app.post("/upload", upload.single("ppt"), async (req, res) => {
+  try {
+    const { members, department, semester, section, college, problemStatement } = req.body;
 
-// Get All Submissions
+    if (!members || !req.file) {
+      return res.status(400).json({ error: "Missing data or file" });
+    }
+
+    const parsedMembers = JSON.parse(members); // Convert back to array
+
+    // Upload PPT to Cloudinary
+    const uploadResult = await new Promise((resolve, reject) => {
+      cloudinary.uploader.upload_stream(
+        { resource_type: "raw", folder: "submissions" },
+        (error, result) => (error ? reject(error) : resolve(result))
+      ).end(req.file.buffer);
+    });
+
+    // Save to Firestore
+    const submissionRef = db.collection("submissions").doc(); // Generate a new document
+    const submissionData = {
+      members: parsedMembers,
+      department,
+      semester,
+      section,
+      college,
+      problemStatement,
+      pptUrl: uploadResult.secure_url,
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+    };
+
+    await submissionRef.set(submissionData);
+
+    res.json({ message: "Upload successful", id: submissionRef.id, data: submissionData });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Upload failed", message: error.message });
+  }
+});
+
+// Get All Submissions from Firestore
 app.get("/submissions", async (req, res) => {
   try {
-    const submissions = await Submission.find();
+    const submissionsSnapshot = await db.collection("submissions").orderBy("createdAt", "desc").get();
+    const submissions = submissionsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     res.json(submissions);
   } catch (error) {
     console.error("Fetch Error:", error);

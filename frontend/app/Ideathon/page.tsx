@@ -20,8 +20,8 @@ const Page = () => {
     return (
         <div className='bg-gray-900'>
             <Main />
-            <AboutUs />
             <IdeaProblem />
+            <AboutUs />
             <IdeaFAQs />
             <IdeaTeamInfo />
             <IdeaFooter />
