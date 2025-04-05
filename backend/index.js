@@ -52,7 +52,7 @@ app.use((req, res, next) => {
 // Upload PPT and Store Team Info in Firestore
 app.post("/upload", upload.single("ppt"), async (req, res) => {
   try {
-    const { members, department, semester, section, college, problemStatement } = req.body;
+    const { members, teamname, department, semester, section, college, problemStatement } = req.body;
 
     if (!members || !req.file) {
       return res.status(400).json({ error: "Missing data or file" });
