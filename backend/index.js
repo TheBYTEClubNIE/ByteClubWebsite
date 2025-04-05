@@ -103,6 +103,27 @@ app.get("/submissions", async (req, res) => {
   }
 });
 
+const SELF_URL = "https://byteclubwebsite.onrender.com"; // Replace with your actual Render backend URL
+
+function randomInterval(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+async function keepAlive() {
+  try {
+    const res = await fetch(SELF_URL);
+    console.log(`[KEEP ALIVE] Pinged successfully at ${new Date().toISOString()}`);
+  } catch (err) {
+    console.error("[KEEP ALIVE] Failed to ping:", err.message);
+  }
+
+  const nextPing = randomInterval(10, 15) * 60 * 1000; // Convert minutes to ms
+  setTimeout(keepAlive, nextPing);
+}
+
+// Initial delay before starting keep-alive loop
+setTimeout(keepAlive, randomInterval(10, 15) * 60 * 1000);
+
 // Start Server
 const PORT = process.env.PORT || 5050;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
