@@ -72,6 +72,7 @@ app.post("/upload", upload.single("ppt"), async (req, res) => {
     const submissionRef = db.collection("submissions").doc(); // Generate a new document
     const submissionData = {
       members: parsedMembers,
+      teamname,
       department,
       semester,
       section,

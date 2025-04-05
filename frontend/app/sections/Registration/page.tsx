@@ -4,6 +4,7 @@ const RegistrationForm = () => {
     const [teamSize, setTeamSize] = useState(2);
     const [formData, setFormData] = useState({
         members: Array(2).fill({ name: "", usn: "" }),
+        teamname: "",
         department: "Computer Science and Engineering",
         semester: "1",
         section: "A",
@@ -64,6 +65,7 @@ const RegistrationForm = () => {
 
         const formDataToSend = new FormData();
         formDataToSend.append("members", JSON.stringify(formData.members));
+        formDataToSend.append("teamname", formData.teamname);
         formDataToSend.append("department", formData.department);
         formDataToSend.append("semester", formData.semester);
         formDataToSend.append("section", formData.section);
@@ -75,10 +77,13 @@ const RegistrationForm = () => {
         }
 
         try {
-            const response = await fetch("https://byteclubwebsite.onrender.com/upload", {
-                method: "POST",
-                body: formDataToSend,
-            });
+            const response = await fetch(
+                "https://byteclubwebsite.onrender.com/upload",
+                {
+                    method: "POST",
+                    body: formDataToSend,
+                }
+            );
 
             if (!response.ok) {
                 throw new Error("Failed to submit data");
@@ -172,6 +177,21 @@ const RegistrationForm = () => {
                             </div>
                         </div>
                     ))}
+
+                    <div>
+                        <label className="block text-gray-300 font-semibold">
+                            Team Name
+                        </label>
+                        <input
+                            type="text"
+                            name="teamname"
+                            value={formData.teamname}
+                            placeholder="Enter Team Name"
+                            onChange={handleChange}
+                            className="w-full mt-2 p-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
+                            required
+                        />
+                    </div>
 
                     {/* Department Dropdown */}
                     <div>
