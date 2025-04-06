@@ -103,6 +103,20 @@ app.get("/submissions", async (req, res) => {
   }
 });
 
+app.get("/teams", async (req, res) => {
+  try {
+    const teamsSnapshot = await db.collection("submissions").orderBy("createdAt", "desc").get();
+    const teams = teamsSnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    res.json(teams);
+  } catch (error) {
+    console.error("Error fetching teams:", error);
+    res.status(500).json({ error: "Failed to fetch teams" });
+  }
+});
+
 const SELF_URL = "https://byteclubwebsite.onrender.com"; // Replace with your actual Render backend URL
 
 function randomInterval(min, max) {
