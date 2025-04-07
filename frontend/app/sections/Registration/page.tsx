@@ -369,13 +369,6 @@ const RegistrationForm = () => {
                                 </p>
                             )}
                         </div>
-
-                        <button
-                            type="submit"
-                            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded-md transition duration-300"
-                        >
-                            Submit
-                        </button>
                     </form>
                 </div>
             </div>
