@@ -12,6 +12,7 @@ const RegistrationForm = () => {
         section: "A",
         college: "",
         problemStatement: "",
+        location: "",
         pptFile: null,
     });
 
@@ -78,6 +79,7 @@ const RegistrationForm = () => {
         formDataToSend.append("section", formData.section);
         formDataToSend.append("college", formData.college);
         formDataToSend.append("problemStatement", formData.problemStatement);
+        formDataToSend.append("location", formData.location);
 
         if (formData.pptFile) {
             formDataToSend.append("ppt", formData.pptFile);
@@ -329,6 +331,21 @@ const RegistrationForm = () => {
                                 value={formData.problemStatement}
                                 onChange={handleChange}
                                 placeholder="Enter Problem Number"
+                                className="w-full mt-2 p-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-gray-300 font-semibold">
+                                Preffered Location
+                            </label>
+                            <input
+                                type="text"
+                                name="location"
+                                value={formData.location}
+                                onChange={handleChange}
+                                placeholder="North Campus"
                                 className="w-full mt-2 p-2 bg-gray-800 text-white border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
                                 required
                             />
