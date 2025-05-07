@@ -19,7 +19,7 @@ const Winners = ({ eventId }: WinnersProps) => {
   }
 
   return (
-    <div className="min-h-screen border border-white/30 py-12 px-4 lg:px-16 bg-gradient-to-br from-black via-gray-900 to-black text-white">
+    <div className="min-h-screen rounded-lg  border border-white/30 py-12 px-4 lg:px-16 bg-gradient-to-br from-black via-gray-900 to-black text-white">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-12">
           🏆 Winning Teams 🏆

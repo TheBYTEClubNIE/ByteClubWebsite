@@ -12,7 +12,7 @@ const Page = () => {
 
   return (
     <div className="h-full w-screen bg-[url('/dotted-pattern.svg')] lg:p-6">
-      <div className="   backdrop-blur-lg shadow-lg rounded-lg p-8 lg:border border-white/30">
+      <div className=" backdrop-blur-[1px]  rounded-lg p-8 lg:border border-white/30">
         <h1 className="text-4xl font-extrabold text-center text-white mb-6 drop-shadow-lg">
           {event?.title}
         </h1>
