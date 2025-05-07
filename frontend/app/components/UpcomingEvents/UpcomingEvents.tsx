@@ -35,7 +35,7 @@ function UpcomingEvents() {
             {/* Event 2: Hackathon */}
           <div className="p-4 md:p-8">
             <h2 className="text-2xl md:text-3xl font-bold text-blue-400 mb-2 md:mb-4" style={{textShadow : "black 0px 0px 50px"}}>
-              Hackathon
+              BeyondByte Hackathon
             </h2>
             <p className="text-gray-300 text-sm md:text-base mb-4 md:mb-6">
               Code, collaborate, and create. Participate in our hackathon to
