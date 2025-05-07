@@ -10,20 +10,10 @@ import IdeaTeamInfo from "../components/Ideathon/IdeaTeamInfo";
 const Page = () => {
   return (
     <>
-      <div className="relative h-max overflow-hidden">
+      <div className=" h-screen w-screen z-[-1]">
+        <video src="beyondbyte/byte_rain.mp4" className="absolute object-cover w-screen h-screen z-[-1]" muted autoPlay loop/>
         
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full confetti"></div>
-        </div>
-
-        {/* Background Pattern */}
-        <div className="absolute inset-0">
-          <div className="relative h-full w-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 opacity-95 [&>div]:absolute [&>div]:inset-0 [&>div]:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] [&>div]:bg-[size:14px_24px]">
-            <div></div>
-          </div>
-        </div>
-
-        {/* Main Content */}
+  
         <div className="relative z-50 w-screen h-screen flex flex-col items-center justify-center">
           <ByteHackathonNavbar />
           <ByteHackathonHeroSection />

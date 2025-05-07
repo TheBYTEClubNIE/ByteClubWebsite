@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Link from "next/link";
+import Image from "next/image";
 
 const ByteHackathonNavbar = () => {
   const navRef = useRef<HTMLElement | null>(null);
@@ -40,7 +41,7 @@ const ByteHackathonNavbar = () => {
           className="text-4xl tracking-tighter font-mono text-center w-full sm:w-max font-extrabold bg-gradient-to-r from-pink-400 to-blue-500 text-transparent bg-clip-text cursor-pointer"
           onClick={() => scrollToSection("hero")}
         >
-          <Link href={"/bytehackathon"}>Beyond Byte</Link>
+          <Link href={"/bytehackathon"}><Image src={"/beyondbyte/beyondByte_0.png"} height={500} width={500} className="h-[13rem] w-[13rem]" alt="Image" /></Link>
         </h1>
         {/* 🌟 Navigation Links */}
         <div className="hidden sm:flex space-x-6 text-lg font-semibold">

@@ -35,14 +35,14 @@ function UpcomingEvents() {
             {/* Event 2: Hackathon */}
           <div className="p-4 md:p-8">
             <h2 className="text-2xl md:text-3xl font-bold text-blue-400 mb-2 md:mb-4" style={{textShadow : "black 0px 0px 50px"}}>
-              Ideathon
+              Hackathon
             </h2>
             <p className="text-gray-300 text-sm md:text-base mb-4 md:mb-6">
-              Unleash your creativity and pitch your groundbreaking ideas. Join
-              us for an exciting ideathon where innovation meets opportunity.
+              Code, collaborate, and create. Participate in our hackathon to
+              build innovative solutions and compete for amazing prizes.
             </p>
             
-            <a onClick={()=>{window.location.href="/Ideathon"}} className="cursor-pointer bg-blue-500 text-white px-2 py-2 rounded-full hover:bg-blue-600 transition-colors font-semibold text-sm md:text-base tracking-wider shadow-lg hover:shadow-blue-500/50">
+            <a onClick={()=>{window.location.href="/bytehackathon"}} className="cursor-pointer bg-green-500 text-white px-2 py-2 rounded-full hover:bg-green-600 transition-colors font-semibold text-sm md:text-base tracking-wider shadow-lg hover:shadow-green-500/50">
               Learn More
             </a>
           </div>
