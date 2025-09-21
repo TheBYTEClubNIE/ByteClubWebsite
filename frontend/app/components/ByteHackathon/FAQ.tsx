@@ -5,7 +5,7 @@ import gsap from "gsap";
 
 const faqs = [
   {
-    question: "What is Byte?",
+    question: "What is Beyond Byte?",
     answer:
       "Byte is a 36-hour hackathon with the goal of uniting talented developers and designers under one roof and encouraging healthy competition among them...",
   },
@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: "Do I need to pay to register?",
-    answer: "No, registration is completely free!",
+    answer: "Yes, registration fee is 400 per team",
   },
   {
     question: "Is it necessary for the participants to be from the same university?",
@@ -32,7 +32,7 @@ const faqs = [
 const ByteHackathonFAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const faqRefs = useRef<(HTMLDivElement | null)[]>([]); // ✅ Properly typed ref array
+  const faqRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,7 +44,7 @@ const ByteHackathonFAQ = () => {
               { opacity: 0, y: 30 },
               { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, ease: "power2.out" }
             );
-            observer.disconnect(); // Stop observing after animation runs
+            observer.disconnect(); 
           }
         });
       },
@@ -68,7 +68,9 @@ const ByteHackathonFAQ = () => {
 
   return (
     <div ref={sectionRef} id="FAQs" className="min-h-screen bg-gray-900 text-white px-6 py-12 flex items-center justify-center">
+
       <div className="max-w-3xl w-full">
+        
         <h2 className="text-4xl font-extrabold text-center bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text mb-8">
           🔥 Frequently Asked Questions
         </h2>
@@ -78,7 +80,7 @@ const ByteHackathonFAQ = () => {
             <div
               key={index}
               ref={(el) => {
-                faqRefs.current[index] = el; // ✅ Now returns void, fixing TS error
+                faqRefs.current[index] = el;
               }}
               className="faq-container border border-gray-700 rounded-lg p-4 bg-gray-900 shadow-md opacity-0"
             >

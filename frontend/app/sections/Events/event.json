@@ -75,5 +75,25 @@
         }
       ]
     }
+  },
+  {
+    "id": 3,
+    "imageUrl": "/beyondbyte/BEYONDBYTE.png",
+    "images": [
+      "/beyondbyte/ideathon/1.jpg",
+      "/beyondbyte/ideathon/2.jpg",
+      "/beyondbyte/ideathon/3.jpg",
+      "/beyondbyte/ideathon/4.jpg",
+      "/beyondbyte/ideathon/5.jpg",
+      "/beyondbyte/ideathon/6.jpg",
+      "/beyondbyte/ideathon/7.jpg",
+      "/beyondbyte/ideathon/8.jpg",
+      "/beyondbyte/ideathon/9.jpg"
+    ],
+    
+    "cardNo": "03",
+    "title": "Beyond Byte Ideathon",
+    "content": "Beyond Byte:- where ideas ignited, innovation thrived, and the future was imagined! Stay curious, keep building!",
+    "winner": ""
   }
 ]

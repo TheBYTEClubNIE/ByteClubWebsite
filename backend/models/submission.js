@@ -7,6 +7,7 @@ const memberSchema = new mongoose.Schema({
 
 const submissionSchema = new mongoose.Schema({
   members: { type: [memberSchema], required: true },
+  teamname: { type: String, required: true },
   department: { type: String, required: true },
   semester: { type: String, required: true },
   section: { type: String, required: true },

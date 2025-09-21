@@ -1,12 +1,11 @@
 "use client";
 import React from "react";
-import events from "../sections/Events/event.json"
+import events from "../sections/Events/event.json";
 
 interface Member {
   name: string;
   image: string;
 }
-
 
 interface WinnersProps {
   eventId: number;
@@ -15,43 +14,38 @@ interface WinnersProps {
 const Winners = ({ eventId }: WinnersProps) => {
   const event = events.find((event) => event.id === eventId);
 
-  // Check if there are winners for this event
   if (!event || !event.winner || Object.keys(event.winner).length === 0) {
-    return null; // Don't render anything if no winners
+    return null;
   }
 
-
-
   return (
-    <div className="min-h-screen bg-gradient-to-r from-indigo-900 to-purple-600 md:p-8 relative">
-      {/* Background Image */}
-      <div
-        className="md:block hidden absolute inset-0 bg-cover bg-center z-0"
-        
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-800 to-purple-500 opacity-40 z-10"></div>
-      </div>
-
-      {/* Winners Section */}
-      <div className="max-w-6xl  p-2 relative z-20 bg-white/20 backdrop-blur-lg shadow-lg rounded-lg md:p-8 border border-white/30">
-        <h1 className="md:text-4xl text-2xl font-extrabold text-center text-white mb-8 ">
-          🏆 Winners Teams 🏆
+    <div className="min-h-screen rounded-lg  border border-white/30 py-12 px-4 lg:px-16 bg-gradient-to-br from-black via-gray-900 to-black text-white">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-4xl font-bold text-center mb-12">
+          🏆 Winning Teams 🏆
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-20">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {Object.entries(event.winner).map(([teamName, members], index) => (
-            <div key={index} className="bg-black/20 p-6 md:w-44 lg:w-52 gap-32 rounded-xl shadow-lg">
-              <h2 className=" md:text-2xl text-xl font-semibold text-center text-white mb-10">
+            <div
+              key={index}
+              className="bg-white/10 rounded-2xl p-6 shadow-xl backdrop-blur-md border border-white/20"
+            >
+              <h2 className="text-2xl font-semibold text-center mb-6">
                 {teamName}
               </h2>
-              <div className="space-y-4 mb-4">
+              <div className="flex flex-col gap-6">
                 {members.map((member: Member, idx: number) => (
-                  <div key={idx} className="group relative mb-10 overflow-hidden `rounded-lg shadow-md">
+                  <div
+                    key={idx}
+                    className="flex flex-col items-center text-center"
+                  >
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-40 object-cover mb-4 rounded-lg transition-transform duration-500 ease-in-out group-hover:scale-105"
+                      className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg transition-transform hover:scale-105 duration-300"
                     />
-                    <p className="text-white text-lg font-semibold mb-4">{member.name}</p>
+                    <p className="mt-4 text-lg font-medium">{member.name}</p>
                   </div>
                 ))}
               </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { Analytics } from "@vercel/analytics/react"
 import { useEffect, useState } from "react";
 import Loading from "./components/Loading/loading";
 import Navbar from "./components/Navbar/Navbar";
@@ -49,6 +50,7 @@ export default function Home() {
       <SendReview/>
       </div>
       <Footer/>
+      <Analytics />
     </div>
   );
 }
