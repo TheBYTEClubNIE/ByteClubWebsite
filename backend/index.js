@@ -118,6 +118,36 @@ app.get("/teams", async (req, res) => {
   }
 });
 
+//byte-up event route
+app.post("/byte-up", async (req, res) => {
+  try {
+    const { name, usn, email, mobileNumber, branch, section } = req.body;
+
+    if (!name || !usn || !email || !mobileNumber || !branch || !section) {
+      return res.status(400).json({ error: "All fields are required" });
+    }
+
+    const regRef = db.collection("byteup-registrations").doc(); 
+    const regData = {
+      name,
+      usn,
+      email,
+      mobileNumber,
+      branch,
+      section,
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+    };
+
+    await regRef.set(regData);
+
+    res.status(200).json({ message: "Registration successful", id: regRef.id, data: regData });
+  } catch (error) {
+    console.error("Registration Error:", error);
+    res.status(500).json({ error: "Failed to register", message: error.message });
+  }
+});
+
+
 const SELF_URL = "https://byteclubwebsite.onrender.com"; // Replace with your actual Render backend URL
 
 function randomInterval(min, max) {
@@ -138,6 +168,8 @@ async function keepAlive() {
 
 // Initial delay before starting keep-alive loop
 setTimeout(keepAlive, randomInterval(10, 15) * 60 * 1000);
+
+//BYTEUp
 
 // Start Server
 const PORT = process.env.PORT || 5050;
