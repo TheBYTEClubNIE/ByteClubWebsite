@@ -228,7 +228,7 @@ const SingleStepForm = () => {
         </div>
 
         {/* Special Details */}
-        <div>
+        {/* <div>
           <label className="block text-sm font-bold mb-1" htmlFor="firstName">
             First Name
           </label>
@@ -254,7 +254,7 @@ const SingleStepForm = () => {
             className="input text-black"
           />
           {errors.lastName && <p className="text-red-500">{errors.lastName.message}</p>}
-        </div>
+        </div> */}
         
 
         {/* Submit Button */}
