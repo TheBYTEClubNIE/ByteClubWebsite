@@ -144,8 +144,8 @@ app.get("/teams", async (req, res) => {
   }
 });
 
-//byte-up event route
-app.post("/byte-up", async (req, res) => {
+//byte-escape event route
+app.post("/byte-escape", async (req, res) => {
   try {
     const { name, usn, email, mobileNumber, branch, section } = req.body;
 
@@ -153,7 +153,7 @@ app.post("/byte-up", async (req, res) => {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    const regRef = db.collection("byteup-registrations").doc();
+    const regRef = db.collection("byte-escape-registrations").doc();
     const regData = {
       name,
       usn,
@@ -203,8 +203,6 @@ async function keepAlive() {
 
 // Initial delay before starting keep-alive loop
 setTimeout(keepAlive, randomInterval(10, 15) * 60 * 1000);
-
-//BYTEUp
 
 // Start Server
 const PORT = process.env.PORT || 5050;
