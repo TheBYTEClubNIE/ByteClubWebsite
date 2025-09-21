@@ -25,7 +25,6 @@ if (!admin.apps.length) {
 
 const db = admin.firestore(); // Firestore Database
 
-
 const app = express();
 app.use(express.json());
 app.use(cors({ origin: "*" })); // Allow all origins
@@ -45,14 +44,26 @@ const upload = multer({ storage });
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
   next();
 });
 
 // Upload PPT and Store Team Info in Firestore
 app.post("/upload", upload.single("ppt"), async (req, res) => {
   try {
-    const { members, teamname, department, semester, section, college, problemStatement, location } = req.body;
+    const {
+      members,
+      teamname,
+      department,
+      semester,
+      section,
+      college,
+      problemStatement,
+      location,
+    } = req.body;
 
     if (!members || !req.file) {
       return res.status(400).json({ error: "Missing data or file" });
@@ -62,10 +73,12 @@ app.post("/upload", upload.single("ppt"), async (req, res) => {
 
     // Upload PPT to Cloudinary
     const uploadResult = await new Promise((resolve, reject) => {
-      cloudinary.uploader.upload_stream(
-        { resource_type: "raw", folder: "submissions" },
-        (error, result) => (error ? reject(error) : resolve(result))
-      ).end(req.file.buffer);
+      cloudinary.uploader
+        .upload_stream(
+          { resource_type: "raw", folder: "submissions" },
+          (error, result) => (error ? reject(error) : resolve(result))
+        )
+        .end(req.file.buffer);
     });
 
     // Save to Firestore
@@ -85,7 +98,11 @@ app.post("/upload", upload.single("ppt"), async (req, res) => {
 
     await submissionRef.set(submissionData);
 
-    res.json({ message: "Upload successful", id: submissionRef.id, data: submissionData });
+    res.json({
+      message: "Upload successful",
+      id: submissionRef.id,
+      data: submissionData,
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Upload failed", message: error.message });
@@ -95,8 +112,14 @@ app.post("/upload", upload.single("ppt"), async (req, res) => {
 // Get All Submissions from Firestore
 app.get("/submissions", async (req, res) => {
   try {
-    const submissionsSnapshot = await db.collection("submissions").orderBy("createdAt", "desc").get();
-    const submissions = submissionsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    const submissionsSnapshot = await db
+      .collection("submissions")
+      .orderBy("createdAt", "desc")
+      .get();
+    const submissions = submissionsSnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
     res.json(submissions);
   } catch (error) {
     console.error("Fetch Error:", error);
@@ -106,8 +129,11 @@ app.get("/submissions", async (req, res) => {
 
 app.get("/teams", async (req, res) => {
   try {
-    const teamsSnapshot = await db.collection("submissions").orderBy("createdAt", "desc").get();
-    const teams = teamsSnapshot.docs.map(doc => ({
+    const teamsSnapshot = await db
+      .collection("submissions")
+      .orderBy("createdAt", "desc")
+      .get();
+    const teams = teamsSnapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
     }));
@@ -127,7 +153,7 @@ app.post("/byte-up", async (req, res) => {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    const regRef = db.collection("byteup-registrations").doc(); 
+    const regRef = db.collection("byteup-registrations").doc();
     const regData = {
       name,
       usn,
@@ -140,13 +166,20 @@ app.post("/byte-up", async (req, res) => {
 
     await regRef.set(regData);
 
-    res.status(200).json({ message: "Registration successful", id: regRef.id, data: regData });
+    res
+      .status(200)
+      .json({
+        message: "Registration successful",
+        id: regRef.id,
+        data: regData,
+      });
   } catch (error) {
     console.error("Registration Error:", error);
-    res.status(500).json({ error: "Failed to register", message: error.message });
+    res
+      .status(500)
+      .json({ error: "Failed to register", message: error.message });
   }
 });
-
 
 const SELF_URL = "https://byteclubwebsite.onrender.com"; // Replace with your actual Render backend URL
 
@@ -157,7 +190,9 @@ function randomInterval(min, max) {
 async function keepAlive() {
   try {
     const res = await fetch(SELF_URL);
-    console.log(`[KEEP ALIVE] Pinged successfully at ${new Date().toISOString()}`);
+    console.log(
+      `[KEEP ALIVE] Pinged successfully at ${new Date().toISOString()}`
+    );
   } catch (err) {
     console.error("[KEEP ALIVE] Failed to ping:", err.message);
   }
@@ -173,4 +208,6 @@ setTimeout(keepAlive, randomInterval(10, 15) * 60 * 1000);
 
 // Start Server
 const PORT = process.env.PORT || 5050;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(PORT, () =>
+  console.log(`Server running on http://localhost:${PORT}`)
+);
