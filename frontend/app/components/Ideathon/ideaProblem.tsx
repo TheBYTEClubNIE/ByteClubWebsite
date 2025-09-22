@@ -12,9 +12,9 @@ const IdeaProblem = () => {
                 <Dropdown title="Artificial Intelligence and Machine Learning">
                     <div className="space-y-4">
                         <ul className="ml-5 list-disc space-y-2 ">
-                            <li>
+                            <li className="font-bold text-yellow-100">
                                 The Resume Black Hole
-                                <p>
+                                <p className="font-normal text-white">
                                     Every job posting receives hundreds of
                                     applications, but most candidates never hear
                                     back. Recruiters spend hours manually
@@ -28,9 +28,9 @@ const IdeaProblem = () => {
                                     while ensuring diversity and inclusion?
                                 </p>
                             </li>
-                            <li>
+                            <li className="font-bold text-yellow-100">
                                 News or Noise?
-                                <p>
+                                <p className="font-normal text-white">
                                     Social media is flooded with misinformation,
                                     and distinguishing fact from fiction has
                                     become nearly impossible. Fake news spreads
@@ -43,9 +43,9 @@ const IdeaProblem = () => {
                                     share them?
                                 </p>
                             </li>
-                            <li>
+                            <li className="font-bold text-yellow-100">
                                 The Traffic Jam That Shouldn’t Exist
-                                <p>
+                                <p className="font-normal text-white">
                                     Every day, millions of people waste hours
                                     stuck in traffic due to poorly optimized
                                     traffic signals and outdated road planning.
@@ -65,9 +65,9 @@ const IdeaProblem = () => {
                 <Dropdown title="Ecommerce">
                     <div className="space-y-4">
                         <ul className="ml-5 list-disc space-y-2">
-                            <li>
+                            <li className="font-bold text-yellow-100">
                                 The Shopping Maze
-                                <p>
+                                <p className="font-normal text-white">
                                     Online shoppers are bombarded with thousands
                                     of product choices, leading to decision
                                     fatigue. Many rely on fake reviews,
@@ -79,9 +79,9 @@ const IdeaProblem = () => {
                                     time and money?
                                 </p>
                             </li>
-                            <li>
+                            <li className="font-bold text-yellow-100">
                                 The Discount That Disappeared
-                                <p>
+                                <p className="font-normal text-white">
                                     Online prices fluctuate constantly, and
                                     shoppers often miss out on the best deals.
                                     Many add items to their carts, only to see
@@ -92,9 +92,9 @@ const IdeaProblem = () => {
                                     without the hassle?
                                 </p>
                             </li>
-                            <li>
+                            <li className="font-bold text-yellow-100">
                                 Reviews You Can’t Trust
-                                <p>
+                                <p className="font-normal text-white">
                                     Most product reviews are either fake,
                                     biased, or misleading. Some are paid
                                     promotions, while others come from users
@@ -113,9 +113,9 @@ const IdeaProblem = () => {
                 <Dropdown title="Web3/Blockchain">
                     <div className="space-y-4">
                         <ul className="ml-5 list-disc space-y-2">
-                            <li>
+                            <li className="font-bold text-yellow-100">
                                 The Vote That Vanished
-                                <p>
+                                <p className="font-normal text-white">
                                     Elections and surveys are plagued with
                                     fraud, manipulation, and lack of
                                     transparency. People don’t trust the
@@ -126,9 +126,9 @@ const IdeaProblem = () => {
                                     transparent, and fraud-proof?
                                 </p>
                             </li>
-                            <li>
+                            <li className="font-bold text-yellow-100">
                                 Who Owns This?
-                                <p>
+                                <p className="font-normal text-white">
                                     Digital content—art, music, and documents—is
                                     constantly stolen, copied, and resold
                                     without crediting the original creators.
@@ -140,9 +140,9 @@ const IdeaProblem = () => {
                                     control over their work?
                                 </p>
                             </li>
-                            <li>
+                            <li className="font-bold text-yellow-100">
                                 Where Did My Donation Go?
-                                <p>
+                                <p className="font-normal text-white">
                                     People donate millions to charities and
                                     crowdfunding campaigns, yet most never know
                                     how their money is actually used.
@@ -160,9 +160,9 @@ const IdeaProblem = () => {
                 <Dropdown title="Cybersecurity">
                     <div className="space-y-4">
                         <ul className="ml-5 list-disc space-y-2">
-                            <li>
+                            <li className="font-bold text-yellow-100">
                                 The Link You Shouldn’t Have Clicked
-                                <p>
+                                <p className="font-normal text-white">
                                     Phishing scams trick millions of people into
                                     giving away sensitive information, leading
                                     to stolen identities and drained bank
@@ -172,9 +172,9 @@ const IdeaProblem = () => {
                                     recognize and avoid phishing attacks?
                                 </p>
                             </li>
-                            <li>
+                            <li className="font-bold text-yellow-100">
                                 The File You Shouldn’t Have Downloaded
-                                <p>
+                                <p className="font-normal text-white">
                                     Malicious files disguised as documents,
                                     apps, or attachments are one of the biggest
                                     cybersecurity threats. Employees and
@@ -184,9 +184,9 @@ const IdeaProblem = () => {
                                     suspicious files before they cause damage?
                                 </p>
                             </li>
-                            <li>
+                            <li className="font-bold text-yellow-100">
                                 The Camera That’s Watching You
-                                <p>
+                                <p className="font-normal text-white">
                                     Smart home devices, security cameras, and
                                     IoT gadgets can be hacked, allowing
                                     attackers to spy on people in their own
@@ -204,9 +204,9 @@ const IdeaProblem = () => {
                 <Dropdown title="Smart Cities">
                     <div className="space-y-4">
                         <ul className="ml-5 list-disc space-y-2">
-                            <li>
+                            <li className="font-bold text-yellow-100">
                                 The Pollution You Can’t See
-                                <p>
+                                <p className="font-normal text-white">
                                     Air pollution levels vary across different
                                     city areas, yet most people rely on generic
                                     weather apps that don’t provide real-time,
@@ -216,9 +216,9 @@ const IdeaProblem = () => {
                                     them make informed decisions?
                                 </p>
                             </li>
-                            <li>
+                            <li className="font-bold text-yellow-100">
                                 The Streetlight That Never Sleeps
-                                <p>
+                                <p className="font-normal text-white">
                                     Many streetlights remain on during the day,
                                     wasting energy, while others fail at night,
                                     creating unsafe areas. Traditional lighting
@@ -230,9 +230,9 @@ const IdeaProblem = () => {
                                     safety?
                                 </p>
                             </li>
-                            <li>
+                            <li className="font-bold text-yellow-100">
                                 The Parking Spot You’ll Never Find
-                                <p>
+                                <p className="font-normal text-white">
                                     Drivers spend a significant amount of time
                                     searching for parking, causing unnecessary
                                     congestion and fuel waste. Many available

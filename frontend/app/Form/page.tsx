@@ -91,32 +91,37 @@ const SingleStepForm = () => {
     <div className="md:flex lg:items-center min-h-screen Form-screen max-md:justify-center">
 
       {/* For Desktop Devices */}
-      <div className="max-md:hidden w-3/5 border-2 border-white min-h-screen float-left forLOGO">
-      Logo aayega ghumta hua
-      </div>{/* for logo of byte club gol gol gol gol */}
-      {/* Node mailer to be add here */}
-      {/* For Mobile Devices */}
-      <div className="md:hidden">
-        {/* <div className="absolute inset-1 overflow-hidden ">
-          <div className="absolute w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,0,128,0.15),transparent)] 
-          animate-[spin_30s_linear_infinite] z-0"></div>
-          <div className="absolute w-[150%] h-[150%] bg-[radial-gradient(circle,rgba(0,128,255,0.2),transparent)] 
-          animate-[spin_20s_linear_reverse_infinite] z-0"></div>
-          </div> */}
-        <div className="flex justify-center">
-          <Image src={NoBgLogo} alt="alt" width={200} height={200} className="Image" />
-        </div>
-        <div className="mx-6 text-white">
-          Content for Specific event
+      <div className="max-md:hidden w-3/5 min-h-screen float-left forLOGO">
+      {/* <Imag src="frontend\public\byteOriginalLogo.jpeg" alt="alt" width={500} height={500} /> */}
+              <div className="flex justify-center">
+          <Image src={NoBgLogo} alt="alt" width={750} height={800}  />
         </div>
       </div>
+
+
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="sm:w-full md:w-2/5 shadow-lg rounded-lg p-6 space-y-6 min-h-screen overflow-y-scroll max-md:bg-transparent bg-white"
       >
-        <div className="max-md:hidden ">
+        <div className="">
           <div className="text-3xl font-extrabold text-center text-emerald-500 border-b-2 border-emerald-600 pb-2">Byte Club Form</div>
-          Content for specific events
+          <div className="max-md:text-white"><br/>
+            <span className="text-2xl font-bold text-emerald-500">BYTEscape </span><br/>
+Escape the Ordinary with The BYTE Club
+<br/><br/>
+<span className="text-xl font-semibold">Event Details</span>
+<br/>
+📅 25 September, 2025<br/>
+⏰ 11:30 AM – 1:30 PM<br/>
+📍 North Auditorium<br/>
+<br/>
+<span className="text-xl font-semibold">Tagline / Teaser</span>
+<br/>
+✨ Not just an event… an experience!
+<br/>
+🎮 Games • 🕵️‍♂️ Mystery • 🤝 Networking • 🎉 Fun<br/>
+💡 Step into a world of surprises and discover BYTE like never before!
+          </div>
         </div>
 
         {/* User Details */}
@@ -228,7 +233,7 @@ const SingleStepForm = () => {
         </div>
 
         {/* Special Details */}
-        <div>
+        {/* <div>
           <label className="block text-sm font-bold mb-1" htmlFor="firstName">
             First Name
           </label>
@@ -254,7 +259,7 @@ const SingleStepForm = () => {
             className="input text-black"
           />
           {errors.lastName && <p className="text-red-500">{errors.lastName.message}</p>}
-        </div>
+        </div> */}
         
 
         {/* Submit Button */}
