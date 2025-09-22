@@ -2,7 +2,7 @@
 import { useParams } from "next/navigation";
 import React from "react";
 import Image from "next/image";
-import events from "./../event.json"
+import events from "@/app/sections/Events/event.json"
 import Link from "next/link";
 import Winners from "@/app/components/Winners";
 
