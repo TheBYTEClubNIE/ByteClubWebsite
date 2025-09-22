@@ -166,18 +166,45 @@ app.post("/byte-escape", async (req, res) => {
 
     await regRef.set(regData);
 
-    res
-      .status(200)
-      .json({
-        message: "Registration successful",
-        id: regRef.id,
-        data: regData,
-      });
+    res.status(200).json({
+      message: "Registration successful",
+      id: regRef.id,
+      data: regData,
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
   } catch (error) {
     console.error("Registration Error:", error);
     res
       .status(500)
       .json({ error: "Failed to register", message: error.message });
+  }
+});
+
+app.get("/submissions/byte-escape", async (req, res) => {
+  try {
+    const registrationsSnapshot = await db
+      .collection("byte-escape-registrations")
+      .orderBy("createdAt", "desc")
+      .get();
+
+    const registrations = registrationsSnapshot.docs.map((doc) => {
+      const data = doc.data();
+      return {
+        id: doc.id,
+        ...data,
+        createdAt: data.createdAt
+          ? data.createdAt.toDate().toLocaleString()
+          : null,
+      };
+    });
+
+    res.status(200).json(registrations);
+  } catch (error) {
+    console.error("Error fetching byte-escape registrations:", error);
+    res.status(500).json({
+      error: "Failed to fetch registrations",
+      message: error.message,
+    });
   }
 });
 
