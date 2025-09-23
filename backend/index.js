@@ -263,6 +263,9 @@ app.post("/byte-escape", async (req, res) => {
   try {
     const { username, usn, email, semester, branch, section } = req.body;
 
+
+    console.log(req.body);
+
     if (!username || !usn || !email || !semester || !branch || !section) {
       return res.status(400).json({ error: "All fields are required" });
     }

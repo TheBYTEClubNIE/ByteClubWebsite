@@ -24,7 +24,6 @@ interface FormData {
   section: string;
 }
 
-
 const SingleStepForm = () => {
   const [submitting, setSubmitting] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
@@ -55,10 +54,11 @@ const SingleStepForm = () => {
     if (selectedSemester === "1") {
       setBranchOptions([
         { value: "CSE", label: "Computer Science & Engineering" },
+        { value: "ISE", label: "Information Science & Engineering" },
+
         { value: "AIML", label: "Artificial Intelligence & Machine Learning" },
       ]);
-    }
-    else {
+    } else {
       setBranchOptions([
         { value: "CSE", label: "Computer Science & Engineering" },
         { value: "ISE", label: "Information Science & Engineering" },
@@ -68,7 +68,10 @@ const SingleStepForm = () => {
   };
 
   const handleBranchChange = (selectedBranch: string) => {
-    if ((semester === "1" || semester === "3" || semester === "5") && selectedBranch === "AIML") {
+    if (
+      (semester === "1" || semester === "3" || semester === "5") &&
+      selectedBranch === "AIML"
+    ) {
       setSectionOptions([
         { value: "A", label: "A" },
         { value: "B", label: "B" },
@@ -85,66 +88,64 @@ const SingleStepForm = () => {
     }
   };
 
-const onSubmit: SubmitHandler<FormData> = async (data) => {
-  const isFormValid = await trigger();
-  if (isFormValid) {
-    setSubmitting(true);
-    try {
-      const response = await fetch("http://localhost:5050/byte-escape", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    const isFormValid = await trigger();
+    if (isFormValid) {
+      setSubmitting(true);
+      try {
+        const response = await fetch("http://localhost:5050/byte-escape", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
 
-      const result = await response.json();
-      console.log("Server Response:", result);
+        const result = await response.json();
+        console.log("Server Response:", result);
 
-      if (response.ok) {
-        alert("Registration successful!");
-      } else {
-        alert("Failed: " + result.error);
+        if (response.ok) {
+          alert("Registration successful!");
+        } else {
+          alert("Failed: " + result.error);
+        }
+      } catch (err) {
+        console.error("Error submitting form:", err);
+        alert("Something went wrong!");
+      } finally {
+        setSubmitting(false);
       }
-    } catch (err) {
-      console.error("Error submitting form:", err);
-      alert("Something went wrong!");
-    } finally {
-      setSubmitting(false);
     }
-  }
-};
-
+  };
 
   return (
     <div className="Form-screen flex flex-col min-h-screen bg-gray-900 text-white">
       {/* Navbar */}
       <nav className="w-full bg-gray-950 shadow-lg sticky top-0 z-50">
-  <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    {/* Brand */}
-    <Link
-      href="/"
-      className="text-xl md:text-2xl font-semibold text-white hover:text-cyan-400 transition-colors duration-200"
-    >
-      BYTE Club
-    </Link>
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          {/* Brand */}
+          <Link
+            href="/"
+            className="text-xl md:text-2xl font-semibold text-white hover:text-cyan-400 transition-colors duration-200"
+          >
+            BYTE Club
+          </Link>
 
-    {/* Future space for links / CTA if needed */}
-    <div className="hidden md:flex items-center space-x-6">
-      <Link
-        href="/"
-        className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
-      >
-        About
-      </Link>
-      <Link
-        href="/"
-        className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
-      >
-        Contact
-      </Link>
-    </div>
-  </div>
-</nav>
-
+          {/* Future space for links / CTA if needed */}
+          <div className="hidden md:flex items-center space-x-6">
+            <Link
+              href="/"
+              className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
+            >
+              About
+            </Link>
+            <Link
+              href="/"
+              className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
+            >
+              Contact
+            </Link>
+          </div>
+        </div>
+      </nav>
 
       <div className="flex flex-1 flex-col md:flex-row">
         {/* Hero Section for desktop */}
@@ -177,8 +178,7 @@ const onSubmit: SubmitHandler<FormData> = async (data) => {
             </p>
             <p className="flex justify-center gap-4 text-lg">
               <FaGamepad title="Games" /> <FaUserSecret title="Mystery" />{" "}
-              <FaUsers title="Networking" />{" "}
-              <FaGlassCheers title="Fun" />
+              <FaUsers title="Networking" /> <FaGlassCheers title="Fun" />
             </p>
           </div>
         </div>
@@ -228,7 +228,9 @@ const onSubmit: SubmitHandler<FormData> = async (data) => {
             </p>
 
             <div>
-              <label className="block text-sm font-medium mb-1">Your Name</label>
+              <label className="block text-sm font-medium mb-1">
+                Your Name
+              </label>
               <input
                 {...register("username", {
                   required: "Username is required",
@@ -248,7 +250,9 @@ const onSubmit: SubmitHandler<FormData> = async (data) => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-1">University Seat Number</label>
+              <label className="block text-sm font-medium mb-1">
+                University Seat Number
+              </label>
               <input
                 {...register("usn", {
                   required: "USN is required",
@@ -266,7 +270,6 @@ const onSubmit: SubmitHandler<FormData> = async (data) => {
                 <p className="text-red-500 mt-1">{errors.usn.message}</p>
               )}
             </div>
-
 
             {/* Email */}
             <div>
