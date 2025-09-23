@@ -17,11 +17,13 @@ import NoBgLogo from "../../public/NoBgLogo.png";
 
 interface FormData {
   username: string;
+  usn: string;
   email: string;
   semester: string;
   branch: string;
   section: string;
 }
+
 
 const SingleStepForm = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -50,12 +52,13 @@ const SingleStepForm = () => {
   ]);
 
   const handleSemesterChange = (selectedSemester: string) => {
-    if (selectedSemester === "7") {
+    if (selectedSemester === "1") {
       setBranchOptions([
         { value: "CSE", label: "Computer Science & Engineering" },
-        { value: "ISE", label: "Information Science & Engineering" },
+        { value: "AIML", label: "Artificial Intelligence & Machine Learning" },
       ]);
-    } else {
+    }
+    else {
       setBranchOptions([
         { value: "CSE", label: "Computer Science & Engineering" },
         { value: "ISE", label: "Information Science & Engineering" },
@@ -65,12 +68,12 @@ const SingleStepForm = () => {
   };
 
   const handleBranchChange = (selectedBranch: string) => {
-    if ((semester === "1" || semester === "3") && selectedBranch === "AIML") {
+    if ((semester === "1" || semester === "3" || semester === "5") && selectedBranch === "AIML") {
       setSectionOptions([
         { value: "A", label: "A" },
         { value: "B", label: "B" },
       ]);
-    } else if (semester === "5" && selectedBranch === "AIML") {
+    } else if (semester === "7" && selectedBranch === "AIML") {
       setSectionOptions([{ value: "A", label: "A" }]);
     } else {
       setSectionOptions([
@@ -82,14 +85,34 @@ const SingleStepForm = () => {
     }
   };
 
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
-    const isFormValid = await trigger();
-    if (isFormValid) {
-      setSubmitting(true);
-      console.log("Form Data: ", data);
-      setTimeout(() => setSubmitting(false), 3000);
+const onSubmit: SubmitHandler<FormData> = async (data) => {
+  const isFormValid = await trigger();
+  if (isFormValid) {
+    setSubmitting(true);
+    try {
+      const response = await fetch("http://localhost:5050/byte-escape", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      console.log("Server Response:", result);
+
+      if (response.ok) {
+        alert("Registration successful!");
+      } else {
+        alert("Failed: " + result.error);
+      }
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      alert("Something went wrong!");
+    } finally {
+      setSubmitting(false);
     }
-  };
+  }
+};
+
 
   return (
     <div className="Form-screen flex flex-col min-h-screen bg-gray-900 text-white">
@@ -223,6 +246,27 @@ const SingleStepForm = () => {
                 <p className="text-red-500 mt-1">{errors.username.message}</p>
               )}
             </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-1">University Seat Number</label>
+              <input
+                {...register("usn", {
+                  required: "USN is required",
+                  pattern: {
+                    value: /^[A-Za-z0-9]+$/,
+                    message: "Only letters & numbers allowed",
+                  },
+                  minLength: { value: 5, message: "At least 5 characters" },
+                  maxLength: { value: 15, message: "Max 15 characters" },
+                })}
+                placeholder="Enter USN"
+                className="input-field"
+              />
+              {errors.usn && (
+                <p className="text-red-500 mt-1">{errors.usn.message}</p>
+              )}
+            </div>
+
 
             {/* Email */}
             <div>
