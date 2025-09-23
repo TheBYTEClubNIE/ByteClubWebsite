@@ -93,7 +93,7 @@ const SingleStepForm = () => {
     if (isFormValid) {
       setSubmitting(true);
       try {
-        const response = await fetch("http://localhost:5050/byte-escape", {
+        const response = await fetch("https://byteclubwebsite.onrender.com/byte-escape", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
